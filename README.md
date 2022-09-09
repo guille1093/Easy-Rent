@@ -89,7 +89,7 @@
 
 
 * ![Java][Java]
-
+* ![Thymeleaf][Thymeleaf]
 * ![Spring][spring.io]
 * ![Maven][Maven]
 * ![PostgreSQL][PostgreSQL]
@@ -225,7 +225,7 @@ Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.c
 [license-shield]: https://img.shields.io/github/license/guille1093/SpringWebApp-POO2.svg?style=for-the-badge
 [license-url]: https://github.com/guille1093/SpringWebApp-POO2/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/guillermo-quintana-b60541205
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Java]: https://img.shields.io/badge/java-ED8B00?style=for-the-badge&logo=java&logoColor=white
@@ -250,3 +250,4 @@ Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.c
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
 [PostgreSQL]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
+[Thymeleaf]: https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white
