@@ -106,17 +106,21 @@
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* Java
-  ```sh
-  sudo apt install default-jdk
-  ```
+1. Check if you have Java installed
+   ```sh
+   java -version
+   ```
+2. If you don't have Java installed, install it from [here][Java-url] or run the following command:
+   ```sh
+   sudo apt install default-jre
+   ```
+   ```sh
+   sudo apt install default-jdk
+   ```
 
 ### Installation
 
