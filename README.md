@@ -124,7 +124,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a coffe 😉 .
 2. Clone the repo
    ```sh
    git clone https://github.com/guille1093/SpringWebApp-POO2.git
