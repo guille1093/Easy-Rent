@@ -350,6 +350,7 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
@@ -357,6 +358,7 @@
                     </thead>
                     <tbody>
                     <tr th:each="usuario : ${usuarios}">
+                        <td class="text-white" th:text="${usuario.id}"></td>
                         <td class="text-white" th:text="${usuario.nombre}"></td>
                         <td class="text-white" th:text="${usuario.apellido}"></td>
                         <td class="text-white" th:text="${usuario.correo}"></td>

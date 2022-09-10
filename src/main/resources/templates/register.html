@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,18 +18,20 @@
                 <div class="card col-lg-4 mx-auto">
                     <div class="card-body px-5 py-5">
                         <h3 class="card-title text-left mb-3">Registrarse</h3>
-                        <form>
+                        <form action="#" th:action="@{/register/newregister}" th:object="${usuario}" method="post" >
                             <div class="form-group">
-                                <label>Usuario</label>
-                                <input type="text" class="form-control p_input">
+                                <label>Nombre</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control p_input">
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control p_input">
+                                <label>Apellido</label>
+<!--                                <input type="text" th:field="*{apellido}" class="form-control p_input">-->
+                                <input type="text" id="apellido" name="apellido" class="form-control p_input">
                             </div>
                             <div class="form-group">
-                                <label>Contraseña</label>
-                                <input type="password" class="form-control p_input">
+                                <label>E-mail</label>
+<!--                                <input type="email" th:field="*{correo}"class="form-control p_input">-->
+                                <input type="email" id="correo" name="correo" class="form-control p_input">
                             </div>
                             <div class="form-group d-flex align-items-center justify-content-between">
                                 <div class="form-check">
