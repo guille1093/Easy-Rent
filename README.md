@@ -74,7 +74,7 @@
 <div align="center">
 
 <a href="https://github.com/guille1093/SpringWebApp-POO2">
-<img src="src/main/resources/static/images/screenshots/classic-horizontal.jpg" alt="Logo" width="600" height="380">
+<img src="src/main/resources/static/images/screenshots/login.png" alt="Logo" width="600" height="380">
 </a>
 </div>
 
