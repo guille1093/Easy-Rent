@@ -5,6 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-panel douuuuuuuuu
+<link rel="stylesheet" href="/vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="shortcut icon" href="/images/favicon.png" />
+
+<div class="col-lg-4 grid-margin">
+    <div class="align-content-xl-stretch">
+        <div class="card-body">
+            <h4 class="card-title">Usuarios</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Correo</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="usuario : ${usuarios}">
+                        <td class="text-white" th:text="${usuario.nombre}"></td>
+                        <td class="text-white" th:text="${usuario.apellido}"></td>
+                        <td class="text-white" th:text="${usuario.correo}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
