@@ -106,8 +106,8 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Get a coffe 😉 .
-2. Clone the repo
+1. Get a coffee 😉 .
+2. Clone the repo ⬇️
    ```sh
    git clone https://github.com/guille1093/SpringWebApp-POO2.git
    ```
@@ -146,10 +146,9 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] JSP Migration
+- [ ] SpringSecurity
+- [ ] Ligth Mode UI
 
 See the [open issues](https://github.com/guille1093/SpringWebApp-POO2/issues) for a full list of proposed features (and known issues).
 
