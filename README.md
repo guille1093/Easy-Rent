@@ -188,6 +188,8 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
+Cristaldo Yonathan Ariel: cristaldoyonathanariel@gmail.com
+
 Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.com/guille1093/SpringWebApp-POO2)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
