@@ -11,7 +11,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/guille1093/SpringWebApp-POO2">
-    <img src="src/main/resources/static/images/logo-unam.png" alt="Logo" width="291" height="145">
+    <img src="src/main/webapp/static/images/logo-unam.png" alt="Logo" width="291" height="145">
   </a>
 
 <h3 align="center">Object Oriented Programming 2</h3>
@@ -56,7 +56,7 @@
 <div align="center">
 
 <a href="https://github.com/guille1093/SpringWebApp-POO2">
-<img src="src/main/resources/static/images/screenshots/login.png" alt="Logo" width="600" height="380">
+<img src="src/main/webapp/static/images/screenshots/login.png" alt="Logo" width="600" height="380">
 </a>
 </div>
 
