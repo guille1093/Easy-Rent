@@ -137,7 +137,7 @@
                                     class="form-control"
                                     id="email"
                                     name="email-username"
-                                    placeholder="Enter your email or username"
+                                    placeholder="Ingrese su mail o usuario"
                                     autofocus
                             />
                         </div>
@@ -192,7 +192,6 @@
 <script src="../static/vendor/libs/popper/popper.js"></script>
 <script src="../static/vendor/js/bootstrap.js"></script>
 <script src="../static/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-
 <script src="../static/vendor/js/menu.js"></script>
 <!-- endbuild -->
 
