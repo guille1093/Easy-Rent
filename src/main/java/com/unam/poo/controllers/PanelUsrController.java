@@ -22,6 +22,6 @@ public class PanelUsrController {
 //        model.addAllAttributes(usuarios);
         model.addAttribute("usuarios", usuarios);
 
-        return "panelusr";
+        return "table";
     }
 }
