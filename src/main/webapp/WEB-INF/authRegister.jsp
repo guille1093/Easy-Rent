@@ -114,7 +114,12 @@
           <h4 class="mb-2">Su proximo lugar se encuentra aqui 🚀</h4>
           <p class="mb-4">Cree una cuenta para disfrutar todos nuestros beneficios</p>
 
-          <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+          <form id="formAuthentication"
+                class="mb-3"
+                action="${pageContext.request.contextPath}/register/newregister"
+                modelAtribute="usuario"
+                method="POST">
+
             <div class="mb-3">
               <label for="username" class="form-label">Nombre de usuario</label>
               <input
@@ -169,6 +174,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
