@@ -9,7 +9,7 @@ Así también las personas que poseen los lugares a ser alquilados muchas veces 
 ## Clientes potenciales
 
 Los usuarios potenciales para este software serian todas aquellas personas que cuenten con una propiedad y quieran publicarla para ser alquilada, y a su vez todas aquellas personas que tengan la necesidad de adquirir un alquiler.
-Sin la necesidad de perder la comodidad.
+Sin la necesidad de perder la comodidad
 
 ## Solución propuesta 
 

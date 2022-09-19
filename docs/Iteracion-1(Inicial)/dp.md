@@ -27,7 +27,7 @@ Wireframe Ingresar Usuario
 **Caso de uso**: Ingresar Usuario  
 **Descripción**: El usuario quiere ingresar a su cuenta ya creada en la plataforma, se dirige al apartado de Inicio de Sesión e ingresa los datos de su cuenta.  
 **Precondición**:Tener una cuenta registrada   
-**Postcondición**:--  
+**Postcondición**:---  
 
 **Flujo Típico de eventos**:
 <table>
