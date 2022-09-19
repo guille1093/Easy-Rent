@@ -123,7 +123,7 @@
                       autofocus
               />
             </div>
-            <button class="btn btn-primary d-grid w-100">Enviar link de recuperación</button>
+            <button class="btn btn-primary d-grid w-100">Enviar link de recuperacion</button>
           </form>
           <div class="text-center">
             <a href="/login" class="d-flex align-items-center justify-content-center">
