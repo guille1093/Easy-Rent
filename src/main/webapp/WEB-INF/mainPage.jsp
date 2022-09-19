@@ -1,263 +1,424 @@
 <%--
   Created by IntelliJ IDEA.
   User: gq
-  Date: 15/09/2022
-  Time: 10:21
+  Date: 17/09/2022
+  Time: 22:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<!--
+=========================================================
+* Material Kit 2 - v3.0.4
+=========================================================
+
+* Product Page:  https://www.creative-tim.com/product/material-kit
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
-<html
-        lang="en"
-        class="light-style layout-menu-fixed"
-        dir="ltr"
-        data-theme="theme-default"
-        data-static-path="../static/"
-        data-template="vertical-menu-template-free"
->
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+
 <head>
-  <meta charset="utf-8" />
-  <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-  />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
 
-  <title>Without menu - Layouts | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-
-  <meta name="description" content="" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../static/img/favicon/favicon.ico" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-          href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-          rel="stylesheet"
-  />
-
-  <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="../static/vendor/fonts/boxicons.css" />
-
-  <!-- Core CSS -->
-  <link rel="stylesheet" href="../static/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../static/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../static/css/demo.css" />
-
-  <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../static/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-
-  <!-- Page CSS -->
-
-  <!-- Helpers -->
-  <script src="../static/vendor/js/helpers.js"></script>
-
-  <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-  <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="../static/js/config.js"></script>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Nucleo Icons -->
+    <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
+    <title>
+        Easy-Rent
+    </title>
 </head>
 
-<body>
-<!-- Layout wrapper -->
-<div class="layout-wrapper layout-content-navbar layout-without-menu">
-  <div class="layout-container">
-    <!-- Layout container -->
-    <div class="layout-page">
-      <!-- Navbar -->
+<body class="about-us bg-gray-200">
+<!-- Navbar Transparent -->
+<%--simpler Navbar--%>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-absolute shadow-none" style="backdrop-filter:blur(5px); background-color: rgba(255, 255, 255, .15);">
+    <div class="container">
+        <a class="navbar-brand text-white" href="javascript:">Aca va el logo xd</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header-2" aria-controls="navbar-header-2" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-header-2">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="javascript:">
+                        Inicio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="javascript:">
+                        Buscar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="javascript:">
+                        Publicar
+                    </a>
+                </li>
+            </ul>
 
-      <nav
-              class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-              id="layout-navbar"
-      >
-        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-          <!-- Search -->
-          <div class="navbar-nav align-items-center">
-            <div class="nav-item d-flex align-items-center">
-              <i class="bx bx-search fs-4 lh-0"></i>
-              <input
-                      type="text"
-                      class="form-control border-0 shadow-none"
-                      placeholder="Search..."
-                      aria-label="Search..."
-              />
-            </div>
-          </div>
-          <!-- /Search -->
-
-          <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <!-- Place this tag where you want the button to render. -->
-            <li class="nav-item lh-1 me-3">
-              <a
-                      class="github-button"
-                      href="https://github.com/themeselection/sneat-html-admin-template-free"
-                      data-icon="octicon-star"
-                      data-size="large"
-                      data-show-count="true"
-                      aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-              >Star</a
-              >
-            </li>
-
-            <!-- User -->
-            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-              <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                <div class="avatar avatar-online">
-                  <img src="../static/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                </div>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <div class="d-flex">
-                      <div class="flex-shrink-0 me-3">
-                        <div class="avatar avatar-online">
-                          <img src="../static/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
-                        </div>
-                      </div>
-                      <div class="flex-grow-1">
-                        <span class="fw-semibold d-block">John Doe</span>
-                        <small class="text-muted">Admin</small>
-                      </div>
-                    </div>
-                  </a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://twitter.com/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </li>
-                <li>
-                  <div class="dropdown-divider"></div>
+                <li class="nav-item">
+                    <a class="nav-link text-white mx-2" href="https://www.facebook.com/">
+                        <i class="fab fa-facebook"></i>
+                    </a>
                 </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bx bx-user me-2"></i>
-                    <span class="align-middle">My Profile</span>
-                  </a>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
                 </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    <i class="bx bx-cog me-2"></i>
-                    <span class="align-middle">Settings</span>
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
-                        </span>
-                  </a>
-                </li>
-                <li>
-                  <div class="dropdown-divider"></div>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="auth-login-basic.html">
-                    <i class="bx bx-power-off me-2"></i>
-                    <span class="align-middle">Log Out</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!--/ User -->
-          </ul>
+                                <li class="nav-item my-auto ms-3 ms-sm-0">
+                                    <a href="/login" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Iniciar sesión</a>
+                                </li>
+            </ul>
         </div>
-      </nav>
-
-      <!-- / Navbar -->
-
-      <!-- Content wrapper -->
-      <div class="content-wrapper">
-        <!-- Content -->
-
-        <div class="container-xxl flex-grow-1 container-p-y">
-          <!-- Layout Demo -->
-          <div class="layout-demo-wrapper">
-            <div class="layout-demo-placeholder">
-              <img
-                      src="../static/img/layouts/layout-without-menu-light.png"
-                      class="img-fluid"
-                      alt="Layout without menu"
-                      data-app-light-img="layouts/layout-without-menu-light.png"
-                      data-app-dark-img="layouts/layout-without-menu-dark.png"
-              />
-            </div>
-            <div class="layout-demo-info">
-              <h4>Layout without Menu (Navigation)</h4>
-              <button class="btn btn-primary" type="button" onclick="history.back()">Go Back</button>
-            </div>
-          </div>
-          <!--/ Layout Demo -->
-        </div>
-        <!-- / Content -->
-
-        <!-- Footer -->
-        <footer class="content-footer footer bg-footer-theme">
-          <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-            <div class="mb-2 mb-md-0">
-              ©
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              , made with ❤️ by
-              <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
-            </div>
-            <div>
-              <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-              <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
-
-              <a
-                      href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                      target="_blank"
-                      class="footer-link me-4"
-              >Documentation</a
-              >
-
-              <a
-                      href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                      target="_blank"
-                      class="footer-link me-4"
-              >Support</a
-              >
-            </div>
-          </div>
-        </footer>
-        <!-- / Footer -->
-
-        <div class="content-backdrop fade"></div>
-      </div>
-      <!-- Content wrapper -->
     </div>
-    <!-- / Layout page -->
-  </div>
+
+</nav>
+<!-- End Navbar -->
+<!-- -------- START HEADER 7 w/ text and video ------- -->
+<header class="bg-gradient-dark">
+    <div class="page-header min-vh-75" style="background-image: url('../assets/img/bgdep3.jpg');">
+        <span class="mask bg-gradient-dark opacity-5"></span>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mx-auto my-auto">
+                    <h1 class=" text-white" >Easy-Rent</h1>
+                    <p class="lead mb-4 text-white opacity-8">Tu proximo lugar esta aca</p>
+                    <button type="submit" class="btn bg-gradient-primary text-white border-radius-lg"> Quiero buscar un alquiler </button>
+                    <span>ㅤㅤ</span>
+                    <button type="submit" class="btn bg-gradient-primary text-white border-radius-lg">Quiero publicar un alquiler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- -------- END HEADER 7 w/ text and video ------- -->
+<div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <!-- Section with four info areas left & one card right with image and waves -->
+    <section class="py-7">
+        <div class="container">
+        <h3 class="text-center mb-5">Es simple</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="card card-body border-0 shadow-lg">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-shape-primary rounded me-3">
+                                <i class="fa fa-search"></i>
+                            </div>
+                            <div class="icon-text">
+                                <h5 class="mb-0">Busca</h5>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-0">Busca el alquiler que mas te guste, con la mejor ubicacion y el mejor precio.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="card card-body border-0 shadow-lg">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-shape-success rounded me-3">
+                                <i class="fa fa-handshake"></i>
+                            </div>
+                            <div class="icon-text">
+                                <h5 class="mb-0">Contacta</h5>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-0">Contacta al dueño del alquiler y arregla los detalles de la operacion.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <div class="card card-body border-0 shadow-lg">
+                        <div class="d-flex align-items-center">
+                            <div class="icon icon-shape icon-shape-warning rounded me-3">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="icon-text">
+                                <h5 class="mb-0">Disfruta</h5>
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-0">Disfruta de tu nuevo hogar y de la mejor experiencia de alquiler.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Section with four info areas left & one card right with image and waves -->
+    <!-- -------- START Features w/ pattern background & stats & rocket -------- -->
+    <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
+    <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
+        <div class="col">
+            <div class="card h-100" style="--bs-btn-hover-bg:100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/1.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Alquiler a la vuelta de la facu</h5>
+                    <h2 class="card-text"> $ 10.000</h2>
+                    <p class="card-text">
+                        Departamento con todos los servicios incluidos, internet agua y luz, con una vista increible a la ciudad.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/2.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Un alquiler 1</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/3.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">hover</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/4.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/5.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/6.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/7.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/8.webp" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to additional content.
+                        This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+<%--        a card with the same image as above and the image squared and a a fav button on the top left corner of the image on the card top--%>
+
+    </div>
+    <!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
+<%--    <section class="my-5 pt-5">--%>
+<%--        <div class="container">--%>
+<%--            <div class="row">--%>
+<%--                <div class="col-md-6 m-auto">--%>
+<%--                    <h4>Se el primero </h4>--%>
+<%--                    <p class="lead">Enterate de los nuevos alquileres antes que nadie, suscribite a nuestro newsletter.</p>--%>
+<%--             <section class="py-7">--%>
+
+<%--</section>--%>
+<%--                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">--%>
+<%--                        <button class="btn btn-primary" type="button" id="button-addon2">Suscribirse</button>--%>
+<%--                    </div>--%>
+
+<%--                    <p class="mb-4">--%>
+<%--                        Your company may not be in the software business,--%>
+<%--                        but eventually, a software company will be in your business.--%>
+<%--                    </p>--%>
+<%--                    <div class="row">--%>
+<%--                        <div class="col-8">--%>
+<%--                            <div class="input-group input-group-outline">--%>
+<%--                                <label class="form-label">Email Here...</label>--%>
+<%--                                <input type="text" class="form-control mb-sm-0">--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div class="col-4 ps-0">--%>
+<%--                            <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">Subscribe</button>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="col-md-5 ms-auto">--%>
+<%--                    <div class="position-relative">--%>
+<%--                        <img class="max-width-50 w-100 position-relative z-index-2" src="../assets/img/macbook.png" alt="image">--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </section>--%>
+
+<%--    --%>
+    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>
-<!-- / Layout wrapper -->
+<!--   Core JS Files   -->
+<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+<!--  Plugin for TypedJS, full documentation here: https://github.com/inorganik/CountUp.js -->
+<script src="../assets/js/plugins/countup.min.js"></script>
+<!--  Plugin for Parallax, full documentation here: https://github.com/wagerfield/parallax  -->
+<script src="../assets/js/plugins/parallax.min.js"></script>
+<!-- Control Center for Material UI Kit: parallax effects, scripts for the example pages etc -->
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDTTfWur0PDbZWPr7Pmq8K3jiDp0_xUziI"></script>
+<script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
+<script>
+    // get the element to animate
+    var element = document.getElementById('count-stats');
+    var elementHeight = element.clientHeight;
 
-<div class="buy-now">
-  <a
-          href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
-          target="_blank"
-          class="btn btn-danger btn-buy-now"
-  >Upgrade to Pro</a
-  >
-</div>
+    // listen for scroll event and call animate function
 
-<!-- Core JS -->
-<!-- build:js static/vendor/js/core.js -->
-<script src="../static/vendor/libs/jquery/jquery.js"></script>
-<script src="../static/vendor/libs/popper/popper.js"></script>
-<script src="../static/vendor/js/bootstrap.js"></script>
-<script src="../static/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    document.addEventListener('scroll', animate);
 
-<script src="../static/vendor/js/menu.js"></script>
-<!-- endbuild -->
+    // check if element is in view
+    function inView() {
+        // get window height
+        var windowHeight = window.innerHeight;
+        // get number of pixels that the document is scrolled
+        var scrollY = window.scrollY || window.pageYOffset;
+        // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+        var scrollPosition = scrollY + windowHeight;
+        // get element position (distance from the top of the page to the bottom of the element)
+        var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
 
-<!-- Vendors JS -->
+        // is scroll position greater than element position? (is element in view?)
+        if (scrollPosition > elementPosition) {
+            return true;
+        }
 
-<!-- Main JS -->
-<script src="../static/js/main.js"></script>
+        return false;
+    }
 
-<!-- Page JS -->
+    var animateComplete = true;
+    // animate element when it is in view
+    function animate() {
 
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+        // is element in view?
+        if (inView()) {
+            if (animateComplete) {
+                if (document.getElementById('state1')) {
+                    const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+                    if (!countUp.error) {
+                        countUp.start();
+                    } else {
+                        console.error(countUp.error);
+                    }
+                }
+                if (document.getElementById('state2')) {
+                    const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+                    if (!countUp1.error) {
+                        countUp1.start();
+                    } else {
+                        console.error(countUp1.error);
+                    }
+                }
+                if (document.getElementById('state3')) {
+                    const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+                    if (!countUp2.error) {
+                        countUp2.start();
+                    } else {
+                        console.error(countUp2.error);
+                    };
+                }
+                animateComplete = false;
+            }
+        }
+    }
+
+    if (document.getElementById('typed')) {
+        var typed = new Typed("#typed", {
+            stringsElement: '#typed-strings',
+            typeSpeed: 90,
+            backSpeed: 90,
+            backDelay: 200,
+            startDelay: 500,
+            loop: true
+        });
+    }
+</script>
+<script>
+    if (document.getElementsByClassName('page-header')) {
+        window.onscroll = debounce(function() {
+            var scrollPosition = window.pageYOffset;
+            var bgParallax = document.querySelector('.page-header');
+            var oVal = (window.scrollY / 3);
+            bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
+        }, 6);
+    }
+</script>
 </body>
+
 </html>
