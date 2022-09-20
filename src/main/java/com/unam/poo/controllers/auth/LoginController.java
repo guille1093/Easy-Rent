@@ -11,7 +11,7 @@ public class LoginController {
     PanelUsrController panelUsrController;
     @GetMapping("/login")
     public String loginload() {
-        return "authLogin";
+        return "authLogin2";
     }
 
 //    public String loginredirect () {
