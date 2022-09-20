@@ -98,7 +98,6 @@
                            <div class="align-content-center text-center">
                                <a class="mt-4 text-sm text-center" href="/register/authRegister">Aun no tiene una cuenta?</a>
                            </div>
-
                         </form>
                     </div>
                 </div>
