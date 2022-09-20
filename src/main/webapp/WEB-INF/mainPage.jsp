@@ -167,9 +167,9 @@
     <!-- -------- END Features w/ pattern background & stats & rocket -------- -->
     <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
         <div class="col">
-            <div class="card h-100" style="--bs-btn-hover-bg:100">
+            <div class="card move-on-hover overflow-hidden h-100" style="--bs-btn-hover-bg:100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/1.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/1.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Alquiler a la vuelta de la facu</h5>
@@ -183,7 +183,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/2.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/2.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Un alquiler 1</h5>
@@ -197,7 +197,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/3.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/3.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">hover</h5>
@@ -210,7 +210,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/4.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/4.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -224,7 +224,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/5.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/5.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -238,7 +238,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/6.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/6.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -252,7 +252,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/7.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/7.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -266,7 +266,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/8.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/8.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -281,45 +281,6 @@
 
     </div>
     <!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
-<%--    <section class="my-5 pt-5">--%>
-<%--        <div class="container">--%>
-<%--            <div class="row">--%>
-<%--                <div class="col-md-6 m-auto">--%>
-<%--                    <h4>Se el primero </h4>--%>
-<%--                    <p class="lead">Enterate de los nuevos alquileres antes que nadie, suscribite a nuestro newsletter.</p>--%>
-<%--             <section class="py-7">--%>
-
-<%--</section>--%>
-<%--                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">--%>
-<%--                        <button class="btn btn-primary" type="button" id="button-addon2">Suscribirse</button>--%>
-<%--                    </div>--%>
-
-<%--                    <p class="mb-4">--%>
-<%--                        Your company may not be in the software business,--%>
-<%--                        but eventually, a software company will be in your business.--%>
-<%--                    </p>--%>
-<%--                    <div class="row">--%>
-<%--                        <div class="col-8">--%>
-<%--                            <div class="input-group input-group-outline">--%>
-<%--                                <label class="form-label">Email Here...</label>--%>
-<%--                                <input type="text" class="form-control mb-sm-0">--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                        <div class="col-4 ps-0">--%>
-<%--                            <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">Subscribe</button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="col-md-5 ms-auto">--%>
-<%--                    <div class="position-relative">--%>
-<%--                        <img class="max-width-50 w-100 position-relative z-index-2" src="../assets/img/macbook.png" alt="image">--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </section>--%>
-
-<%--    --%>
     <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>
 <!--   Core JS Files   -->

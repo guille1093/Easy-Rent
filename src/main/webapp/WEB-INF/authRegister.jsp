@@ -54,7 +54,8 @@
                 <div class="card z-index-0 fadeIn3 fadeInBottom">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                         <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
-                            <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Easy-Rent</h4>
+                            <h3 class="text-white font-weight-bolder text-center mt-2 mb-0">Easy-Rent</h3>
+                            <h6 class="text-white font-weight-bolder text-center mt-2 mb-0">Registrese</h6>
                             <div class="row mt-3">
                                 <div class="col-2 text-center ms-auto">
                                     <a class="btn btn-link px-3" href="javascript:">
@@ -80,23 +81,36 @@
                                 <label class="form-label">Email</label>
                                 <input type="email" class="form-control">
                             </div>
+                            <div class="input-group input-group-outline my-3">
+                                <label class="form-label">DNI</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="input-group input-group-outline my-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="email" class="form-control">
+                            </div>
+                            <div class="input-group input-group-outline my-3">
+                                <label class="form-label">Apellido</label>
+                                <input type="email" class="form-control">
+                            </div>
                             <div class="input-group input-group-outline mb-3">
                                 <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Confirme su contraseña</label>
                                 <input type="password" class="form-control">
                             </div>
 
                             <div class="form-check form-switch d-flex align-items-center mb-3">
                                 <input class="form-check-input bg-gradient-primary" type="checkbox" id="rememberMe" checked>
-                                <label class="form-check-label mb-0 ms-3" for="rememberMe">Recuerdame</label>
+                                <label class="form-check-label mb-0 ms-3" for="rememberMe">Acepto los terminos y condiciones</label>
                             </div>
                             <div class="text-center">
-                                <a href="/forgotpsw/" class="text-body text-decoration-none">¿Olvidaste tu contraseña?</a>
-                            </div>
-                            <div class="text-center">
-                                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Iniciar sesión</button>
+                                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Registrarme</button>
                             </div>
                             <div class="align-content-center text-center">
-                                <a class="mt-4 text-sm text-center" href="/register/authRegister">Aun no tiene una cuenta?</a>
+                                <a class="mt-4 text-sm text-center" href="/register/authRegister">Ya tiene una cuenta? inicie sesion</a>
                             </div>
                         </form>
                     </div>

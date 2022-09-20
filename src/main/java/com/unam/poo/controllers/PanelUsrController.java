@@ -21,7 +21,6 @@ public class PanelUsrController {
         List<Usuario> usuarios = usuarioService.findAll();
 //        model.addAllAttributes(usuarios);
         model.addAttribute("usuarios", usuarios);
-
         return "table";
     }
 }
