@@ -169,7 +169,7 @@
         <div class="col">
             <div class="card h-100" style="--bs-btn-hover-bg:100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/1.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/1.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Alquiler a la vuelta de la facu</h5>
@@ -183,7 +183,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/2.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/2.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Un alquiler 1</h5>
@@ -197,7 +197,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/3.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/3.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">hover</h5>
@@ -210,7 +210,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/4.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/4.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -224,7 +224,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/5.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/5.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -238,7 +238,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/6.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/6.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -252,7 +252,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/7.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/7.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -266,7 +266,7 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../static/img/rents/8.webp" alt="Card image cap">
+                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/8.webp" alt="Card image cap">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
