@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form role="form" class="text-start">
+                        <form role="form" action="/auth/login" method="post" class="text-start">
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Email</label>
                                 <input type="email" class="form-control">
@@ -94,7 +94,7 @@
                                 <a href="/forgotpsw/" class="text-body text-decoration-none">¿Olvidaste tu contraseña?</a>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Iniciar sesión</button>
+                                <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Iniciar sesión</button>
                             </div>
                            <div class="align-content-center text-center">
                                <a class="mt-4 text-sm text-center" href="/register/authRegister">Aun no tiene una cuenta?</a>

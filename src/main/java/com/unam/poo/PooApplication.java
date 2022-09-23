@@ -8,6 +8,7 @@ public class PooApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PooApplication.class, args);
+		System.out.println("Iniciado");
 	}
 
 }

@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form role="form" class="text-start">
+                        <form role="form" action="auth/register/newRegister" method="post" class="text-start">
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Email</label>
                                 <input type="email" class="form-control">
@@ -107,7 +107,7 @@
                                 <label class="form-check-label mb-0 ms-3" for="rememberMe">Acepto los terminos y condiciones</label>
                             </div>
                             <div class="text-center">
-                                <button type="button" class="btn bg-gradient-primary w-100 my-4 mb-2">Registrarme</button>
+                                <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Registrarme</button>
                             </div>
                             <div class="align-content-center text-center">
                                 <a class="mt-4 text-sm text-center" href="/register/authRegister">Ya tiene una cuenta? inicie sesion</a>
