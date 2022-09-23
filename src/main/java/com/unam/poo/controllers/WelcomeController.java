@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WelcomeController {
     @RequestMapping(value = "/")
     @GetMapping("/")
-    public String ShowLogin(){
+    public String HomePage(){
         return "welcome";
     }
 }
