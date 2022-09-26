@@ -88,7 +88,7 @@
                     </a>
                 </li>
                 <li class="nav-item my-auto ms-3 ms-sm-0">
-                    <a href="/login" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Iniciar sesión</a>
+                    <a href="${pageContext.request.contextPath}/login" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Iniciar sesión</a>
                 </li>
             </ul>
         </div>
