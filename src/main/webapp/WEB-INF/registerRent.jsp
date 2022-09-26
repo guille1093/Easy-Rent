@@ -11,6 +11,6 @@
     <title>Registre su propiedad</title>
 </head>
 <body>
-
+<%@include file="common/navBar.jsp"%>
 </body>
 </html>
