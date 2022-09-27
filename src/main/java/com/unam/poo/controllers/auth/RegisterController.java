@@ -31,4 +31,5 @@ public class RegisterController {
         usuarioService.saveUsuario(usuario);
         return "register";
     }
+
 }

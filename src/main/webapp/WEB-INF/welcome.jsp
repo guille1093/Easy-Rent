@@ -55,19 +55,23 @@
         <div class="collapse navbar-collapse" id="navbar-header-2">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="javascript:">
+                    <a class="nav-link text-white" href="javascript:" >
                         Inicio
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="javascript:">
+                    <a class="nav-link text-white" href="javascript:" >
                         Buscar
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="javascript:">
-                        Publicar
-                    </a>
+
+<%--                    <a class="nav-link text-white" href="javascript:">--%>
+<%--                        --%>
+<%--                    </a>--%>
+
+                    <a href="${pageContext.request.contextPath}/publicacion/crearPublicacion" class="nav-link text-white">Publicar</a>
+
                 </li>
             </ul>
 
