@@ -107,7 +107,7 @@
                     <p class="lead mb-4 text-white opacity-8">Tu proximo lugar esta aca</p>
                     <button type="submit" class="btn bg-gradient-primary text-white border-radius-lg"> Quiero buscar un alquiler </button>
                     <span>ㅤㅤ</span>
-                    <button type="submit" class="btn bg-gradient-primary text-white border-radius-lg">Quiero publicar un alquiler</button>
+                    <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/rents/register">Quiero publicar un alquiler</a>
                 </div>
             </div>
         </div>
