@@ -5,7 +5,7 @@
   Time: 17:39
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Title</title>
@@ -25,398 +25,106 @@
     </button>
     <div class="navbar-collapse pt-3 pb-2 py-lg-0 w-100 collapse show" id="navigation" style="">
       <ul class="navbar-nav navbar-nav-hover ms-auto">
+<%--  home --%>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <span class="nav-link-text">Inicio</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mainpage/">Inicio</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mainpage/faq">FAQ</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mainpage/contact">Contacto</a></li>
+          </ul>
+
         <li class="nav-item dropdown dropdown-hover mx-2">
           <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-            Pages
-            <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+            <i class="material-icons opacity-6 me-2 text-md">search</i>
+            Buscar
+            <img src="../../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
           </a>
           <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
             <div class="d-none d-lg-block">
               <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                Landing Pages
+                Refinar busqueda
               </h6>
-              <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                <span>About Us</span>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Departamentos</span>
               </a>
-              <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                <span>Contact Us</span>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Casas</span>
               </a>
-              <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                <span>Author</span>
-              </a>
-              <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                Account
-              </h6>
-              <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                <span>Sign In</span>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Monoambientes</span>
               </a>
             </div>
-
+            <%--Duplicado para cuando la barra esta colapsada--%>
             <div class="d-lg-none">
               <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                Landing Pages
+                Refinar busqueda
               </h6>
 
-              <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                <span>About Us</span>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Departamentos</span>
               </a>
-              <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                <span>Contact Us</span>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Casas</span>
               </a>
-              <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                <span>Author</span>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Monoambientes</span>
               </a>
-
-              <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                Account
-              </h6>
-              <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                <span>Sign In</span>
-              </a>
-
             </div>
-
           </div>
         </li>
 
         <li class="nav-item dropdown dropdown-hover mx-2">
-          <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="material-icons opacity-6 me-2 text-md">view_day</i>
-            Sections
-            <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
+          <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages2" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="material-icons opacity-6 me-2 text-md">publish</i>
+            Publicar
+            <img src="../../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
           </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
+          <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3" aria-labelledby="dropdownMenuPages">
             <div class="d-none d-lg-block">
-              <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./presentation.html">
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Page Sections</h6>
-                      <span class="text-sm">See all sections</span>
-                    </div>
-                    <img src="../assets/img/down-arrow.svg" alt="down-arrow" class="arrow">
-                  </div>
-                </a>
-                <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/page-sections/hero-sections.html">
-                    Page Headers
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/page-sections/features.html">
-                    Features
-                  </a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./presentation.html">
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Navigation</h6>
-                      <span class="text-sm">See all navigations</span>
-                    </div>
-                    <img src="../assets/img/down-arrow.svg" alt="down-arrow" class="arrow">
-                  </div>
-                </a>
-                <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/navigation/navbars.html">
-                    Navbars
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/navigation/nav-tabs.html">
-                    Nav Tabs
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/navigation/pagination.html">
-                    Pagination
-                  </a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./presentation.html">
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Input Areas</h6>
-                      <span class="text-sm">See all input areas</span>
-                    </div>
-                    <img src="../assets/img/down-arrow.svg" alt="down-arrow" class="arrow">
-                  </div>
-                </a>
-                <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/input-areas/inputs.html">
-                    Inputs
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/input-areas/forms.html">
-                    Forms
-                  </a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./presentation.html">
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Attention Catchers</h6>
-                      <span class="text-sm">See all examples</span>
-                    </div>
-                    <img src="../assets/img/down-arrow.svg" alt="down-arrow" class="arrow">
-                  </div>
-                </a>
-                <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/attention-catchers/alerts.html">
-                    Alerts
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/attention-catchers/modals.html">
-                    Modals
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/attention-catchers/tooltips-popovers.html">
-                    Tooltips &amp; Popovers
-                  </a>
-                </div>
-              </li>
-
-              <li class="nav-item dropdown dropdown-hover dropdown-subitem">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./presentation.html">
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Elements</h6>
-                      <span class="text-sm">See all elements</span>
-                    </div>
-
-                    <img src="../assets/img/down-arrow.svg" alt="down-arrow" class="arrow">
-                  </div>
-                </a>
-                <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/avatars.html">
-                    Avatars
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/badges.html">
-                    Badges
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/breadcrumbs.html">
-                    Breadcrumbs
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/buttons.html">
-                    Buttons
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/dropdowns.html">
-                    Dropdowns
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/progress-bars.html">
-                    Progress Bars
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/toggles.html">
-                    Toggles
-                  </a>
-                  <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/typography.html">
-                    Typography
-                  </a>
-                </div>
-              </li>
+              <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
+                Publicaciones
+              </h6>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Crear nueva publicación</span>
+              </a>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Mis publicaciones</span>
+              </a>
             </div>
+            <%--Duplicado para cuando la barra esta colapsada--%>
+            <div class="d-lg-none">
+              <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
+                Publicaciones
+              </h6>
 
-            <div class="row d-lg-none">
-              <div class="col-md-12">
-                <div class="d-flex mb-2">
-                  <div class="icon h-10 me-3 d-flex mt-1">
-                    <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
-                  </div>
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Page Sections</h6>
-                    </div>
-                  </div>
-                </div>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/page-sections/hero-sections.html">
-                  Page Headers
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/page-sections/features.html">
-                  Features
-                </a>
-
-                <div class="d-flex mb-2 mt-3">
-                  <div class="icon h-10 me-3 d-flex mt-1">
-                    <i class="ni ni-laptop text-gradient text-primary"></i>
-                  </div>
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Navigation</h6>
-                    </div>
-                  </div>
-                </div>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/navigation/navbars.html">
-                  Navbars
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/navigation/nav-tabs.html">
-                  Nav Tabs
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/navigation/pagination.html">
-                  Pagination
-                </a>
-
-
-                <div class="d-flex mb-2 mt-3">
-                  <div class="icon h-10 me-3 d-flex mt-1">
-                    <i class="ni ni-badge text-gradient text-primary"></i>
-                  </div>
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Input Areas</h6>
-                    </div>
-                  </div>
-                </div>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/input-areas/inputs.html">
-                  Inputs
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/input-areas/forms.html">
-                  Forms
-                </a>
-
-
-                <div class="d-flex mb-2 mt-3">
-                  <div class="icon h-10 me-3 d-flex mt-1">
-                    <i class="ni ni-notification-70 text-gradient text-primary"></i>
-                  </div>
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Attention Catchers</h6>
-                    </div>
-                  </div>
-                </div>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/attention-catchers/alerts.html">
-                  Alerts
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/attention-catchers/modals.html">
-                  Modals
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/attention-catchers/tooltips-popovers.html">
-                  Tooltips &amp; Popovers
-                </a>
-
-
-                <div class="d-flex mb-2 mt-3">
-                  <div class="icon h-10 me-3 d-flex mt-1">
-                    <i class="ni ni-app text-gradient text-primary"></i>
-                  </div>
-                  <div class="w-100 d-flex align-items-center justify-content-between">
-                    <div>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Elements</h6>
-                    </div>
-                  </div>
-                </div>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/avatars.html">
-                  Avatars
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/badges.html">
-                  Badges
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/breadcrumbs.html">
-                  Breadcrumbs
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/buttons.html">
-                  Buttons
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/dropdowns.html">
-                  Dropdowns
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/progress-bars.html">
-                  Progress Bars
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/toggles.html">
-                  Toggles
-                </a>
-                <a class="dropdown-item ps-3 border-radius-md mb-1" href="./sections/elements/typography.html">
-                  Typography
-                </a>
-              </div>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Crear nueva publicación</span>
+              </a>
+              <a href="#" class="dropdown-item border-radius-md">
+                <span>Mis publicaciones</span>
+              </a>
             </div>
+          </div>
+        </li>
 
+
+        <%-- li con toogle para iniciar sesion --%>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-user me-1"></i>
+            <span class="d-sm-inline d-md-none">Account</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login">Iniciar sesión</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/profile">Perfil</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login">Cerrar sesión</a></li>
           </ul>
         </li>
 
-        <li class="nav-item dropdown dropdown-hover mx-2">
-          <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="material-icons opacity-6 me-2 text-md">article</i>
-            Docs
-            <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
-            <div class="d-none d-lg-block">
-              <ul class="list-group">
-                <li class="nav-item list-group-item border-0 p-0">
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/overview/material-kit ">
-                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Getting Started</h6>
-                    <span class="text-sm">All about overview, quick start, license and contents</span>
-                  </a>
-                </li>
-                <li class="nav-item list-group-item border-0 p-0">
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/colors/material-kit ">
-                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Foundation</h6>
-                    <span class="text-sm">See our colors, icons and typography</span>
-                  </a>
-                </li>
-                <li class="nav-item list-group-item border-0 p-0">
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/alerts/material-kit ">
-                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Components</h6>
-                    <span class="text-sm">Explore our collection of fully designed components</span>
-                  </a>
-                </li>
-                <li class="nav-item list-group-item border-0 p-0">
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/datepicker/material-kit ">
-                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Plugins</h6>
-                    <span class="text-sm">Check how you can integrate our plugins</span>
-                  </a>
-                </li>
-                <li class="nav-item list-group-item border-0 p-0">
-                  <a class="dropdown-item py-2 ps-3 border-radius-md" href=" https://www.creative-tim.com/learning-lab/bootstrap/utilities/material-kit ">
-                    <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Utility Classes</h6>
-                    <span class="text-sm">For those who want flexibility, use our utility classes</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="row d-lg-none">
-              <div class="col-md-12 g-0">
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                  <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Getting Started</h6>
-                  <span class="text-sm">All about overview, quick start, license and contents</span>
-                </a>
-
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                  <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Foundation</h6>
-                  <span class="text-sm">See our colors, icons and typography</span>
-                </a>
-
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                  <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Components</h6>
-                  <span class="text-sm">Explore our collection of fully designed components</span>
-                </a>
-
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                  <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Plugins</h6>
-                  <span class="text-sm">Check how you can integrate our plugins</span>
-                </a>
-
-                <a class="dropdown-item py-2 ps-3 border-radius-md" href="./pages/about-us.html">
-                  <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Utility Classes</h6>
-                  <span class="text-sm">For those who want flexibility, use our utility classes</span>
-                </a>
-              </div>
-            </div>
-
-          </ul>
-        </li>
-        <li class="nav-item ms-lg-auto">
-          <a class="nav-link nav-link-icon me-2" href="https://github.com/creativetimofficial/material-kit" target="_blank">
-            <i class="fa fa-github me-1" aria-hidden="true"></i>
-            <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="bottom">Github</p>
-          </a>
-        </li>
-        <li class="nav-item my-auto ms-3 ms-lg-0">
-
-          <a href="${pageContext.request.contextPath}/login" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Iniciar sesión</a>
-
-        </li>
       </ul>
     </div>
   </div>
