@@ -253,7 +253,6 @@ Paso 1: <br> Campo-1: Tipo de propiedad</td>
   <tr>
     <td></td>
     <td><b>3</b>. El sistema despliega el formulario utilizado en el CU-05(Registrar Propiedad) con la información asociada al alquiler seleccionado</td>
-    <td></td>
   </tr>
   <tr>
     <td><b>4</b>. El propietario busca el dato a cambiar, lo modifica y se dirige al paso 5 del formulario y presiona en el botón con la etiqueta “Guardar Modificación”</td>
@@ -261,7 +260,6 @@ Paso 1: <br> Campo-1: Tipo de propiedad</td>
   <tr>
     <td></td>
     <td><b>5</b>. El sistema verifica que todos los campos se encuentren cargados de manera correcta y avisa que todos los cambios se guardaron de manera correcta</td>
-    <td></td>
   </tr>
   <tr>
     <td></td>
