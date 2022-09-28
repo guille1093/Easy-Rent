@@ -2,8 +2,10 @@ package com.unam.poo.controllers.auth;
 
 import com.unam.poo.models.Usuario;
 import com.unam.poo.services.UsuarioService;
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,14 +24,19 @@ public class RegisterController {
     }
 
     @GetMapping ("/authRegister")
-    public String registerload() {
+    public String registerload(Model model) {
+        model.addAttribute("usuario", new Usuario());
         return "authRegister";
     }
 
     @PostMapping("/newRegister")
-    public String register(@ModelAttribute("usuario") Usuario usuario) {
+    public String register(@Validated @ModelAttribute("usuario") Usuario usuario, BindingResult result) {
+        if (result.hasErrors()) {
+            //aca deberia ir una pagina de error xd
+            return "authRegister";
+        }
         usuarioService.saveUsuario(usuario);
-        return "register";
+        return "authRegister";
     }
 
 }

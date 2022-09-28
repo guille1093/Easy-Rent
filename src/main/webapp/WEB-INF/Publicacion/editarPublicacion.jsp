@@ -1,3 +1,4 @@
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %><%--
 <%--
   Created by IntelliJ IDEA.
   User: yonat
@@ -9,8 +10,15 @@
 <html>
 <head>
     <title>Title</title>
+    <%--    CSS_Imports --%>
+    <tags:css_imports/>
+    <%--    CSS_Imports --%>
 </head>
 <body>
+<%--            NavbarStart--%>
+<%@include file="../common/navBar2.jsp"%>
+<%--            NavbarEnd--%>
 
+<tags:js_imports/>
 </body>
 </html>

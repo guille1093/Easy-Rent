@@ -44,62 +44,7 @@
 </head>
 
 <body class="about-us bg-gray-200">
-<!-- Navbar Transparent -->
-<%--simpler Navbar--%>
-<nav class="navbar navbar-expand-lg navbar-dark navbar-absolute shadow-none" style="backdrop-filter:blur(5px); background-color: rgba(255, 255, 255, .15);">
-    <div class="container">
-        <a class="navbar-brand text-white" href="javascript:">Aca va el logo xd</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header-2" aria-controls="navbar-header-2" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-header-2">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="javascript:" >
-                        Inicio
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="javascript:" >
-                        Buscar
-                    </a>
-                </li>
-                <li class="nav-item">
 
-<%--                    <a class="nav-link text-white" href="javascript:">--%>
-<%--                        --%>
-<%--                    </a>--%>
-
-                    <a href="${pageContext.request.contextPath}/publicacion/crearPublicacion" class="nav-link text-white">Publicar</a>
-
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="https://twitter.com/">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white mx-2" href="https://www.facebook.com/">
-                        <i class="fab fa-facebook"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="https://www.instagram.com/">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="nav-item my-auto ms-3 ms-sm-0">
-                    <a href="${pageContext.request.contextPath}/login" class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">Iniciar sesión</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-</nav>
-<!-- End Navbar -->
 <!-- -------- START HEADER 7 w/ text and video ------- -->
 <header class="bg-gradient-dark">
     <div class="page-header min-vh-75" style="background-image: url('../assets/img/bgdep1.jpg');">
@@ -117,6 +62,12 @@
         </div>
     </div>
 </header>
+<!-- Navbar Transparent -->
+<div>
+    <%@include file="common/navBar2.jsp"%>
+</div>
+
+<!-- End Navbar -->
 <!-- -------- END HEADER 7 w/ text and video ------- -->
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
     <!-- Section with four info areas left & one card right with image and waves -->
