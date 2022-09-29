@@ -1,20 +1,25 @@
 package com.unam.poo.controllers.auth;
 
+
 import com.unam.poo.models.Usuario;
 import com.unam.poo.services.UsuarioService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/register")
 @Controller
+@RequestMapping("/auth/register")
 public class RegisterController {
 
+    @GetMapping ("/")
+    public String registerload() {
+        return "authRegister";
+    }
+    
     //esto es lo mismo que usar el @Autowired pero de forma manual y deja de dar la advertencia
     final
     UsuarioService usuarioService;

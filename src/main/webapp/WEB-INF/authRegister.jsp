@@ -64,9 +64,13 @@
                     </div>
                     <div class="card-body">
 
+
+
+
 <%--                        <jsp:useBean id="command" class="com.unam.poo.models.Usuario" scope="request"></jsp:useBean>--%>
 
                         <form:form role="form" method="post" action="/register/newRegister" modelAttribute="usuario" class="text-start">
+
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Email</label>
                                 <form:input path="correo" type="email" class="form-control"/>

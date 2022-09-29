@@ -1,8 +1,19 @@
 package com.unam.poo.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import jakarta.persistence.*;
-
 import java.time.LocalTime;
+import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@NoArgsConstructor
 
 @Entity
 @Table(name = "publicacion")
