@@ -19,6 +19,80 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Wireframe y caso de uso
 
+## Wireframe Registrar Usuario
+
+![](link-a-imagen)  
+
+<br><br>
+**Caso de uso**: Registrar Usuario  
+**Descripción**:  El usuario quiere crear un nombre de usuario y contraseña para poder ingresar al sistema, se dirige a la sección  “Iniciar sesión” luego a la parte inferior en “cree una cuenta” donde deberá completar los campos requeridos (E-Mail, DNI, Nombre, Apellido, Contraseña) de esta manera podrá generar su usuario y contraseña.  
+**Precondición**: Disponer de un E-Mail válido   
+**Postcondición**: El usuario fué registrado   
+
+**Flujo Típico de eventos**:
+<table>
+  <tr>
+    <th>Actor</th>
+    <th>Sistema</th>
+  </tr>
+  <tr>
+    <td><b>1</b>. Este caso de uso comienza cuando <br>el usuario se dirige al apartado de <br>“Cree una cuenta”</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><b>2</b>. El sistema despliega un formulario de Identificación con seis campos:
+    <br>Campo-1: E-mail
+    <br>Campo-2: DNI
+    <br>Campo-3: Nombre
+    <br>Campo-4. Apellido
+    <br>Campo-5: Contraseña
+    <br>Campo-6: Confirme su contraseña
+  </tr>
+  <tr>
+    <td><b>3</b>. El usuario selecciona el campo con la etiqueta asociada “ E-mail” y lo completa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>4</b>. El usuario selecciona el campo con la etiqueta asociada “DNI” y lo completa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>5</b>. El usuario selecciona el campo con la etiqueta asociada “Nombre” y lo completa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>6</b>. El usuario selecciona el campo con la etiqueta asociada “Apellido” y lo completa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>7</b>. El usuario selecciona el campo con la etiqueta asociada “Contraseña” y lo completa</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>8</b>. El usuario selecciona el campo con la <br>etiqueta asociada “Confirme su contraseña” y lo <br>completa</td>
+    <td></td>
+  <tr>
+    <td><b>9</b>. El usuario presiona sobre el botón con la etiqueta “REGISTRARME”</td>
+    <td></td>
+  <tr>
+    <td></td>
+    <td><b>10</b>. El sistema valida los campos cargados <br>y muestra el mensaje "Registro exitoso" <br> el cual contiene un boton con la etiqueta "OK"</td>
+ </tr>
+   <tr>
+    <td><b>11</b>. El usuario presiona el boton con la <br>etiqueta  “OK”</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><b>12</b>. El sistema redirecciona al usuario a la pantalla del apartado “Iniciar sesión” <br> (Al login) </td>
+ </tr>
+</table>
+
+<u>**Flujo Alternativo de Eventos**.</u>  
+
+**Paso 8**:  El sistema detecta que la contraseña ingresada en el campo “Confirme su contraseña”no coincide con la del campo “Contraseña”. Muestra un mensaje de error y remarca con color rojo el cuadro con la contraseña errónea.
+
 ## Wireframe Ingresar Usuario
 
 ![](link-a-imagen)  
@@ -290,6 +364,37 @@ Paso 1: <br> Campo-1: Tipo de propiedad</td>
 # Tareas
 
 <br><br>
+
+## **Tareas para Registrar usuario**
+
+**Como** Inquilino/Propietario/Administrador  
+**Quiero**  crear una nueva cuenta  
+**Para**  poder hacer uso de las funcionalidades del sistema
+
+<u>Criterios de aceptación</u>
+
+-  Cuando el usuario intente ingresar a una URL o pantalla en la que no tenga permiso, entonces el sistema se direccionará a la pantalla de registro del sistema.
+-  La contraseña del usuario debe tener como mínimo 8 dígitos y como máximo 1
+-  El nombre de usuario no debe contener caracteres especiales
+
+<u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
+
+- Creación de wireframe
+    - Creación del formulario donde contendrán los siguientes elementos
+        - Posicionamiento de campo de texto para completar “E-Mail”
+        - Posicionamiento de campo de texto para completar “DNI”
+        - Posicionamiento de campo de texto para completar “Nombre”
+        - Posicionamiento de campo de texto para completar “Apellido”
+        - Posicionamiento de campo de texto para completar “Contraseña”
+        - Posicionamiento de campo de texto para completar “Confirme su contraseña”
+        - Boton de accion de “REGISTRARME” para enviar el formulario
+
+
+- Descripción del Uso del wireframe (Caso de Uso real)
+- Creación del modelo de datos(Entidad/es de Base de datos)
+- Establecer funcion de envio de formulario 
+- Validación de campos con sus respectivas alertas
+
 
 ## **Tareas para Ingresar usuario**
 
