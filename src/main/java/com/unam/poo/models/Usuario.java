@@ -15,9 +15,12 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
 
 @Getter
 @Setter
@@ -25,12 +28,20 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @jakarta.persistence.Table(name="usuario")
+
 public class Usuario implements Serializable {
+//usuario de prueba
+public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @NotBlank(message = "El nombre no puede estar vacio")
     private String nombre;
+    @NotBlank(message = "El apellido no puede estar vacio")
     private String apellido;
+    @NotBlank(message = "El correo no puede estar vacio")
     private String correo;
     private Long dni;
     private String password;

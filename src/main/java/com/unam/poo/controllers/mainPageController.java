@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class mainPageController {
     @RequestMapping(value = "/")
     public String ShowMainPage(){
-        return "mainPage";
+        return "welcome";
     }
 }
