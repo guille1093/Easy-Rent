@@ -32,7 +32,7 @@ public class RegisterController {
     @PostMapping("/newRegister")
     public String register(@Validated @ModelAttribute("usuario") Usuario usuario, BindingResult result) {
         if (result.hasErrors()) {
-            //aca deberia ir una pagina de error xd
+            //aca deberia ir una pagina de error o algo xd
             return "authRegister";
         }
         usuarioService.saveUsuario(usuario);
