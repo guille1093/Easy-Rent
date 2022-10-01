@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import usuarioService;
 import com.unam.poo.services.UsuarioService;
 
 import java.util.List;
@@ -27,7 +26,7 @@ public class PanelUsrController {
         //model.addAllAttributes(usuarios);
         //aca agregamos los atributos al modelo que es lo
         //que usamos en el html para mostrar los datos
-         model.addAttribute("usuarios", usuarios);
+        model.addAttribute("usuarios", usuarios);
         //retornamos el nombre del JSP que queremos mostrar
         //cuando se llame a esta funcion por la ruta
         //en este caso la tabla de usuarios que esta en WEB-INF/jsp/table.jsp

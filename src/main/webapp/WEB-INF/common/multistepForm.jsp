@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: gq
@@ -6,6 +7,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<tags:jsp_imports/>
 <html>
 <head>
     <title>Title</title>
@@ -28,7 +32,14 @@
   <!--form panels-->
   <div class="row">
     <div class="col-12 col-lg-8 m-auto">
-      <form class="multisteps-form__form">
+
+
+
+
+      <div class="multisteps-form__form">
+
+      <%--@elvariable id="publicacion" type=""--%>
+      <form:form role="form" method="post" action="/publicacion/nuevaPublicacion" modelAttribute="publicacion"  class="text-start">
 
         <!--PANEL TIPO DE PROPIEDAD-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
@@ -36,12 +47,17 @@
           <div class="multisteps-form__content">
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <select class="multisteps-form__select form-control" name="provincia">
-                <option selected="selected">Seleccione el tipo de propiedad</option>
-                <option value="Casa">Casa</option>
-                <option value="Departamento">Departamento</option>
-                <option value="Campo">Campo</option>
-              </select>
+
+
+                 <form:select path="idTipo" class="multisteps-form__select form-control" >
+                  <option>Seleccione un tipo de propiedad</option>
+                   <c:forEach items="${tipos}" var="tipo">
+                    <form:option value="${tipo.id}" label="${tipo.tipo}"/>
+                    </c:forEach>
+                 </form:select>
+              <form:errors path="idTipo" cssClass="error" element="div" />
+
+
             </div>
 
             <div class="button-row d-flex mt-4">
@@ -60,13 +76,15 @@
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input class="multisteps-form__input form-control" type="text" placeholder="Calle"/>
+                <form:input class="multisteps-form__input form-control" type="text" path="callePublicacion" placeholder="Calle"/>
+                <form:errors path="callePublicacion" cssClass="text-danger" element="div" />
               </div>
             </div>
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input class="multisteps-form__input form-control" type="text" placeholder="Altura"/>
+                <form:input class="multisteps-form__input form-control" type="text" path="alturaPublicacion" placeholder="Altura"/>
+                <form:errors path="alturaPublicacion" cssClass="error" element="div" />
               </div>
             </div>
 
@@ -104,44 +122,51 @@
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Ambientes"/>
+                <form:input type="number" class="form-control" placeholder="Ambientes" path="ambientesPublicacion"/>
+                <form:errors path="ambientesPublicacion" cssClass="text-danger" element="div" />
               </div>
             </div>
 
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Dormitorios"/>
+                <form:input type="number" class="form-control" placeholder="Dormitorios" path="dormitoriosPublicacion"/>
+                <form:errors path="dormitoriosPublicacion" cssClass="text-danger" element="div" />
               </div>
             </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Baños"/>
+                <form:input type="number" class="form-control" placeholder="Baños" path="baniosPublicacion"/>
+                <form:errors path="baniosPublicacion" cssClass="text-danger" element="div" />
               </div>
             </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Cochera"/>
+                <form:input type="number" class="form-control" placeholder="Cochera" path="cocheraPublicacion"/>
+                <form:errors path="cocheraPublicacion" cssClass="text-danger" element="div" />
               </div>
             </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Superficie cubierta"/>
+                <form:input type="number" class="form-control" placeholder="Superficie cubierta" path="superficieCubiertaCasa"/>
+<%--                <form:errors path="superficieCubiertaCasa" cssClass="error" element="div" />--%>
               </div>
             </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Superficie total"/>
+                <form:input type="number" class="form-control" placeholder="Superficie total" path="superficieTotalTerreno"/>
+<%--                <form:errors path="superficieTotalTerreno" cssClass="error" element="div" />--%>
               </div>
             </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="number" class="form-control" placeholder="Precio"/>
+                <form:input type="number" class="form-control" placeholder="Precio" path="precioPublicacion"/>
+                <form:errors path="precioPublicacion" cssClass="text-danger" element="div" />
               </div>
             </div>
 
@@ -210,12 +235,12 @@
               <h6 class="p-2" >Caracteristicas especificas</h6>
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Acceso para personas con discapacidad</label>
+                <label class="form-check-label" >Acceso para personas con discapacidad</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Permiten mascotas</label>
+                <label class="form-check-label" >Permiten mascotas</label>
               </div>
 
             </div>
@@ -224,37 +249,37 @@
               <h6 class="p-2" >Caracteristicas</h6>
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" for="exampleCheck1">Aire acondicionado</label>
+                <label class="form-check-label" >Aire acondicionado</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" for="exampleCheck1">Amoblado</label>
+                <label class="form-check-label" >Amoblado</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" for="exampleCheck1">Calefaccion</label>
+                <label class="form-check-label" >Calefaccion</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" for="exampleCheck1">Cocina equipada</label>
+                <label class="form-check-label" >Cocina equipada</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Lavarropas</label>
+                <label class="form-check-label" >Lavarropas</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Termotanque</label>
+                <label class="form-check-label" >Termotanque</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Vigilancia</label>
+                <label class="form-check-label" >Vigilancia</label>
               </div>
 
             </div>
@@ -263,22 +288,22 @@
               <h6 class="p-2">Servicios</h6>
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Ascensor</label>
+                <label class="form-check-label" >Ascensor</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Internet/Wifi</label>
+                <label class="form-check-label" >Internet/Wifi</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Lavanderia</label>
+                <label class="form-check-label" >Lavanderia</label>
               </div>
 
               <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " ">
-                <label class="form-check-label" for="exampleCheck1">Servicio de limpieza</label>
+                <input type="checkbox" class="form-check-input  ">
+                <label class="form-check-label" >Servicio de limpieza</label>
               </div>
 
             </div>
@@ -287,57 +312,57 @@
               <h6 class="p-2">Ambientes</h6>
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Balcon</label>
+                <label class="form-check-label" >Balcon</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Cocina</label>
+                <label class="form-check-label" >Cocina</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Comedor</label>
+                <label class="form-check-label" >Comedor</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Hall</label>
+                <label class="form-check-label" >Hall</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Jardin</label>
+                <label class="form-check-label" >Jardin</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Lavadero</label>
+                <label class="form-check-label" >Lavadero</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Living</label>
+                <label class="form-check-label" >Living</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Living comedor</label>
+                <label class="form-check-label" >Living comedor</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Patio</label>
+                <label class="form-check-label" >Patio</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Sotano</label>
+                <label class="form-check-label" >Sotano</label>
               </div>
 
               <div class="col form-check-inline">
                 <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" for="exampleCheck1">Terraza</label>
+                <label class="form-check-label" >Terraza</label>
               </div>
 
             </div>
@@ -358,7 +383,9 @@
         </div>
 
 
-      </form>
+      </form:form>
+      </div>
+
     </div>
   </div>
 </div>

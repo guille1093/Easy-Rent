@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +15,6 @@ import jakarta.validation.constraints.NotBlank;
 @NoArgsConstructor
 @Entity
 @jakarta.persistence.Table(name="usuario")
-//usuario de prueba
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
