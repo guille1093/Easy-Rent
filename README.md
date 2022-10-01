@@ -6,7 +6,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -20,8 +19,6 @@
     A WebApp project.
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -49,45 +46,33 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
+
 <div align="center">
 
 <a href="https://github.com/guille1093/SpringWebApp-POO2">
-<img src="src/main/webapp/assets/img/md/scrshot1.png" alt="Logo" width="861" height="734">
+<img src="src/main/webapp/assets/img/md/scrshot1.png" alt="Logo" >
 </a>
 </div>
 
-
-
-
-
-
-
 ### Built With
 
-
-
-* ![Java][Java]
-* ![Thymeleaf][Thymeleaf]
-* ![Spring][spring.io]
-* ![Maven][Maven]
-* ![PostgreSQL][PostgreSQL]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* ![Sass][Sass]
-
-
-
-
+- ![Java][java]
+- ![Thymeleaf][thymeleaf]
+- ![Spring][spring.io]
+- ![Maven][maven]
+- ![PostgreSQL][postgresql]
+- [![Bootstrap][bootstrap.com]][bootstrap-url]
+- ![Sass][sass]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
+
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
@@ -96,7 +81,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    java -version
    ```
-2. If you don't have Java installed, install it from [here][Java-url] or run the following command:
+2. If you don't have Java installed, install it from [here][java-url] or run the following command:
    ```sh
    sudo apt install default-jre
    ```
@@ -120,28 +105,26 @@ To get a local copy up and running follow these simple steps.
 4. Install Maven packages
    ```sh
     mvn install
-    ```
+   ```
 5. Run the project
-    ```sh
-     mvn spring-boot:run
-     ```
+   ```sh
+    mvn spring-boot:run
+   ```
 6. Open the browser and go to `localhost:8080`
 7. Enjoy!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
 _For more information about the usage of the software please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ROADMAP -->
+
 ## Roadmap
 
 - [x] JSP Migration
@@ -153,9 +136,8 @@ See the [open issues](https://github.com/guille1093/SpringWebApp-POO2/issues) fo
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -171,18 +153,16 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- LICENSE -->
+
 ## License
 
 Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- CONTACT -->
+
 ## Contact
 
 Quintana Guillermo: guillermo.quintana@fceqyn.unam.edu.ar
@@ -201,21 +181,19 @@ Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.c
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgments
 
-* []() To the National University of Misiones.
-* []() Lic. Claudio Biale for the support.
-* []() To all the contributors and members of the development team.
+- []() To the National University of Misiones.
+- []() Lic. Claudio Biale for the support.
+- []() To all the contributors and members of the development team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/guille1093/SpringWebApp-POO2.svg?style=for-the-badge
 [contributors-url]: https://github.com/guille1093/SpringWebApp-POO2/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/guille1093/SpringWebApp-POO2.svg?style=for-the-badge
@@ -229,27 +207,27 @@ Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.c
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/guillermo-quintana-b60541205
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Java]: https://img.shields.io/badge/java-ED8B00?style=for-the-badge&logo=java&logoColor=white
-[Spring.io]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
-[Next-url]: https://nextjs.org/
-[Java-url]: https://www.java.com/es/
-[Spring-url]: https://spring.io/
-[Maven]: https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[Sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
-[PostgreSQL]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
-[Thymeleaf]: https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white
+[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[java]: https://img.shields.io/badge/java-ED8B00?style=for-the-badge&logo=java&logoColor=white
+[spring.io]: https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white
+[next-url]: https://nextjs.org/
+[java-url]: https://www.java.com/es/
+[spring-url]: https://spring.io/
+[maven]: https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
+[vue-url]: https://vuejs.org/
+[angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
+[angular-url]: https://angular.io/
+[svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
+[svelte-url]: https://svelte.dev/
+[laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[laravel-url]: https://laravel.com
+[bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[bootstrap-url]: https://getbootstrap.com
+[sass]: https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white
+[jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
+[jquery-url]: https://jquery.com
+[postgresql]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
+[thymeleaf]: https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white

@@ -66,7 +66,8 @@
 
 <%--                        <jsp:useBean id="command" class="com.unam.poo.models.Usuario" scope="request"></jsp:useBean>--%>
 
-                        <form:form role="form" method="post" action="/register/newRegister" modelAttribute="usuario" class="text-start">
+                        <form:form role="form" autocomplete="false" method="post" action="/register/newRegister" modelAttribute="usuario" class="text-start">
+                            <input autocomplete="false" name="hidden" type="text" style="display:none;">
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Email</label>
                                 <form:input path="correo" type="email" class="form-control"/>

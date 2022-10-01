@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/register")
 @Controller
 public class RegisterController {
+    /**
+        * @param model
+        * @return
+        */
 
     //esto es lo mismo que usar el @Autowired pero de forma manual y deja de dar la advertencia
     final
