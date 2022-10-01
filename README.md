@@ -146,9 +146,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] JSP Migration
+- [x] JSP Migration
 - [ ] SpringSecurity
-- [ ] Ligth Mode UI
+- [x] Ligth Mode UI
+- [x] Material Desing
 
 See the [open issues](https://github.com/guille1093/SpringWebApp-POO2/issues) for a full list of proposed features (and known issues).
 
@@ -186,11 +187,17 @@ Distributed under the GPL-3.0 License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
 Quintana Guillermo: guillermo.quintana@fceqyn.unam.edu.ar
 
 Cristaldo Yonathan Ariel: cristaldoyonathanariel@gmail.com
+
+Stigelmeier Marcela: stigelmarce@gmail.com
+
+Kachuk Marcelo: marcelonkachuk@gmail.com
+
+Fernandez Matias: fernandezmati@gmail.com
+
+Blazco Emiliano: emilianoblazco@gmail.com
 
 Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.com/guille1093/SpringWebApp-POO2)
 
@@ -201,9 +208,9 @@ Project Link: [https://github.com/guille1093/SpringWebApp-POO2](https://github.c
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* []() To the National University of Misiones.
+* []() Lic. Claudio Biale for the support.
+* []() To all the contributors and members of the development team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
