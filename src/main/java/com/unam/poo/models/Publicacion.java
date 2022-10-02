@@ -55,7 +55,7 @@ public class Publicacion {
     private Double superficieCubiertaCasa;
 
     @Column(name = "imagen_uno_publicacion")
-    private byte[] imagenUnoPublicacion;
+    private String imagenUnoPublicacion;
 
     @Column(name = "imagen_dos_publicacion")
     private byte[] imagenDosPublicacion;

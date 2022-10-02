@@ -1,21 +1,16 @@
 package com.unam.poo.controllers.Publicacion;
 
+import com.unam.poo.models.Ciudad;
+import com.unam.poo.models.Provincia;
 import com.unam.poo.models.Publicacion;
 import com.unam.poo.models.Tipo;
-import com.unam.poo.models.Usuario;
-import com.unam.poo.services.PublicacionService;
-import com.unam.poo.services.TipoService;
-import com.unam.poo.services.UsuarioService;
+import com.unam.poo.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequestMapping("/publicacion")
@@ -31,29 +26,67 @@ public class PublicacionController {
     @Autowired
     UsuarioService usuarioService;
 
+    @Autowired
+    ProvinciaService provinciaService;
+
+    @Autowired
+    CiudadService ciudadService;
+
+
+//    Ruta localhost:8080/publicacion/crearPublicacion
     @GetMapping("/crearPublicacion")
     public String publicacionLoad(Model model){
 
         List<Tipo> tipos = tipoService.findAll();
+        List<Provincia> provincias = provinciaService.findAll();
+        List<Ciudad> ciudades = ciudadService.findAll();
 
+        model.addAttribute("ciudades", ciudades);
+        model.addAttribute("provincias", provincias);
         model.addAttribute("tipos", tipos);
         model.addAttribute("publicacion", new Publicacion());
         return "Publicacion/crearPublicacion";
     }
 
-
-
+//    Ruta localhost:8080/publicacion/nuevaPublicacion
     @PostMapping("/nuevaPublicacion")
-    public String crearPublicacion(@Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result) {
+    public String crearPublicacion( @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result) {
     if (result.hasErrors()) {
         //aca deberia ir una pagina de error o algo xd
         return "Publicacion/crearPublicacion";
     }
+
+   /* if (!foto.isEmpty()) {
+
+   @RequestParam(name = "file", required = false) MultipartFile foto, ESTO VA EN LOS PARAMETROS DE crearPublicacion
+
+        System.out.println("HAY FOTO");
+
+        String ruta = "C://Users//yonat//OneDrive//Escritorio";
+
+        try {
+            byte[] bytes = foto.getBytes();
+
+            System.out.println("bytes: " + bytes);
+
+            Path rutaCompleta = Paths.get(ruta + "//" + foto.getOriginalFilename());
+
+            System.out.println("rutaCompleta: " + rutaCompleta);
+
+
+            Files.write(rutaCompleta, bytes);
+            publicacion.setImagenUnoPublicacion(foto.getOriginalFilename());
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    } */
+
     publicacionService.savePublicacion(publicacion);
     return "Publicacion/crearPublicacion";
     }
-
-
 
 
 
@@ -61,10 +94,13 @@ public class PublicacionController {
     @GetMapping("/editarPublicacion")
     public String editarPublicacionload() {return "Publicacion/editarPublicacion";}
 
+
+
 //    Ruta localhost:8080/publicacion/consultarPublicacion
     @GetMapping("/consultarPublicacion")
     public String consultarPublicacionload() {return "Publicacion/consultarPublicacion";}
 
 
 }
+
 
