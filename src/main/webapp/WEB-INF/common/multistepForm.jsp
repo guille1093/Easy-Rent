@@ -14,6 +14,8 @@
 <head>
     <title>Title</title>
   <link href="../../assets/css/multistep.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+
 </head>
 
 <body>
@@ -40,7 +42,7 @@
       <div class="multisteps-form__form">
 
       <%--@elvariable id="publicacion" type=""--%>
-      <form:form role="form" method="post" action="/publicacion/nuevaPublicacion" modelAttribute="publicacion"  class="text-start">
+      <form:form role="form" method="post" action="/publicacion/nuevaPublicacion" modelAttribute="publicacion"  class="text-start" >
 
         <!--PANEL TIPO DE PROPIEDAD-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
@@ -49,13 +51,13 @@
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
 
+              <form:select path="idTipo" class="multisteps-form__select form-control" >
+                <option>Seleccione un tipo de propiedad</option>
+                <c:forEach items="${tipos}" var="tipo">
+                  <form:option value="${tipo.id}" label="${tipo.tipo}"/>
+                </c:forEach>
+              </form:select>
 
-                 <form:select path="idTipo" class="multisteps-form__select form-control" >
-                  <option>Seleccione un tipo de propiedad</option>
-                   <c:forEach items="${tipos}" var="tipo">
-                    <form:option value="${tipo.id}" label="${tipo.tipo}"/>
-                    </c:forEach>
-                 </form:select>
               <form:errors path="idTipo" cssClass="error" element="div" />
 
 
@@ -84,32 +86,36 @@
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <form:input class="multisteps-form__input form-control" type="text" path="alturaPublicacion" placeholder="Altura"/>
+                <form:input class="multisteps-form__input form-control" type="number" path="alturaPublicacion" placeholder="Altura"/>
                 <form:errors path="alturaPublicacion" cssClass="error" element="div" />
               </div>
             </div>
 
-
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
               <select class="multisteps-form__select form-control" name="provincia">
-                <option selected="selected">Seleccione la provincia</option>
+                <option selected="selected">Seleccione una provincia</option>
                 <option value="Misiones">Misiones</option>
               </select>
             </div>
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <select class="multisteps-form__select form-control" name="provincia">
-                <option selected="selected">Seleccione la ciudad</option>
-                <option value="Misiones">Misiones</option>
-              </select>
+              <form:select path="idCiudad" class="multisteps-form__select form-control" >
+                <option>Seleccione una ciudad</option>
+                <c:forEach items="${ciudades}" var="ciudad">
+                  <form:option value="${ciudad.id}" label="${ciudad.ciudad}"/>
+                </c:forEach>
+              </form:select>
             </div>
+
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4198.158044205938!2d-55.77119880812339!3d-27.77231641207666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94563758e73ae093%3A0x4642bcf36db682e7!2sKulipadel!5e0!3m2!1ses-419!2sar!4v1664591023556!5m2!1ses-419!2sar"  width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-              </div>
 
-          </div>
+                <div id="map" style="width: 100%; height:450px"></div>
+
+<%--                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4198.158044205938!2d-55.77119880812339!3d-27.77231641207666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94563758e73ae093%3A0x4642bcf36db682e7!2sKulipadel!5e0!3m2!1ses-419!2sar!4v1664591023556!5m2!1ses-419!2sar"  width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>--%>
+              </div>
+            </div>
 
           <div class="button-row d-flex mt-4 " >
             <div class="col">
@@ -120,7 +126,7 @@
             </div>
           </div>
         </div>
-
+        </div>
 
         <!--PANEL CARACTERÍSTICAS-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
@@ -195,9 +201,18 @@
           <h3 class="multisteps-form__title">Fotos de la propiedad. Puede cargar hasta 3 imagenes</h3>
           <div class="multisteps-form__content">
 
+
+
+
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="file" placeholder="Imagen"/>
+                <form:input type="file" placeholder="Imagen" path="imagenUnoPublicacion"/>
+              </div>
+            </div>
+
+            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
+              <div class="col">
+                <form:input type="file" placeholder="Imagen" path="imagenDosPublicacion"/>
               </div>
             </div>
 
@@ -206,13 +221,6 @@
                 <input type="file" placeholder="Imagen"/>
               </div>
             </div>
-
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <input type="file" placeholder="Imagen"/>
-              </div>
-            </div>
-
 
 
 
@@ -229,13 +237,7 @@
 
         </div>
 
-
-
-
-
-
-
-        <!--single form panel-->
+        <!--PANEL COMODIDADES-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
           <h3 class="multisteps-form__title">Comodidades</h3>
           <div class="multisteps-form__content">
@@ -391,16 +393,16 @@
 
         </div>
 
-
       </form:form>
       </div>
-
     </div>
   </div>
 </div>
-</div>
 
 <script src="../../assets/js/plugins/multistep.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+<script src="../../assets/js/map.js"></script>
+
 
 </body>
 </html>
