@@ -888,7 +888,7 @@
 </head>
 <body>
 
-<div class="page-header align-items-start min-vh-100" style="background-image: url('../assets/img/bgdep2.jpg');">
+<div class="page-header align-items-start min-vh-100" style="background-image: url('../../assets/img/bgdep2.jpg');">
     <span class="mask bg-gradient-dark opacity-5"></span>
     <%--            NavbarStart--%>
     <%@include file="../common/navBar2.jsp"%>

@@ -1,0 +1,9 @@
+.cat-item .cat-img img,
+.product-item .product-img img {
+    transition: .5s;
+}
+
+.cat-item:hover .cat-img img,
+.product-item:hover .product-img img {
+    transform: scale(1.2);
+}

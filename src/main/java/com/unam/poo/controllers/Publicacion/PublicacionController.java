@@ -2,7 +2,6 @@ package com.unam.poo.controllers.Publicacion;
 
 import com.unam.poo.models.Publicacion;
 import com.unam.poo.models.Tipo;
-import com.unam.poo.models.Usuario;
 import com.unam.poo.services.PublicacionService;
 import com.unam.poo.services.TipoService;
 import com.unam.poo.services.UsuarioService;
@@ -64,6 +63,10 @@ public class PublicacionController {
 //    Ruta localhost:8080/publicacion/consultarPublicacion
     @GetMapping("/consultarPublicacion")
     public String consultarPublicacionload() {return "Publicacion/consultarPublicacion";}
+
+    //este get tendria que tener un parametro de id de publicacion
+    @GetMapping("/verPublicacion")
+    public String verPublicacionload() {return "Publicacion/verPublicacion";}
 
 
 }

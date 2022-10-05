@@ -50,7 +50,13 @@
     <div class="page-header min-vh-75" style="background-image: url('../assets/img/bgdep1.jpg');">
         <span class="mask bg-gradient-dark opacity-5"></span>
         <div class="container">
+            <!-- Navbar Transparent -->
+            <div>
+                <%@include file="common/navBar2.jsp"%>
+            </div>
+            <!-- End Navbar -->
             <div class="row justify-content-center">
+
                 <div class="col-lg-8 text-center mx-auto my-auto">
                     <h1 class=" text-white" >Easy-Rent</h1>
                     <p class="lead mb-4 text-white opacity-8">Tu proximo lugar esta aca</p>
@@ -62,15 +68,11 @@
         </div>
     </div>
 </header>
-<!-- Navbar Transparent -->
-<div>
-    <%@include file="common/navBar2.jsp"%>
-</div>
 
-<!-- End Navbar -->
 <!-- -------- END HEADER 7 w/ text and video ------- -->
 <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
     <!-- Section with four info areas left & one card right with image and waves -->
+
     <section class="py-7">
         <div class="container">
             <h3 class="text-center mb-5">Es simple</h3>
@@ -123,9 +125,11 @@
     <div class="row row-cols-1 row-cols-md-4 g-4 mb-5">
         <div class="col">
             <div class="card h-100" style="--bs-btn-hover-bg:100">
+                <a href="" class="position-relative overflow-hidden">
                 <div class="ratio ratio-1x1">
                     <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/1.webp" alt="Card image cap">
                 </div>
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">Alquiler a la vuelta de la facu</h5>
                     <h2 class="card-text"> $ 10.000</h2>
@@ -221,7 +225,20 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/8.webp" alt="Card image cap">
+<%--                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/8.webp" alt="Card image cap">--%>
+    <div id="carousel-1" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active ratio ratio-1x1"><img class="w-100 d-block card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/1.webp" alt="Slide Image" /></div>
+            <div class="carousel-item ratio ratio-1x1"><img class="w-100 d-block card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/2.webp" alt="Slide Image" /></div>
+            <div class="carousel-item ratio ratio-1x1"><img class="w-100 d-block card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/3.webp" alt="Slide Image" /></div>
+        </div>
+        <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
+        <ol class="carousel-indicators">
+            <li class="active" data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
+            <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+        </ol>
+    </div>
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -310,11 +327,9 @@
         var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
 
         // is scroll position greater than element position? (is element in view?)
-        if (scrollPosition > elementPosition) {
-            return true;
-        }
+        return scrollPosition > elementPosition;
 
-        return false;
+
     }
 
     var animateComplete = true;
