@@ -4,12 +4,11 @@
 - Crear un nuevo usuario
 - Ingresar usuario
 - Registrar propiedad
-- Modificar propiedad
 
 **Iteracion 2**
 - Dar de baja una propiedad
-- Consultar propiedad
-- Ver detalles del alquiler
+- Consultar propiedad(exclusivo para propietarios)
+- Ver detalles del alquiler(exclusivo para inquilinos)
 - Consultar alquileres obtenidos
 
 **Iteracion 3**
@@ -21,6 +20,7 @@
 - Dar de baja un usuario (baja lógica)
 - Agregar un alquiler a Favoritos
 - Eliminar un alquiler de Favoritos
+- Modificar propiedad
 
 **Iteracion 5**
 - Consultar alquileres Favoritos
