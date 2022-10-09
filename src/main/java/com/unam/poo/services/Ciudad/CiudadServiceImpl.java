@@ -1,4 +1,4 @@
-package com.unam.poo.services;
+package com.unam.poo.services.Ciudad;
 
 import com.unam.poo.models.Ciudad;
 import com.unam.poo.repository.CiudadRepository;

@@ -5,6 +5,10 @@ import com.unam.poo.models.Provincia;
 import com.unam.poo.models.Publicacion;
 import com.unam.poo.models.Tipo;
 import com.unam.poo.services.*;
+import com.unam.poo.services.Ciudad.CiudadService;
+import com.unam.poo.services.Provincia.ProvinciaService;
+import com.unam.poo.services.Publicacion.PublicacionService;
+import com.unam.poo.services.Tipo.TipoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -99,6 +103,9 @@ public class PublicacionController {
 //    Ruta localhost:8080/publicacion/consultarPublicacion
     @GetMapping("/consultarPublicacion")
     public String consultarPublicacionload() {return "Publicacion/consultarPublicacion";}
+
+    @GetMapping("/verPublicacion")
+    public String verPublicacionload() {return "Publicacion/verPublicacion";}
 
 
 }

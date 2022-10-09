@@ -1,4 +1,4 @@
-package com.unam.poo.services;
+package com.unam.poo.services.Provincia;
 
 import com.unam.poo.models.Provincia;
 import com.unam.poo.repository.ProvinciaRepository;

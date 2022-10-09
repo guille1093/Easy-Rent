@@ -206,13 +206,13 @@
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <form:input type="file" placeholder="Imagen" path="imagenUnoPublicacion"/>
+                <input type="file" placeholder="Imagen"/>
               </div>
             </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <form:input type="file" placeholder="Imagen" path="imagenDosPublicacion"/>
+                <input type="file" placeholder="Imagen" />
               </div>
             </div>
 

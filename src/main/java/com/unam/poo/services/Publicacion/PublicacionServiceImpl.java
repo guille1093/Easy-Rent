@@ -1,4 +1,4 @@
-package com.unam.poo.services;
+package com.unam.poo.services.Publicacion;
 
 
 import com.unam.poo.models.Publicacion;

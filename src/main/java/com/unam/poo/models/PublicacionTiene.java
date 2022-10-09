@@ -1,46 +1,33 @@
 package com.unam.poo.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import java.util.Objects;
+
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
-@Table(name = "publicacion_tiene")
+@Table(name = "publicacion_tiene", schema = "public", catalog = "playground")
+@IdClass(PublicacionTienePK.class)
 public class PublicacionTiene {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EmbeddedId
-    private PublicacionTieneId id;
+    private PublicacionTienePK id;
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     @MapsId("idPublicacion")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_publicacion", nullable = false)
     private Publicacion idPublicacion;
 
-    @MapsId("idComodidad")
+    @MapsId("idCaracteristica")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_comodidad", nullable = false)
-    private ComodidadPropiedad idComodidad;
-
-    public PublicacionTieneId getId() {
-        return id;
-    }
-
-    public void setId(PublicacionTieneId id) {
-        this.id = id;
-    }
-
-    public Publicacion getIdPublicacion() {
-        return idPublicacion;
-    }
-
-    public void setIdPublicacion(Publicacion idPublicacion) {
-        this.idPublicacion = idPublicacion;
-    }
-
-    public ComodidadPropiedad getIdComodidad() {
-        return idComodidad;
-    }
-
-    public void setIdComodidad(ComodidadPropiedad idComodidad) {
-        this.idComodidad = idComodidad;
-    }
-
+    @JoinColumn(name = "id_caracteristica", nullable = false)
+    private CaracteristicaComodidad idCaracteristica;
 }

@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,69 +16,64 @@ import java.time.LocalDateTime;
 @Table(name = "publicacion")
 
 public class Publicacion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_publicacion", nullable = false)
     private Integer id;
 
+    @Basic
     @Column(name = "estado_publicacion", length = 20)
     private String estadoPublicacion = "activo";
-
+    @Basic
     @Column(name = "fecha_hora_publicacion")
     private LocalDateTime fechaHoraPublicacion = LocalDateTime.now();
-
+    @Basic
     @NotBlank(message = "El campo Calle es obligatorio")
     @Column(name = "calle_publicacion", length = 100)
     private String callePublicacion;
-
-//    @NotBlank(message = "El campo Altura es obligatorio")
+    //    @NotBlank(message = "El campo Altura es obligatorio")
+    @Basic
     @Column(name = "altura_publicacion")
     private Integer alturaPublicacion;
-
-//    @NotBlank(message = "El campo Dormitorios es obligatorio")
+    //    @NotBlank(message = "El campo Dormitorios es obligatorio")
+    @Basic
     @Column(name = "dormitorios_publicacion")
     private Integer dormitoriosPublicacion;
-
-//    @NotBlank(message = "El campo Baños es obligatorio")
+    //    @NotBlank(message = "El campo Baños es obligatorio")
+    @Basic
     @Column(name = "banios_publicacion")
     private Integer baniosPublicacion;
-
-//    @NotBlank(message = "El campo Cocheras es obligatorio")
+    //    @NotBlank(message = "El campo Cocheras es obligatorio")
+    @Basic
     @Column(name = "cochera_publicacion")
     private Integer cocheraPublicacion;
-
-//    @NotBlank(message = "El campo Ambientes es obligatorio")
+    //    @NotBlank(message = "El campo Ambientes es obligatorio")
+    @Basic
     @Column(name = "ambientes_publicacion")
     private Integer ambientesPublicacion;
 
-//    @NotBlank(message = "El campo Superficie cubierta es obligatorio")
+    //    @NotBlank(message = "El campo Superficie cubierta es obligatorio")
+    @Basic
     @Column(name = "superficie_cubierta_casa")
     private Double superficieCubiertaCasa;
 
-    @Column(name = "imagen_uno_publicacion")
-    private String imagenUnoPublicacion;
-
-    @Column(name = "imagen_dos_publicacion")
-    private byte[] imagenDosPublicacion;
-
-    @Column(name = "imagen_tres_publicacion")
-    private byte[] imagenTresPublicacion;
-
-//    @NotBlank(message = "El campo Superficie total es obligatorio")
+    //    @NotBlank(message = "El campo Superficie total es obligatorio")
+    @Basic
     @Column(name = "superficie_total_terreno")
     private Double superficieTotalTerreno;
-
-//    @NotBlank(message = "El campo Precio es obligatorio")
+    //    @NotBlank(message = "El campo Precio es obligatorio")
+    @Basic
     @Column(name = "precio_publicacion")
     private Double precioPublicacion;
-
+    @Basic
     @Column(name = "titulo_publicacion")
     private String tituloPublicacion;
-
+    @Basic
     @Column(name = "descripcion_publicacion")
     private String descripcionPublicacion;
 
-//    @NotBlank(message = "El campo Tipo de propiedad es obligatorio")
+    //    @NotBlank(message = "El campo Tipo de propiedad es obligatorio")
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_tipo", nullable = false)
     private Tipo idTipo;
@@ -85,8 +81,5 @@ public class Publicacion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_ciudad", nullable = false)
     private Ciudad idCiudad;
-
-
-
 
 }

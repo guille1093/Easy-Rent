@@ -11,14 +11,16 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "tipo")
-public class Tipo {
+public class Comodidad {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_tipo", nullable = false)
-    private Integer id;
+    @Column(name = "id_comodidad")
+    private Integer idComodidad;
 
     @Basic
-    @Column(name = "tipo", length = 50)
-    private String tipo;
+    @Column(name = "comodidad")
+    private String comodidad;
+
+
 }

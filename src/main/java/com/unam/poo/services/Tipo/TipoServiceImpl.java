@@ -1,4 +1,4 @@
-package com.unam.poo.services;
+package com.unam.poo.services.Tipo;
 
 import com.unam.poo.models.Tipo;
 import com.unam.poo.repository.TipoRepository;
