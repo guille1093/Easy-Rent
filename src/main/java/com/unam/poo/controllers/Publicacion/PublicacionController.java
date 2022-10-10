@@ -1,11 +1,10 @@
 package com.unam.poo.controllers.Publicacion;
 
-import com.unam.poo.models.Ciudad;
-import com.unam.poo.models.Provincia;
-import com.unam.poo.models.Publicacion;
-import com.unam.poo.models.Tipo;
+import com.unam.poo.models.*;
 import com.unam.poo.services.*;
+import com.unam.poo.services.CaracteristicaComodidad.CaracteristicaComodidadService;
 import com.unam.poo.services.Ciudad.CiudadService;
+import com.unam.poo.services.Comodidad.ComodidadService;
 import com.unam.poo.services.Provincia.ProvinciaService;
 import com.unam.poo.services.Publicacion.PublicacionService;
 import com.unam.poo.services.Tipo.TipoService;
@@ -34,7 +33,15 @@ public class PublicacionController {
     ProvinciaService provinciaService;
 
     @Autowired
+    ComodidadService comodidadService;
+
+    @Autowired
+    CaracteristicaComodidadService caracteristicaComodidadService;
+
+    @Autowired
     CiudadService ciudadService;
+
+
 
 
 //    Ruta localhost:8080/publicacion/crearPublicacion
@@ -44,10 +51,15 @@ public class PublicacionController {
         List<Tipo> tipos = tipoService.findAll();
         List<Provincia> provincias = provinciaService.findAll();
         List<Ciudad> ciudades = ciudadService.findAll();
+        List<Comodidad> comodidades = comodidadService.findAll();
+        List<CaracteristicaComodidad> caracteristicaComodidades = caracteristicaComodidadService.findAll();
+
 
         model.addAttribute("ciudades", ciudades);
         model.addAttribute("provincias", provincias);
         model.addAttribute("tipos", tipos);
+        model.addAttribute("comodidades", comodidades);
+        model.addAttribute("caracteristicaComodidades", caracteristicaComodidades);
         model.addAttribute("publicacion", new Publicacion());
         return "Publicacion/crearPublicacion";
     }
@@ -89,7 +101,7 @@ public class PublicacionController {
     } */
 
     publicacionService.savePublicacion(publicacion);
-    return "Publicacion/crearPublicacion";
+    return "Publicacion/consultarPublicacion";
     }
 
 

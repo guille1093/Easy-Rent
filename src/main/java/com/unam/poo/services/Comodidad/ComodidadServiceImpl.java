@@ -3,9 +3,11 @@ package com.unam.poo.services.Comodidad;
 import com.unam.poo.models.Comodidad;
 import com.unam.poo.repository.ComodidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ComodidadServiceImpl implements ComodidadService {
 
     @Autowired

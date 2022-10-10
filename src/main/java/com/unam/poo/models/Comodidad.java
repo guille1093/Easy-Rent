@@ -22,5 +22,4 @@ public class Comodidad {
     @Column(name = "comodidad")
     private String comodidad;
 
-
 }

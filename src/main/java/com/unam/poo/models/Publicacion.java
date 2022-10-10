@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Getter
@@ -81,5 +82,11 @@ public class Publicacion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_ciudad", nullable = false)
     private Ciudad idCiudad;
+
+    @ManyToMany
+    @JoinTable(name = "publicación_tiene_caracteristica",
+            joinColumns = @JoinColumn(name = "id_publicacion"),
+            inverseJoinColumns = @JoinColumn(name = "id_caracteristica"))
+    private List<CaracteristicaComodidad> caracteristicasComodidades;
 
 }

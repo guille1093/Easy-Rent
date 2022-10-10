@@ -25,4 +25,6 @@ public class CaracteristicaComodidad {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_comodidad", nullable = false)
     private Comodidad idComodidad;
+
+
 }

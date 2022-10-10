@@ -50,7 +50,7 @@
           <div class="multisteps-form__content">
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-
+                <%--@elvariable id="tipos" type=""--%>
               <form:select path="idTipo" class="multisteps-form__select form-control" >
                 <option>Seleccione un tipo de propiedad</option>
                 <c:forEach items="${tipos}" var="tipo">
@@ -202,7 +202,19 @@
           <div class="multisteps-form__content">
 
 
+            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
+              <div class="col">
+                <form:input class="multisteps-form__input form-control" type="text" path="tituloPublicacion" placeholder="Título"/>
+<%--                <form:errors path="alturaPublicacion" cssClass="error" element="div" />--%>
+              </div>
+            </div>
 
+            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
+              <div class="col">
+                <form:textarea class="multisteps-form__input form-control" type="text" path="descripcionPublicacion" placeholder="Descripción de la publicación"/>
+                  <%--                <form:errors path="alturaPublicacion" cssClass="error" element="div" />--%>
+              </div>
+            </div>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
@@ -242,141 +254,26 @@
           <h3 class="multisteps-form__title">Comodidades</h3>
           <div class="multisteps-form__content">
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <h6 class="p-2" >Caracteristicas especificas</h6>
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Acceso para personas con discapacidad</label>
-              </div>
 
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Permiten mascotas</label>
-              </div>
-
-            </div>
+          <c:forEach items="${comodidades}" var="comodidad">
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <h6 class="p-2" >Caracteristicas</h6>
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" >Aire acondicionado</label>
-              </div>
+              <h6>${comodidad.comodidad}</h6>
+              <c:forEach items="${caracteristicaComodidades}"  var="caracteristica" >
 
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" >Amoblado</label>
-              </div>
+                <c:if test="${caracteristica.idComodidad.idComodidad == comodidad.idComodidad}">
+                    <div class="col form-check-inline">
+                      <form:checkbox path="caracteristicasComodidades" value="${caracteristica.idCaracteristica}" class="form-check-input "/>
+                      <label class="form-check-label" >${caracteristica.nombreCaracteristica}</label>
+                    </div>
+                </c:if>
 
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" >Calefaccion</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input ">
-                <label class="form-check-label" >Cocina equipada</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Lavarropas</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Termotanque</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Vigilancia</label>
-              </div>
-
+              </c:forEach>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <h6 class="p-2">Servicios</h6>
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Ascensor</label>
-              </div>
+          </c:forEach>
 
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Internet/Wifi</label>
-              </div>
 
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Lavanderia</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input  ">
-                <label class="form-check-label" >Servicio de limpieza</label>
-              </div>
-
-            </div>
-
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <h6 class="p-2">Ambientes</h6>
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Balcon</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Cocina</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Comedor</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Hall</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Jardin</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Lavadero</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Living</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Living comedor</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Patio</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Sotano</label>
-              </div>
-
-              <div class="col form-check-inline">
-                <input type="checkbox" class="form-check-input " >
-                <label class="form-check-label" >Terraza</label>
-              </div>
-
-            </div>
 
           </div>
 
