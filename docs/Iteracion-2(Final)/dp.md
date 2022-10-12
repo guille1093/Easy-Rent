@@ -25,10 +25,10 @@ La division de las Historias de Usuario sera la siguiente:
 ![](link-a-imagen)  
 
 <br><br>
-**Caso de uso**:   
-**Descripción**:    
-**Precondición**:  
-**Postcondición**:   
+**Caso de uso**: Dar de baja una propiedad
+**Descripción**: EL propietario ingresa en una propiedad propia publicada y busca la opción para desactivarla, presione sobre la opción y la publicación es ocultada de la vista principal de publicaciones  
+**Precondición**: Que el usuario se encuentre con la sesión iniciada. que la propiedad se encuentre registrada. que la publicación se encuentre activa. que el usuario se encuentre dentro de la publicacion. Que no se encuentre ningun inquilino asociado a la propiedad.
+**Postcondición**:  Se dio de baja la publicación  
 
 **Flujo Típico de eventos**:
 <table>
@@ -37,56 +37,23 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b>. 
+    <td><b>1</b>. Este caso de uso comienza cuando el propietario una vez <br> dentro de la publicación selecciona el boton con <br> la etiqueta "Dar de baja"
     <td></td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td><b>2</b>. El sistema verifica que no se encuentre osociado a ningun inquilino <br>a la propiedad y avisa al propietario que su publicación <br> fue dada de baja de manera exitosa
   </tr>
   <tr>
-    <td></td>
-    <td><b>2</b>.
-  </tr>
-  <tr>
-    <td><b>3</b>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>4</b> </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>5</b> </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>6</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>7</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>8</b></td>
-    <td></td>
-  <tr>
-    <td><b>9</b></td>
-    <td></td>
-  <tr>
-    <td></td>
-    <td><b>10</b></td>
- </tr>
-   <tr>
-    <td><b>11</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>12</b> </td>
- </tr>
 </table>
 
 <u>**Flujo Alternativo de Eventos**.</u>  
+**Paso 2:** El sistema detecta que hay un inquilino asociado a la propiedad. Entonces avisa al propietario de esto y no se desactiva la publicación.
 
-**Paso**:
+   
+ **_Las siguientes tareas comprenderan el desarrollo de la historia de usuario_**
+   
+
 
 ## Wireframe Consultar propiedad(exclusivo para propietarios)
 
@@ -265,24 +232,23 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Dar de baja una propiedad**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como** propietario
+**Quiero** dar de baja una propiedad
+**Para** ocultar una publicacion realizada
 
 <u>Criterios de aceptación</u>
 
--
+   -El propietario debe ingresar al sistema con su usuario.
+   -La publicacion debe existir
+   -La publicacion debe estar activa y no debe estar asociada a ningun inquilino
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
+         -  incorporacion de botón con la funcionalidad de dar de baja y la etiqueta "Dar de baja la publicación.
 - Descripción del Uso del wireframe (Caso de Uso real)
-- Creación del modelo de datos(Entidad/es de Base de datos)
-- Validación de campos con sus respectivas alertas
+- Establecer el cambio de estado en el atributo asociado a la publicación
 
 
 ## **Tareas para Consultar propiedad(exclusivo para propietarios)**
