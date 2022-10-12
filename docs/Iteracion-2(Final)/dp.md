@@ -44,16 +44,10 @@ La division de las Historias de Usuario sera la siguiente:
     <td></td>
     <td><b>2</b>. El sistema verifica que no se encuentre osociado a ningun inquilino <br>a la propiedad y avisa al propietario que su publicación <br> fue dada de baja de manera exitosa
   </tr>
-  <tr>
 </table>
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 **Paso 2:** El sistema detecta que hay un inquilino asociado a la propiedad. Entonces avisa al propietario de esto y no se desactiva la publicación.
-
-   
- **_Las siguientes tareas comprenderan el desarrollo de la historia de usuario_**
-   
-
 
 ## Wireframe Consultar propiedad(exclusivo para propietarios)
 
