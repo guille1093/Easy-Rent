@@ -26,8 +26,11 @@ La division de las Historias de Usuario sera la siguiente:
 
 <br><br>
 **Caso de uso**: Dar de baja una propiedad
+
 **Descripción**: EL propietario ingresa en una propiedad propia publicada y busca la opción para desactivarla, presione sobre la opción y la publicación es ocultada de la vista principal de publicaciones  
+
 **Precondición**: Que el usuario se encuentre con la sesión iniciada. que la propiedad se encuentre registrada. que la publicación se encuentre activa. que el usuario se encuentre dentro de la publicacion. Que no se encuentre ningun inquilino asociado a la propiedad.
+
 **Postcondición**:  Se dio de baja la publicación  
 
 **Flujo Típico de eventos**:
@@ -54,10 +57,13 @@ La division de las Historias de Usuario sera la siguiente:
 ![](link-a-imagen)  
 
 <br><br>
-**Caso de uso**:
-**Descripción**: 
-**Precondición**:
-**Postcondición**:  
+**Caso de uso**: Consultar propiedad
+
+**Descripción**: El propietario ingresa en una propiedad propia publicada y el sistema despliega toda la informacion asociada a la publicacion con las respectivas acciones de desactivacion y modificacion asociada a la publicacion. <br>
+
+**Precondición**: Que el usuario se encuentre con su sesión iniciada. Que la propiedad se encuentre registrada. <br>
+
+**Postcondición**: --
 
 **Flujo Típico de eventos**:
 <table>
@@ -66,45 +72,38 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>1</b>. Este caso de uso comienza cuando el propietario ingresa en <br>la publicación deseada presionando sobre el nombre de la publicación
+    <td></td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td><b>2</b>. El sistema despliegue la información asociada a la publicación como ser:<br> 
+            - Foto asociada a la Propiedad <br>
+            - Nombre de la publicacion <br>
+            - Descripcion de publicacion<br>
+            - Servicios y comodidades brindados por la propiedad <br>
+            - Precio de la propiedad <br>
+            - Ubicaion de la propiedad <br>
+            - Mapa asociado a la publicacion<br>
+   <tr>
+    <td><b>3</b>. El propietario recorre la informacion asociada a la publicacion <br> scroleando con la rueda del mouse y una vez finazlizado <br> vuelve a la pagina principal
     <td></td>
   </tr>
-  <tr>
-    <td></td>
-    <td><b>2</b>
-  </tr>
-  <tr>
-    <td><b>3</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>4</b></td>
-    <td></td>
-  <tr>
-    <td><b>5</b></td>
-    <td></td>
-    
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>6</b></td>
- </tr>
 </table>
 
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:  
-**Paso**:
+**Paso**:El sistema no logra cargar la publicación. Entonces pide al usuario que recargue la página
 
 <br><br>
 
 ## Wireframe Ver detalles del alquiler(exclusivo para inquilinos)
 <br><br>
-**Caso de uso**:   
-**Descripción**: 
-**Precondición**:
-**Postcondición**:
+**Caso de uso**: Ver detalles del Alquiler  
+**Descripción**: El inquilino navega por la pantalla de la propiedad seleccionada donde podrá ver la descripción de tal propiedad con sus respectivas características <br>
+**Precondición**: Que el usuario se encuentre con su sesión iniciada. Haber seleccionado una publicación <br>
+**Postcondición**:--
 
 **Flujo Típico de eventos**:
 <table>
@@ -113,49 +112,30 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>1</b>. Este caso de uso comienza cuando el propietario ingresa en <br>la publicación deseada presionando sobre el nombre de la publicación
+    <td></td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td><b>2</b>. El sistema despliegue la información asociada a la publicación como ser:<br> 
+            - Foto asociada a la Propiedad <br>
+            - Nombre de la publicacion <br>
+            - Descripcion de publicacion<br>
+            - Servicios y comodidades brindados por la propiedad <br>
+            - Precio de la propiedad <br>
+            - Ubicaion de la propiedad <br>
+            - Mapa asociado a la publicacion<br>
+   <tr>
+    <td><b>3</b>. El propietario recorre la informacion asociada a la publicacion <br> scroleando con la rueda del mouse y una vez finazlizado <br> vuelve a la pagina principal
     <td></td>
   </tr>
-  <tr>
-    <td></td>
-    <td><b>2</b></td>
-  </tr>
-  <tr>
-    <td><b>3</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>4</b></td>
-  <tr>
-    <td><b>5</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>6</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td><b>7</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td><b>8</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td><b>9</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td></td>
-    <td><b>10</b></td>
- </tr>
 </table>
+
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:
+**Paso**: El sistema no logra cargar la publicación. Entonces pide al usuario que recargue la página
+
 
 <br></br>
 
@@ -165,13 +145,13 @@ La division de las Historias de Usuario sera la siguiente:
 
 <br><br>
 
-**Caso de uso**:  
+**Caso de uso**:  Consultar alquileres obtenidos.
 
-**Descripción**: 
+**Descripción**: El usuario en su perfil puede ver los alquileres asociados a su cuenta.
 
-**Precondición**:   
+**Precondición**:   Haber ingresado al sistema.
   
-**Postcondición**:
+**Postcondición**: --
   
 
 **Flujo Típico de eventos**:
@@ -181,34 +161,26 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>1</b>. Este caso de uso comienza cuando el usuario ingresa al apartado <br>“Mis Alquileres”.
+    <td></td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td><b>2</b>. El sistema muestra los alquileres asociados a ese usuario
+   <tr>
+    <td><b>3</b>. El usuario selecciona una publicación (alquiler).
     <td></td>
   </tr>
-  <tr>
+    <tr>
     <td></td>
-    <td><b>2</b></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>3</b></td>
-  </tr>
-  <tr>
-    <td><b>4</b></td>
-    <td></td>
-  <tr>
-    <td></td>
-    <td><b>5</b></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>6</b></td>
- </tr>
+    <td><b>4</b>. El sistema muestra la publicación (alquiler) en su contexto <br> (presentación como publicación).
+  </tr>   
 </table>
-
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:
+**Paso** 2:  El sistema da aviso al usuario de que no tiene alquileres asociados y termina el caso de uso.
+
 
 
 
@@ -226,65 +198,79 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Dar de baja una propiedad**
 
-**Como** propietario
-**Quiero** dar de baja una propiedad
-**Para** ocultar una publicacion realizada
+**Como** propietario <br/>
+**Quiero** dar de baja una propiedad <br/>
+**Para** ocultar una publicacion realizada <br/>
 
 <u>Criterios de aceptación</u>
 
-   -El propietario debe ingresar al sistema con su usuario.
-   -La publicacion debe existir
-   -La publicacion debe estar activa y no debe estar asociada a ningun inquilino
+   - El propietario debe ingresar al sistema con su usuario.
+   - La publicacion debe existir
+   - La publicacion debe estar activa y no debe estar asociada a ningun inquilino
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-         -  incorporacion de botón con la funcionalidad de dar de baja y la etiqueta "Dar de baja la publicación.
+         - incorporacion de botón con la funcionalidad de dar de baja y la etiqueta "Dar de baja la publicación.
 - Descripción del Uso del wireframe (Caso de Uso real)
 - Establecer el cambio de estado en el atributo asociado a la publicación
 
-
-## **Tareas para Consultar propiedad(exclusivo para propietarios)**
-
-**Como**  
-**Quiero**  
-**Para**
-
 <u>Criterios de aceptación</u>
 
--
+   - El propietario debe ingresar al sistema con su usuario.
+   - El sistema da aviso al usuario de que no tiene alquileres asociados y termina el caso de uso.
 
+## **Tareas para Consultar propiedad (Exclusivo para propietarios)**
+
+**Como** propietario <br/>
+**Quiero** consultar una propiedad <br/>
+**Para** ver los detalles de la misma <br/>
+    
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
+        - Etiqueta que contenga el título de la publicación
+        - Etiqueta que contenga la descripción de la publicación
+        - Etiqueta que contenga el precio de la publicación
+        - Sección donde se muestre las comodidades y servicios asociados a la propiedad
+        - Complemento de mapa para ver la ubicación de la propiedad
+        - Botón con la Etiqueta “Contactar”
+        - Botón con la Etiqueta “Agregar a Favoritos”
+        - Cuadro de Imagen para ver las imágenes asociadas a la publicación
+        - Botón con la Etiqueta “Dar de Baja”
+        - Botón con la Etiqueta “Modificar” 
 - Descripción del Uso del wireframe (Caso de Uso real)
 - Creación del modelo de datos(Entidad/es de Base de datos)
 - Validación de campos con sus respectivas alertas
-
+    
 <br><br>
 
 ## **Tareas para Ver detalles del alquiler(exclusivo para inquilinos)**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como** inquilino <br/>
+**Quiero** ver detalles de alquiler  <br/>
+**Para** ver informacoin de la misma<br/>
 
 <u>Criterios de aceptación</u>
 
--
+- La publicacion debe estar activa
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
+        - Etiqueta que contenga el título de la publicación
+        - Etiqueta que contenga la descripción de la publicación
+        - Etiqueta que contenga el precio de la publicación
+        - Sección donde se muestre las comodidades y servicios asociados a la propiedad
+        - Complemento de mapa para ver la ubicación de la propiedad
+        - Botón con la Etiqueta “Contactar”
+        - Botón con la Etiqueta “Agregar a Favoritos”
+        - Cuadro de Imagen para ver las imágenes asociadas a la publicación
+        - Botón con la Etiqueta “Dar de Baja”
+        - Botón con la Etiqueta “Modificar” 
 - Descripción del Uso del wireframe (Caso de Uso real)
 - Creación del modelo de datos(Entidad/es de Base de datos)
 - Validación de campos con sus respectivas alertas
@@ -293,21 +279,28 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Consultar alquileres obtenidos**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como** usuario (propietario/inquilino)<br/>
+**Quiero**  consultar mis alquileres obtenidos <br/>
+**Para**  poder ver los alquileres que tengo asociado <br/>
 
 <u>Criterios de aceptación</u>
 
--
+- El usuario debe tener alquileres asociados(si no, se da aviso de tal circunstancia).
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
+        - Etiqueta que contenga el título de la publicación
+        - Etiqueta que contenga la descripción de la publicación
+        - Etiqueta que contenga el precio de la publicación
+        - Sección donde se muestre las comodidades y servicios asociados a la propiedad
+        - Complemento de mapa para ver la ubicación de la propiedad
+        - Botón con la Etiqueta “Contactar”
+        - Botón con la Etiqueta “Agregar a Favoritos”
+        - Cuadro de Imagen para ver las imágenes asociadas a la publicación
+        - Botón con la Etiqueta “Dar de Baja”
+        - Botón con la Etiqueta “Modificar” 
 - Descripción del Uso del wireframe (Caso de Uso real)
 - Creación del modelo de datos(Entidad/es de Base de datos)
 - Validación de campos con sus respectivas alertas
