@@ -290,20 +290,7 @@ La division de las Historias de Usuario sera la siguiente:
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
-    - Creación del formulario donde contendrán los siguientes elementos
-        - Etiqueta que contenga el título de la publicación
-        - Etiqueta que contenga la descripción de la publicación
-        - Etiqueta que contenga el precio de la publicación
-        - Sección donde se muestre las comodidades y servicios asociados a la propiedad
-        - Complemento de mapa para ver la ubicación de la propiedad
-        - Botón con la Etiqueta “Contactar”
-        - Botón con la Etiqueta “Agregar a Favoritos”
-        - Cuadro de Imagen para ver las imágenes asociadas a la publicación
-        - Botón con la Etiqueta “Dar de Baja”
-        - Botón con la Etiqueta “Modificar” 
 - Descripción del Uso del wireframe (Caso de Uso real)
-- Creación del modelo de datos(Entidad/es de Base de datos)
-- Validación de campos con sus respectivas alertas
 
 
 
