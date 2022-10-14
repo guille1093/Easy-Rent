@@ -34,4 +34,17 @@ public class PublicacionServiceImpl implements PublicacionService{
         return publicacionRepository.findAll();
     }
 
+    @Override
+    public Publicacion updatePublicacion(Publicacion publicacion, Long id) {
+        Publicacion publicacion1 = publicacionRepository.findById(id).get();
+        publicacion1.setTituloPublicacion(publicacion.getTituloPublicacion());
+        publicacion1.setDescripcionPublicacion(publicacion.getDescripcionPublicacion());
+        publicacion1.setPrecioPublicacion(publicacion.getPrecioPublicacion());
+        publicacion1.setIdTipo(publicacion.getIdTipo());
+//        publicacion1.setUsuario(publicacion.getUsuario());
+        publicacion1.setIdCiudad(publicacion.getIdCiudad());
+        publicacion1.setCaracteristicasComodidades(publicacion.getCaracteristicasComodidades());
+        return publicacionRepository.save(publicacion1);
+    }
+
 }

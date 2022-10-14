@@ -11,4 +11,6 @@ public interface PublicacionService {
     Publicacion getPublicacionById(Long id);
     Publicacion savePublicacion(Publicacion publicacion);
 
+//    metodo para actualizar una publicacion
+    Publicacion updatePublicacion(Publicacion publicacion, Long id);
 }

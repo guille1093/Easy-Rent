@@ -1,4 +1,6 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<tags:jsp_imports/>
 
 <!doctype html>
 <html lang="es">
@@ -10,6 +12,7 @@
 
     <tags:css_imports/>
 
+
     <title>Consulte sus propiedades</title>
 </head>
 <body>
@@ -19,7 +22,7 @@
     <%--            NavbarStart--%>
     <%@include file="../common/navBar2.jsp"%>
     <%--            NavbarEnd--%>
-    <div class="container my-auto">
+    <div class="container my-auto mt-7">
         <div class="row">
             <div class="col-lg-7 col-md-10">
                 <h1 class="text-white">Consulte sus propiedades</h1>
@@ -49,6 +52,10 @@
                         </tr>
                         </thead>
                         <tbody>
+
+                        <c:forEach items="${publicaciones}" var="propiedad">
+
+
                         <tr style="height:100px">
                             <td>
                                 <div class="d-flex px-2 py-1">
@@ -56,31 +63,34 @@
                                         <img src="../../assets/img/rents/1.webp" class="avatar avatar-xl me-3" alt="logo">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
-                                        <h6 class="mb-0">Departamento cerca de la facultad</h6>
-                                        <p class="text-xs text-secondary mb-0">10.000$</p>
+                                        <a class="mb-0 h6" href="${pageContext.request.contextPath}/publicacion/verPublicacion/${propiedad.id}">${propiedad.tituloPublicacion}</a>
+                                        <p class="text-xs text-secondary mb-0">${propiedad.precioPublicacion}</p>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <p class="font-weight-bold mb-0">Departamento</p>
-                                <p class="text-xs text-secondary mb-0">Alquiler</p>
+<%--                                <p class="font-weight-bold mb-0"></p>--%>
+                                <p class="text-xs text-secondary mb-0">${propiedad.idTipo.tipo}</p>
                             </td>
                             <td class="align-middle text-center">
-                                <span class="badge bg-gradient-success">Activa</span>
+                                <span class="badge bg-gradient-success" href="www.google.com">${propiedad.estadoPublicacion}</span>
                             </td>
                             <td class="align-middle text-center">
                                 <span class="text-secondary text-xs font-weight-normal">420</span>
                             </td>
                             <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-normal">23/04/18</span>
+                                <span class="text-secondary text-xs font-weight-normal">${propiedad.fechaHoraPublicacion.toLocalDate()}</span>
                             </td>
                             <td class="align-middle">
-                                <a href="javascript:" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
+                                <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
                             </td>
                         </tr>
+                        </c:forEach>
+
                         </tbody>
                     </table>
                 </div>
+
             </div>
         </div>
         </div>
@@ -89,7 +99,6 @@
     <tags:js_imports/>
     <%-- JS_Imports --%>
 </div>
-
 </body>
 </html>
 
