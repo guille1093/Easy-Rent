@@ -64,49 +64,105 @@
                     </div>
                     <div class="card-body">
 
-<%--                        <jsp:useBean id="command" class="com.unam.poo.models.Usuario" scope="request"></jsp:useBean>--%>
+<%--                    <jsp:useBean id="command" class="com.unam.poo.dto.UsuarioDto" scope="request"></jsp:useBean>--%>
 
-                        <form:form role="form" autocomplete="false" method="post" action="/register/newRegister" modelAttribute="usuario" class="text-start">
-                            <input autocomplete="false" name="hidden" type="text" style="display:none;">
+                        <form:form role="form" action="${pageContext.request.contextPath}/register/newRegister" method="post" modelAttribute="UsuarioDto">
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Email</label>
-                                <form:input path="correo" type="email" class="form-control"/>
-                                <form:errors path="correo" cssClass="text-danger" element="div"/>
+                                <input type="email" name="correo" id="correo" class="form-control">
                             </div>
-<%--                            <div class="input-group input-group-outline my-3">--%>
-<%--                                <label class="form-label">DNI</label>--%>
-<%--                                <input type="text" class="form-control">--%>
-<%--                            </div>--%>
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Nombre</label>
-                                <form:input path="nombre" type="text" class="form-control"/>
-                                <form:errors path="nombre" cssClass="text-danger" element="div"/>
+                                <input type="text" name="nombre" id="nombre" class="form-control">
                             </div>
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Apellido</label>
-                                <form:input path="apellido" type="text" class="form-control"/>
-                                <form:errors path="apellido" cssClass="text-danger" element="div"/>
+                                <input type="text" name="apellido" id="apellido" class="form-control">
                             </div>
-<%--                            <div class="input-group input-group-outline mb-3">--%>
-<%--                                <label class="form-label">Contraseña</label>--%>
-<%--                                <input type="password" class="form-control">--%>
-<%--                            </div>--%>
-<%--                            <div class="input-group input-group-outline mb-3">--%>
-<%--                                <label class="form-label">Confirme su contraseña</label>--%>
-<%--                                <input type="password" class="form-control">--%>
-<%--                            </div>--%>
-
-                            <div class="form-check form-switch d-flex align-items-center mb-3">
-                                <input class="form-check-input bg-gradient-primary" type="checkbox" id="rememberMe" checked>
-                                <label class="form-check-label mb-0 ms-3" for="rememberMe">Acepto los terminos y condiciones</label>
+                            <div class="input-group input-group-outline my-3">
+                                <label class="form-label">DNI</label>
+                                <input type="number" name="dni" id="dni" class="form-control">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Contraseña</label>
+                                <input path="contraseña" name="contraseña" id="floatingPassword1" type="password" class="form-control is-invalid" oninput="verificarPasswords(); return false" required> 
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Confirme su contraseña</label>
+                                <input id="floatingPassword2" type="password" class="form-control is-invalid" oninput="verificarPasswords(); return false" required>
+                            </div>
+                            <div id="error816" class="text-danger d-none">
+                                La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres
+                            </div>
+                            <div id="error" class="text-danger d-none">
+                                Las contraseñas no coinciden
+                            </div>
+                            <div id="ok" class="text-success d-none">
+                                Las contraseñas coinciden
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Registrarme</button>
+                                <button id="btnRegistrar" type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Registrarme</button>
                             </div>
                             <div class="align-content-center text-center">
                                 <a class="mt-4 text-sm text-center" href="${pageContext.request.contextPath}/login">Ya tiene una cuenta? inicie sesion</a>
                             </div>
-                        </form:form>
+                        </form:form>                       
+                        <script>
+                            function verificarPasswords() { 
+                                // Obtenemos los valores de los campos de contraseñas 
+                                clave1 = document.getElementById("floatingPassword1");
+                                clave2 = document.getElementById("floatingPassword2");
+                                //Verificamos si las constraseñas no coinciden 
+                                if (clave1.value.length > 7 && clave1.value.length < 17){
+                                    if (clave1.value !== "") {
+                                        if (clave2.value !== "") {
+                                            if (clave1.value !== clave2.value) { 
+                                                // Si las constraseñas no coinciden muestra un mensaje 
+                                                document.getElementById("error").classList.remove("d-none"); 
+                                                document.getElementById("ok").classList.add("d-none");
+                                                document.getElementById("error816").classList.add("d-none");
+                                                document.getElementById("btnRegistrar").disabled = true;
+                                                document.getElementById("btnRegistrar").style = "border-color: grey !important; background-color: ghostwhite !important; color: grey !important;";
+                                                //return false;
+                                            } else { 
+                                                // Si las contraseñas coinciden oculta el mensaje de error 
+                                                document.getElementById("error").classList.add("d-none");
+                                                document.getElementById("error816").classList.add("d-none");
+                                                // Muestra un mensaje mencionando que las Contraseñas coinciden 
+                                                document.getElementById("ok").classList.remove("d-none"); 
+                                                // Habilita el botón de login 
+                                                document.getElementById("btnRegistrar").disabled = false;
+                                                document.getElementById("btnRegistrar").style = "border-color: black !important; background-color: palevioletred !important; color: white !important";
+                                                //return true;
+                                            }
+                                        } else { 
+                                            defaultValues(); 
+                                        }
+                                    } else
+                                    {
+                                        defaultValues(); 
+                                    }
+                                }else{
+                                    defaultValues(); 
+                                    document.getElementById("error816").classList.remove("d-none"); 
+                                } 
+                            } 
+                            
+                            function defaultValues(){
+                                document.getElementById("error").classList.add("d-none"); 
+                                document.getElementById("error816").classList.add("d-none");
+                                document.getElementById("ok").classList.add("d-none");
+                                document.getElementById("btnRegistrar").disabled = true;
+                                document.getElementById("btnRegistrar").style = "border-color: grey !important; background-color: ghostwhite !important; color: grey !important;";
+                            }
+
+                        </script>
+                          
+                        <!--<div class="form-check form-switch d-flex align-items-center mb-3">
+                            <input class="form-check-input bg-gradient-primary" type="checkbox" id="rememberMe" checked>
+                            <label class="form-check-label mb-0 ms-3" for="rememberMe">Acepto los terminos y condiciones</label>
+                        </div>-->
+                            
                     </div>
                 </div>
             </div>
