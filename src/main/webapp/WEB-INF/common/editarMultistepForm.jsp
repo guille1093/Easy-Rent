@@ -40,7 +40,7 @@
       <div class="multisteps-form__form">
 
       <%--@elvariable id="publicacion" type=""--%>
-      <form:form role="form" method="post" action="/publicacion/nuevaPublicacion" modelAttribute="publicacion"  class="text-start" >
+      <form:form role="form" method="put" action="/publicacion/editarPublicacion/${publicacion.id}" modelAttribute="publicacion"  class="text-start" >
 
         <!--PANEL TIPO DE PROPIEDAD-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">

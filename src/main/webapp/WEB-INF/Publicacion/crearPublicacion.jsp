@@ -19,15 +19,13 @@
     <%--            NavbarStart--%>
     <%@include file="../common/navBar2.jsp"%>
     <%--            NavbarEnd--%>
-    <div class="container my-auto">
+    <div class="container my-auto mt-8">
         <div class="row">
             <div class="col-lg-7 col-md-10">
                 <h1 class="text-white">Registre su propiedad</h1>
-                <p class="text-white mb-0">Registre su propiedad para que pueda ser publicada en nuestro sitio web.</p>
-                <p class="text-white mb-0">Los campos marcados con * son obligatorios.</p>
             </div>
         </div>
-        <div class="card h-100 align-content-xxl-center">
+        <div class="card h-100 align-content-xxl-center mt-3">
             <%@include file="../common/multistepForm.jsp"%>
         </div>
 

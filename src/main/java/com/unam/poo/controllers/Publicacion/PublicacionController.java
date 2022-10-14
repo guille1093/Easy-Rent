@@ -43,7 +43,7 @@ public class PublicacionController {
 
 
 
-
+//    Crear publicacion
 //    Ruta localhost:8080/publicacion/crearPublicacion
     @GetMapping("/crearPublicacion")
     public String publicacionLoad(Model model){
@@ -101,23 +101,69 @@ public class PublicacionController {
     } */
 
     publicacionService.savePublicacion(publicacion);
-    return "Publicacion/consultarPublicacion";
+    return "redirect:/publicacion/consultarPublicacion";
     }
 
 
 
-//    Ruta localhost:8080/publicacion/editarPublicacion
-    @GetMapping("/editarPublicacion")
-    public String editarPublicacionload() {return "Publicacion/editarPublicacion";}
+//    Editar publicacion
+//    Ruta localhost:8080/publicacion/editarPublicacion/{id}
+    @GetMapping("/editarPublicacion/{id}")
+    public String editarPublicacion(@PathVariable("id") Long id, Model model) {
+        Publicacion publicacion = publicacionService.getPublicacionById(id);
+        List<Tipo> tipos = tipoService.findAll();
+        List<Provincia> provincias = provinciaService.findAll();
+        List<Ciudad> ciudades = ciudadService.findAll();
+        List<Comodidad> comodidades = comodidadService.findAll();
+        List<CaracteristicaComodidad> caracteristicaComodidades = caracteristicaComodidadService.findAll();
+
+        model.addAttribute("ciudades", ciudades);
+        model.addAttribute("provincias", provincias);
+        model.addAttribute("tipos", tipos);
+        model.addAttribute("comodidades", comodidades);
+        model.addAttribute("caracteristicaComodidades", caracteristicaComodidades);
+
+        model.addAttribute("publicacion", publicacion);
+        return "Publicacion/editarPublicacion";
+    }
+
+    @PutMapping("/editarPublicacion/{id}")
+    public String editarPublicacion(@PathVariable("id") Long id, @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result) {
+        if (result.hasErrors()) {
+            //aca deberia ir una pagina de error o algo xd
+            return "Publicacion/editarPublicacion";
+        }
+        publicacionService.updatePublicacion(publicacion, id);
+        return "redirect:/publicacion/consultarPublicacion";
+    }
 
 
 
+//    Consultar todas las publicaciones de un usuario
 //    Ruta localhost:8080/publicacion/consultarPublicacion
     @GetMapping("/consultarPublicacion")
-    public String consultarPublicacionload() {return "Publicacion/consultarPublicacion";}
+    public String consultarPublicacionload(Model model){
 
-    @GetMapping("/verPublicacion")
-    public String verPublicacionload() {return "Publicacion/verPublicacion";}
+        List<Publicacion> publicaciones = publicacionService.findAll();
+
+        model.addAttribute("publicaciones", publicaciones);
+
+        return "Publicacion/consultarPublicacion";
+    }
+
+
+
+//    Ver una publicacion
+//    Ruta localhost:8080/publicacion/verPublicacion/{id}
+    @GetMapping("/verPublicacion/{id}")
+    public String verPublicacion(@PathVariable("id") Long id, Model model){
+
+        Publicacion publicacion = publicacionService.getPublicacionById(id);
+
+        model.addAttribute("publicacion", publicacion);
+
+        return "Publicacion/verPublicacion";
+    }
 
 
 }
