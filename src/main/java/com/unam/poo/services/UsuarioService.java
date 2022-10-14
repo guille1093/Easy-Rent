@@ -8,5 +8,5 @@ public interface UsuarioService {
     void deleteUsuarioById(Long id);
     Usuario getUsuarioById(Long id);
     Usuario saveUsuario(Usuario usuario);
-
+    Usuario getUsuarioByCorreo(String correo);
 }

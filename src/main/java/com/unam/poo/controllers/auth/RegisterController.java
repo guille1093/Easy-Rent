@@ -64,6 +64,7 @@ public class RegisterController {
                     user.setCorreo(usuarioDto.getCorreo());
                     user.setDni(usuarioDto.getDni());
                     user.setContraseña(passwordEncoder.encode(usuarioDto.getContraseña()));
+                    
                     Set<Rol> roles = new HashSet<>();
                     roles.add(rolService.getByRolNombre(RolNombre.ROL_USUARIO).get());
                     user.setRoles(roles);
@@ -72,12 +73,15 @@ public class RegisterController {
                     System.out.println("Registro exitoso.");
                     return "authLogin";
                 }else{
+                    System.out.println("ERROR: La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres");
                     return "ERROR: La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres";
                 }                
             }else{
+                System.out.println("ERROR: El valor del DNI debe ser un numero valido mayor a 10000000");
                 return "ERROR: El valor del DNI debe ser un numero valido mayor a 10000000";
             }
         }else{
+            System.out.println("ERROR: Debe especificar un valor para nombre, apellido y correo");
             return "ERROR: Debe especificar un valor para nombre, apellido y correo";
         }
         

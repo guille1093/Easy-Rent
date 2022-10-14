@@ -76,16 +76,16 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        
-                        <form:form role="form" action="${pageContext.request.contextPath}/login" method="post" modelAttribute="LoginDto">
+                       
+                        <form role="form" action="/login" method="post" modelAttribute="LoginDto">
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Email</label>
-                                <input type="email" name="correo" id="correo" class="form-control">
+                                <input #correo type="email" name="correo" id="correo" class="form-control">
                             </div>
                             <div class="input-group input-group-outline mb-3">
                                 <label class="form-label">Contraseña</label>
-                                <input path="contraseña" name="contraseña" type="password" class="form-control is-invalid" required> 
-                            </div>
+                                <input #contraseña path="contraseña" name="contraseña" type="password" class="form-control is-invalid" required> 
+                            </div> 
 
                             <div class="form-check form-switch d-flex align-items-center mb-3">
                                 <input class="form-check-input bg-gradient-primary" type="checkbox" id="rememberMe" checked>
@@ -100,7 +100,7 @@
                            <div class="align-content-center text-center">
                                <a class="mt-4 text-sm text-center" href="/register/authRegister">Aun no tiene una cuenta?</a>
                            </div>
-                        </form:form>
+                        </form>
                     </div>
                 </div>
             </div>
