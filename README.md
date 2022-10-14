@@ -9,7 +9,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/guille1093/SpringWebApp-POO2">
+  <a href="https://www.unam.edu.ar/">
     <img src="src/main/webapp/assets/img/md/logo-unam.png" alt="Logo" width="291" height="145">
   </a>
 
