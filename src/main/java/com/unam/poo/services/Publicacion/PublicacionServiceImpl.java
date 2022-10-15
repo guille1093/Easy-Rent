@@ -14,10 +14,6 @@ public class PublicacionServiceImpl implements PublicacionService{
     @Autowired
     private PublicacionRepository publicacionRepository;
 
-    @Override
-    public void deletePublicacionById(Long id) {
-        publicacionRepository.deleteById(id);
-    }
 
     @Override
     public Publicacion getPublicacionById(Long id) {
@@ -35,7 +31,7 @@ public class PublicacionServiceImpl implements PublicacionService{
     }
 
     @Override
-    public Publicacion updatePublicacion(Publicacion publicacion, Long id) {
+    public void updatePublicacion(Publicacion publicacion, Long id) {
         Publicacion publicacion1 = publicacionRepository.findById(id).get();
         publicacion1.setTituloPublicacion(publicacion.getTituloPublicacion());
         publicacion1.setDescripcionPublicacion(publicacion.getDescripcionPublicacion());
@@ -44,7 +40,22 @@ public class PublicacionServiceImpl implements PublicacionService{
 //        publicacion1.setUsuario(publicacion.getUsuario());
         publicacion1.setIdCiudad(publicacion.getIdCiudad());
         publicacion1.setCaracteristicasComodidades(publicacion.getCaracteristicasComodidades());
-        return publicacionRepository.save(publicacion1);
+        publicacionRepository.save(publicacion1);
     }
+
+    @Override
+    public List<Publicacion> findAllByEstadoPublicacion(String estadoPublicacion) {
+        return publicacionRepository.findAllByEstadoPublicacion(estadoPublicacion);
+    }
+
+    //    borrado logico de publicacion
+    @Override
+    public void deletePublicacionById(Long id) {
+        Publicacion publicacion = publicacionRepository.findById(id).get();
+        publicacion.setEstadoPublicacion("eliminado");
+        publicacionRepository.save(publicacion);
+    }
+
+
 
 }

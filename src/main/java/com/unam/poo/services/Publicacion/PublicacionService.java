@@ -12,5 +12,7 @@ public interface PublicacionService {
     Publicacion savePublicacion(Publicacion publicacion);
 
 //    metodo para actualizar una publicacion
-    Publicacion updatePublicacion(Publicacion publicacion, Long id);
+    void updatePublicacion(Publicacion publicacion, Long id);
+
+    List<Publicacion> findAllByEstadoPublicacion(String estadoPublicacion);
 }

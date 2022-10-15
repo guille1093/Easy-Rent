@@ -1,5 +1,6 @@
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <tags:jsp_imports/>
 
 <!doctype html>
@@ -16,6 +17,7 @@
     <title>Consulte sus propiedades</title>
 </head>
 <body>
+
 
 <div class="page-header align-items-start min-vh-100" style="background-image: url('../../assets/img/bgdep2.jpg');">
     <span class="mask bg-gradient-dark opacity-5"></span>
@@ -82,7 +84,48 @@
                                 <span class="text-secondary text-xs font-weight-normal">${propiedad.fechaHoraPublicacion.toLocalDate()}</span>
                             </td>
                             <td class="align-middle">
-                                <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
+
+                                <form:form action="bajaPublicacion/${propiedad.id}" method="post" modelAttribute="publicaciones" name="${propiedad.id}">
+
+
+                                    <form:button type="submit" class="fas fa-trash m-3" />
+<%--                                        <a class="fas fa-trash m-3" data-toggle="tooltip" data-original-title="Borrar publicacion"  data-bs-toggle="modal" data-bs-target="#es${propiedad.id}"></a>--%>
+<%--                                        <button type="button" onclick="pregunta(${propiedad.id})" class="btn btn-primary"> WENAS TARDES</button>--%>
+
+                                    <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
+
+
+<%--                                    <!-- Modal -->--%>
+<%--                                    <div class="modal fade mt-10 " id="es${propiedad.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">--%>
+<%--                                        <div class="modal-dialog">--%>
+<%--                                            <div class="modal-content">--%>
+<%--                                                <div class="modal-header">--%>
+<%--                                                    <h5 class="modal-title" id="exampleModalLabel">Esta seguro que desea eliminar esta propiedad?</h5>--%>
+<%--                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--%>
+<%--                                                </div>--%>
+<%--                                                <div class="modal-body">--%>
+<%--                                                    Esta accion no se puede deshacer.--%>
+<%--                                                </div>--%>
+<%--                                                <div class="modal-footer justify-content-between">--%>
+<%--                                                    <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>--%>
+
+<%--                                                    <form:button type="submit" class="btn bg-gradient-danger" data-bs-dismiss="modal" >Eliminar</form:button>--%>
+<%--                                                        &lt;%&ndash;                                                <button type="submit" class="btn bg-gradient-danger" >Borrar</button>&ndash;%&gt;--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+
+<%--                                    <form:button type="submit" class="btn bg-gradient-danger" data-bs-dismiss="modal" >Eliminar</form:button>--%>
+
+
+                                </form:form>
+
+
+
+
+
+
                             </td>
                         </tr>
                         </c:forEach>
@@ -95,9 +138,25 @@
         </div>
         </div>
     </div>
-    <%-- JS_Imports --%>
+
+
+
+
+
+
+<%-- JS_Imports --%>
     <tags:js_imports/>
+
     <%-- JS_Imports --%>
+
+
+
+    <script language="JavaScript">
+        function pregunta(id){
+            console.log(id);
+            document.id.submit()
+        }
+    </script>
 </div>
 </body>
 </html>

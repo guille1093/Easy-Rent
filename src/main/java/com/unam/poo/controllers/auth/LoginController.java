@@ -82,7 +82,7 @@ public class LoginController {
                     /* Todo lo de arriba hasta el comentario C1 es opcional y se puede eliminar o comentar a gusto */
                     
                     /* cambiar para redireccionar a panel de usuario -> */
-                    return "authLogin";
+                    return "welcome";
                 }else{
                     System.out.println("ERROR: Contraseña incorrecta");
                     return "authLogin";

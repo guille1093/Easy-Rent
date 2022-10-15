@@ -124,15 +124,19 @@ public class PublicacionController {
         model.addAttribute("caracteristicaComodidades", caracteristicaComodidades);
 
         model.addAttribute("publicacion", publicacion);
+
+        publicacionService.deletePublicacionById(4L);
+
         return "Publicacion/editarPublicacion";
     }
 
-    @PutMapping("/editarPublicacion/{id}")
+    @PostMapping("/editarPublicacion/{id}")
     public String editarPublicacion(@PathVariable("id") Long id, @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result) {
         if (result.hasErrors()) {
             //aca deberia ir una pagina de error o algo xd
             return "Publicacion/editarPublicacion";
         }
+
         publicacionService.updatePublicacion(publicacion, id);
         return "redirect:/publicacion/consultarPublicacion";
     }
@@ -144,7 +148,7 @@ public class PublicacionController {
     @GetMapping("/consultarPublicacion")
     public String consultarPublicacionload(Model model){
 
-        List<Publicacion> publicaciones = publicacionService.findAll();
+        List<Publicacion> publicaciones = publicacionService.findAllByEstadoPublicacion("activo");
 
         model.addAttribute("publicaciones", publicaciones);
 
@@ -163,6 +167,16 @@ public class PublicacionController {
         model.addAttribute("publicacion", publicacion);
 
         return "Publicacion/verPublicacion";
+    }
+
+//    Dar de baja una publicacion
+//    Ruta localhost:8080/publicacion/bajaPublicacion/{id}
+
+    @PostMapping("/bajaPublicacion/{id}")
+    public String bajaPublicacion(@PathVariable("id") Long id) {
+
+        publicacionService.deletePublicacionById(id);
+        return "redirect:/publicacion/consultarPublicacion";
     }
 
 
