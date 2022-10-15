@@ -2,12 +2,12 @@
   Created by IntelliJ IDEA.
   User: gq
   Date: 01/10/2022
-  Time: 22:23
+  Time: 04:23
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8"%>
-<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
+<%@page contentType="text/html;charset=UTF-8"%>
+<%@taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <tags:jsp_imports/>
 <html>

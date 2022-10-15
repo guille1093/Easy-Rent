@@ -72,33 +72,6 @@ public class PublicacionController {
         return "Publicacion/crearPublicacion";
     }
 
-   /* if (!foto.isEmpty()) {
-
-   @RequestParam(name = "file", required = false) MultipartFile foto, ESTO VA EN LOS PARAMETROS DE crearPublicacion
-
-        System.out.println("HAY FOTO");
-
-        String ruta = "C://Users//yonat//OneDrive//Escritorio";
-
-        try {
-            byte[] bytes = foto.getBytes();
-
-            System.out.println("bytes: " + bytes);
-
-            Path rutaCompleta = Paths.get(ruta + "//" + foto.getOriginalFilename());
-
-            System.out.println("rutaCompleta: " + rutaCompleta);
-
-
-            Files.write(rutaCompleta, bytes);
-            publicacion.setImagenUnoPublicacion(foto.getOriginalFilename());
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-
-    } */
 
     publicacionService.savePublicacion(publicacion);
     return "redirect:/publicacion/consultarPublicacion";
@@ -177,6 +150,16 @@ public class PublicacionController {
 
         publicacionService.deletePublicacionById(id);
         return "redirect:/publicacion/consultarPublicacion";
+    }
+
+    @GetMapping("/verPublicaciones")
+    public String verPublicaciones(Model model){
+
+        List<Publicacion> publicaciones = publicacionService.findAll();
+
+        model.addAttribute("publicaciones", publicaciones);
+
+        return "Publicacion/verPublicaciones";
     }
 
 
