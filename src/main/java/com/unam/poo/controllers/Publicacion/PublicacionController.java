@@ -146,13 +146,23 @@ public class PublicacionController {
 //    Consultar todas las publicaciones de un usuario
 //    Ruta localhost:8080/publicacion/consultarPublicacion
     @GetMapping("/consultarPublicacion")
-    public String consultarPublicacionload(Model model){
+    public String consultarPublicacion(Model model){
 
         List<Publicacion> publicaciones = publicacionService.findAllByEstadoPublicacion("activo");
 
         model.addAttribute("publicaciones", publicaciones);
 
         return "Publicacion/consultarPublicacion";
+    }
+
+    @GetMapping("/consultarAlquiler")
+    public String consultarAlquiler(Model model){
+
+        List<Publicacion> publicaciones = publicacionService.findAllByEstadoPublicacion("Alquilado");
+
+        model.addAttribute("publicaciones", publicaciones);
+
+        return "Publicacion/consultarAlquileres";
     }
 
 
