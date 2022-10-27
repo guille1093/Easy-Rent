@@ -23,10 +23,10 @@ La division de las Historias de Usuario sera la siguiente:
 ![](link-a-imagen)  
 
 <br><br>
-**Caso de uso**:   
-**Descripción**:    
-**Precondición**:  
-**Postcondición**:   
+**Caso de uso**:  Modificar datos de usuario <br>
+**Descripción**:   El usuario desea modificar los datos de su cuenta <br>
+**Precondición**:  Tener una cuenta registrada<br>
+**Postcondición**:   -- <br>
 
 **Flujo Típico de eventos**:
 <table>
@@ -35,56 +35,29 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b>. 
+    <td><b>1</b>. Este caso de uso comienza cuando el usuario está <br>en su perfil y presiona sobre la etiqueta “Modificar datos”
     <td></td>
+  </tr> 
+  <tr>
+    <td></td>
+    <td><b>2</b>. El sistema despliega un formulario con los datos <br> del usuario ya cargados 
   </tr>
-  <tr>
+      <tr>
+    <td><b>3</b>. El Usuario busca el dato a cambiar, lo modifica <br>y presiona en el botón con la etiqueta <br> “Guardar Modificación”
     <td></td>
-    <td><b>2</b>.
+  </tr> 
+     <tr>
+    <td></td>
+    <td><b>4</b>. El sistema verifica que todos los campos se <br>encuentren cargados de manera correcta <br> y muestra el mensaje “Los datos han sido modificados correctamente”
   </tr>
-  <tr>
-    <td><b>3</b>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>4</b> </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>5</b> </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>6</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>7</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>8</b></td>
-    <td></td>
-  <tr>
-    <td><b>9</b></td>
-    <td></td>
-  <tr>
-    <td></td>
-    <td><b>10</b></td>
- </tr>
-   <tr>
-    <td><b>11</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>12</b> </td>
- </tr>
 </table>
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:
+**Paso 2**: El sistema no logra cargar el formulario. Pide que cargue de nuevo el sitio<br>
+**Paso 4**: El sistema detecta que un campo obligatorio no fue cargado. Indica cuál es el campo que no cumple con lo requerido.<br>
+**Paso 4**:Paso 4: El sistema detecta un dato no válido, Se le informa al usuario y vuelve a ingresar la información<br>
+
 
 ## Wireframe Consultar usuario
 
@@ -209,13 +182,16 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Modificar datos de usuario**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como**  usuario <br>
+**Quiero**  modificar los datos de usuario<br>
+**Para** actualizar o corregir algún dato cargado<br>
+ 
 
 <u>Criterios de aceptación</u>
 
--
+-El usuario debe tener una cuenta creada
+-Los datos modificados deben ser validos 
+
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
