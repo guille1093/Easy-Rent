@@ -64,9 +64,9 @@ La division de las Historias de Usuario sera la siguiente:
 ![](link-a-imagen)  
 
 <br><br>
-**Caso de uso**:
-**Descripción**: 
-**Precondición**:
+**Caso de uso**: Consultar usuario  
+**Descripción**: Un usuario (inquilino/propietario/administrador) desea consultar la información asociada a un perfil dentro del sistema.  
+**Precondición**:  
 **Postcondición**:  
 
 **Flujo Típico de eventos**:
@@ -76,36 +76,27 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>1.</b> Este caso de uso comienza cuando<br> 
+    un usuario ingresa a una publicación<br> 
+    y hace click en el nombre del propietario.</td>
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td><b>2</b>
-  </tr>
-  <tr>
-    <td><b>3</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>4</b></td>
-    <td></td>
-  <tr>
-    <td><b>5</b></td>
-    <td></td>
-    
+    <td><b>2.</b> El sistema despliega un cuadro<br> con toda la información pública<br> 
+    (nombre, localidad, etc) asociada<br>
+     a ese usuario.
   </tr>
   <tr>
     <td></td>
-    <td><b>6</b></td>
- </tr>
+    <td></td>
+  </tr>
 </table>
 
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:  
-**Paso**:
+**Paso 1**: El usuario hace click en el nombre de un comentario de la publicación. El sistema responde igual.  
 
 <br><br>
 
@@ -204,29 +195,25 @@ La division de las Historias de Usuario sera la siguiente:
 - Creación del modelo de datos(Entidad/es de Base de datos)
 - Validación de campos con sus respectivas alertas
 
-<br><br>
+<br>
 
 ## **Tareas para Consultar usuario**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como** inquilino/propietario/administrador<br>
+**Quiero** consultar datos de un usuario registrado<br> 
+**Para** obtener información vinculada a la persona y/o empresa.
 
 <u>Criterios de aceptación</u>
 
--
+- El sistema debe informar de la inexistencia (si así fuese) del usuario consultado.
+- El inquilino/propietario debe haber ingresado al sistema.
+- Solo el perfil de propietario puede ser visto de manera pública (sin haber ingresado al sistema).
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
-- Creación de wireframe
-    - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
-- Descripción del Uso del wireframe (Caso de Uso real)
-- Creación del modelo de datos(Entidad/es de Base de datos)
-- Validación de campos con sus respectivas alertas
-
+- Creación de wireframe.
+- Descripción del Uso del wireframe (Caso de Uso real).
+- Controlar que se cumplieron los criterios de aceptación.
 
 
 # Retrospectiva de la Iteracion 2
