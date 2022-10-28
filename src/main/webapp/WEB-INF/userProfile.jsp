@@ -141,8 +141,9 @@
                             <p class="text-xs text-secondary mb-0">${propiedad.idTipo.tipo}</p>
                           </td>
                           <td class="align-middle text-center">
-                            <span class="badge bg-gradient-success" href="www.google.com">${propiedad.estadoPublicacion}</span>
+                            <span class="badge bg-gradient-<c:if test="${propiedad.estadoPublicacion == \"Alquilado\"}">warning</c:if><c:if test="${propiedad.estadoPublicacion == \"activo\"}">success</c:if>" href="www.google.com">${propiedad.estadoPublicacion}</span>
                           </td>
+
                           <td class="align-middle text-center">
                             <span class="text-secondary text-xs font-weight-normal">420</span>
                           </td>

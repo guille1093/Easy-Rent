@@ -122,8 +122,10 @@ public class PublicacionController {
     public String consultarPublicacion(Model model){
 
         List<Publicacion> publicaciones = publicacionService.findAllByEstadoPublicacion("activo");
+        List<CaracteristicaComodidad> caracteristicaComodidades = caracteristicaComodidadService.findAll();
 
         model.addAttribute("publicaciones", publicaciones);
+        model.addAttribute("caracteristicaComodidades", caracteristicaComodidades);
 
         return "Publicacion/consultarPublicacion";
     }
@@ -146,6 +148,7 @@ public class PublicacionController {
     public String verPublicacion(@PathVariable("id") Long id, Model model){
 
         Publicacion publicacion = publicacionService.getPublicacionById(id);
+
 
         model.addAttribute("publicacion", publicacion);
 

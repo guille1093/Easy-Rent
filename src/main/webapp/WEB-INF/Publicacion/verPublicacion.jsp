@@ -105,30 +105,7 @@
                     </c:if>
                 </div>
             </div>
-            <div class="row px-xl-5">
-                <div class="col">
-                    <%--            map--%>
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <h5 class="font-weight-semi-bold">Ubicación</h5>
-                                    <p class="text-muted">${publicacion.callePublicacion} - ${publicacion.alturaPublicacion} - ${publicacion.idCiudad.ciudad}</p>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="d-flex align-items-center justify-content-lg-end">
-                                        <div class="bg-primary rounded-circle p-2 mr-3" style="width: 32px; height: 32px"><i class="fas fa-map-marker-alt text-white align-items-center"></i></div>
-                                        <div>
-                                            <h6 class="font-weight-semi-bold ms-2 mb-0">Ver en el mapa</h6>
-                                            <small class="text-muted ms-2">${publicacion.callePublicacion} - ${publicacion.alturaPublicacion} - ${publicacion.idCiudad.ciudad}</small>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="row px-xl-5">
                 <div class="col">
                     <div class="card border-0 shadow-sm mb-4">
@@ -139,6 +116,104 @@
                     </div>
                 </div>
             </div>
+
+<%--            Listado de comodidades de la base de datos--%>
+            <div class="row px-xl-5">
+                <div class="col">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="font-weight-semi-bold">Comodidades</h5>
+                            <div class="row mt-3">
+                                <div class="col-lg-6">
+                                    <ul class="list-unstyled">
+
+<%--                                        crear una variable para contar las iteraciones--%>
+
+
+                                        <c:forEach items="${publicacion.caracteristicasComodidades}" var="comodidad">
+                                            <li class="mb-2">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="bg-primary
+                                                        rounded-circle p-2 mr-3" style="width: 32px; height: 32px"><i class="fas fa-check text-white align-items-center"></i></div>
+                                                    <div>
+                                                        <h6 class="font-weight-semi-bold ms-2 mb-0">${comodidad.nombreCaracteristica}</h6>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </c:forEach>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<%--&lt;%&ndash;                                        Solamente visualiza 5 comodidades&ndash;%&gt;--%>
+<%--                                        @if($loop->iteration <= 5)--%>
+<%--                                        <li class="mb-2"><i class="fas fa-check text-primary mr-2"></i>{{$comodidad->nombre_caracteristica_comodidad}}</li>--%>
+<%--                                        @endif--%>
+
+<%--&lt;%&ndash;                                        Cuando es mayor a 5 lo coloca dentro de un span oculto y con javascript lo muestra&ndash;%&gt;--%>
+<%--                                        @if($loop->iteration > 5)--%>
+
+<%--                                            @if($loop->iteration == 6)--%>
+<%--                                                <span id="dots"></span><span id="more" style="display: none">--%>
+<%--                                            @endif--%>
+<%--                                            <li class="mb-2"><i class="fas fa-check text-primary mr-2"></i>{{$comodidad->nombre_caracteristica_comodidad}}</li>--%>
+<%--                                                @if($loop->last)--%>
+<%--                                                    </span>--%>
+<%--                                                @endif--%>
+<%--                                            @endif--%>
+
+<%--                                        @endforeach--%>
+<%--                                    </ul>--%>
+<%--                                </div>--%>
+<%--&lt;%&ndash;                                si el array tiene más de 5 comodidades, muestra el botón de ver más&ndash;%&gt;--%>
+<%--                                @if($publicacion->caracteristica_comodidades()->count() > 5)--%>
+<%--                                    <button onclick="myFunction()" id="myBtn" class="btn btn-link text-decoration-none text-primary p-0 align-items-center justify-content-center ">Mostrar más<i class="fas fa-chevron-down ms-2"></i></button>--%>
+<%--                                @endif--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+
+<%--            Ubicación de la publicación--%>
+            <div class="row px-xl-5">
+                <div class="col">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h5 class="font-weight-semi-bold">Ubicación</h5>
+                                    <p class="text-muted">${publicacion.callePublicacion} - ${publicacion.alturaPublicacion} - ${publicacion.idCiudad.ciudad}</p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center justify-content-lg-end">
+                                        <div class="bg-primary p-2 mr-3 rounded-circle position-relative" style="height: 32px; width: 32px;"><i class="fas fa-map-marker-alt text-white w-50 h-50 position-absolute"></i></div>
+                                        <div>
+                                            <a class="font-weight-semi-bold ms-2 mb-0 h6" href="https://www.google.com/maps/search/?api=1&query=${publicacion.latitudPublicacion}+${publicacion.longitudPublicacion}&zoom=20" target="_blank">Ver en el mapa</a> <br>
+                                            <small class="text-muted ms-2">${publicacion.callePublicacion} - ${publicacion.alturaPublicacion} - ${publicacion.idCiudad.ciudad}</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+<%--                                Mapa PROVICIONAL--%>
+                                <div class="w-90 m-auto">
+                                    <div class="form-row mt-4 shadow-none p-1 mb- bg-light rounded">
+                                        <div id="map" style="width: 100%; height:600px"></div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <%--    JS IMPORTS--%>
             <tags:js_imports/>
 
@@ -147,5 +222,40 @@
 
 </div>
 </div>
+
+<%--importar script de google maps--%>
+<script>
+    function iniciarMap(){
+
+
+        // establecer un marker con el imagen map-marker-2-512.png
+        // var icono = {
+        //     url: '../../assets/img/map-marker-2-512.png',
+        //     scaledSize: new google.maps.Size(30, 30),
+        //     origin: new google.maps.Point(0,0),
+        //     anchor: new google.maps.Point(16, 31)
+        //
+        // };
+
+        // Obtenemos la posicion de la publicacion
+        var posicion = {lat: ${publicacion.latitudPublicacion}, lng: ${publicacion.longitudPublicacion}};
+
+        // Creamos el mapa
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: posicion
+        });
+
+        // Creamos el marker
+        var marker = new google.maps.Marker({
+            position: posicion,
+            map: map,
+            // icon: icono
+        });
+
+
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRitCKrHHCHbh9KlJed9j697DDQEW-Go&callback=iniciarMap"></script>
 </body>
 </html>

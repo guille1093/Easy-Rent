@@ -74,6 +74,15 @@ public class Publicacion {
     @Column(name = "descripcion_publicacion")
     private String descripcionPublicacion;
 
+//    crear longitud y latitud para la ubicacion en el mapa
+    @Basic
+    @Column(name = "longitud_publicacion")
+    private Double longitudPublicacion;
+
+    @Basic
+    @Column(name = "latitud_publicacion")
+    private Double latitudPublicacion;
+
     //    @NotBlank(message = "El campo Tipo de propiedad es obligatorio")
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_tipo", nullable = false)
