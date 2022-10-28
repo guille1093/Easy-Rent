@@ -151,7 +151,7 @@
 
 
 
-    <script language="JavaScript">
+    <script>
         function pregunta(id){
             console.log(id);
             document.id.submit()

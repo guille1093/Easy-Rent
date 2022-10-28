@@ -29,6 +29,7 @@ public class Usuario {
     @Basic
     @Column(name = "correo")
     @NotBlank(message = "El correo no puede estar vacio")
+
     private String correo;
 
     @Basic
