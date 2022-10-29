@@ -3142,7 +3142,7 @@ textarea.form-control-lg {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #e91e63;
+  background-color: deeppink;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3156,7 +3156,7 @@ textarea.form-control-lg {
 }
 
 .form-range::-webkit-slider-thumb:active {
-  background-color: #f9c1d4;
+  background-color: deeppink;
 }
 
 .form-range::-webkit-slider-runnable-track {
@@ -3164,7 +3164,7 @@ textarea.form-control-lg {
   height: 0.5rem;
   color: transparent;
   cursor: pointer;
-  background-color: #dee2e6;
+  background-color: deeppink;
   border-color: transparent;
   border-radius: 1rem;
 }
@@ -3172,7 +3172,7 @@ textarea.form-control-lg {
 .form-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #e91e63;
+  background-color: deeppink;
   border: 0;
   border-radius: 1rem;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3186,7 +3186,7 @@ textarea.form-control-lg {
 }
 
 .form-range::-moz-range-thumb:active {
-  background-color: #f9c1d4;
+  background-color: deeppink;
 }
 
 .form-range::-moz-range-track {
