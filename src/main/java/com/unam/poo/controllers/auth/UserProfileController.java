@@ -1,7 +1,6 @@
 package com.unam.poo.controllers.auth;
 
-
-import com.sun.net.httpserver.Request;
+ 
 import com.unam.poo.dto.UsuarioDto;
 import com.unam.poo.models.CaracteristicaComodidad;
 import com.unam.poo.models.Ciudad;
@@ -18,8 +17,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.unam.poo.services.UsuarioService;
-
-import org.eclipse.tags.shaded.org.apache.bcel.verifier.statics.LONG_Upper;
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

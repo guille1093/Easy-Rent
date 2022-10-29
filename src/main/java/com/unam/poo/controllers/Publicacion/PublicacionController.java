@@ -172,7 +172,7 @@ public class PublicacionController {
 
         model.addAttribute("publicaciones", publicaciones);
 
-        return "Publicacion/verPublicaciones";
+        return "Publicacion/verPublicaciones2";
     }
 
 

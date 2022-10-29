@@ -225,7 +225,6 @@
         <div class="col">
             <div class="card h-100">
                 <div class="ratio ratio-1x1">
-<%--                    <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/8.webp" alt="Card image cap">--%>
     <div id="carousel-1" class="carousel slide" data-bs-ride="false">
         <div class="carousel-inner">
             <div class="carousel-item active ratio ratio-1x1"><img class="w-100 d-block card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../assets/img/rents/1.webp" alt="Slide Image" /></div>

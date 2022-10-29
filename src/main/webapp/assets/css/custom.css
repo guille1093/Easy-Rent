@@ -7,3 +7,14 @@
 .product-item:hover .product-img img {
     transform: scale(1.2);
 }
+
+/* Path: src/main/webapp/assets/css/custom.css */
+input[type=range]::-webkit-slider-thumb {
+    background: primary;
+}
+input[type=range]::-moz-range-thumb {
+    background: red;
+}
+input[type=range]::-ms-thumb {
+    background: red;
+}

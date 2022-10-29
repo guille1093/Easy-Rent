@@ -15,4 +15,8 @@ public interface PublicacionService {
     void updatePublicacion(Publicacion publicacion, Long id);
 
     List<Publicacion> findAllByEstadoPublicacion(String estadoPublicacion);
+
+//    metodo de busqueda publicaciones por id o titulo
+    List<Publicacion> findByTituloPublicacionLike(String titulo);
+
 }
