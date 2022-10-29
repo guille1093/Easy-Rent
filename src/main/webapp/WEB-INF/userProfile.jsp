@@ -29,20 +29,19 @@
           <img src="../assets/img/pp.jpeg" alt="profile_image" class="w-100 border-radius-lg shadow-xl">
         </div>
       </div>
+
       <div class="col-auto my-auto">
         <div class="h-100">
           <h5 class="mb-1">
             Elpe Lado
           </h5>
           <p class="mb-0 font-weight-normal text-sm">
-            <i class="fas fa-map-marker-alt text-sm me-1"></i> Misiones, Argentina
+            <i class="fas fa-map-marker-alt text-sm me-1 text-primary"></i> Misiones, Argentina
           </p>
         </div>
-
-
       </div>
-
     </div>
+
     <section class="mb-2 mt-2">
       <div class="container">
         <div class="nav-wrapper position-relative end-0">
@@ -65,11 +64,12 @@
         </div>
       </div>
     </section>
+
     <div class="tab-content">
       <div class="tab-pane fade show active" id="profile-tab" role="tabpanel" aria-labelledby="profile-tab">
             <div class="card mb-4 w-xxl-100">
               <div class="card-header pb-0">
-                <h6>Información personal <a class="ms-3" href="javascript:"><i class="fas fa-user-edit text-secondary " data-bs-toggle="modal" data-bs-target="#exampleModal" aria-hidden="true" aria-label="Edit Profile" data-bs-original-title="Edit Profile"></i><span class="sr-only">Edit Profile</span></a>
+                <h6>Información personal <a class="ms-3"><i class="fas fa-user-edit text-secondary " data-bs-toggle="modal" data-bs-target="#datosModal" aria-hidden="true" aria-label="Edit Profile" data-bs-original-title="Edit Profile"></i><span class="sr-only">Edit Profile</span></a>
                 </h6>
               </div>
               <div class="card-body pt-3">
@@ -103,7 +103,7 @@
                   <div class="row text-center py-2 mt-3">
                     <div class="col-4 mx-auto">
                       <div class="input-group input-group-dynamic mb-4">
-                        <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <span class="input-group-text"><i class="fas fa-search text-primary" aria-hidden="true"></i></span>
                         <input class="form-control" placeholder="Buscar" type="text" >
                       </div>
                     </div>
@@ -121,15 +121,12 @@
                       </tr>
                       </thead>
                       <tbody>
-
                       <c:forEach items="${publicaciones}" var="propiedad">
-
-
                         <tr style="height:100px">
                           <td>
                             <div class="d-flex px-2 py-1">
                               <div>
-                                <img src="../../assets/img/rents/1.webp" class="avatar avatar-xl me-3" alt="logo">
+                                <img src="../assets/img/rents/1.webp" class="avatar avatar-xl me-3" alt="logo">
                               </div>
                               <div class="d-flex flex-column justify-content-center">
                                 <a class="mb-0 h6" href="${pageContext.request.contextPath}/publicacion/verPublicacion/${propiedad.id}">${propiedad.tituloPublicacion}</a>
@@ -151,26 +148,19 @@
                             <span class="text-secondary text-xs font-weight-normal">${propiedad.fechaHoraPublicacion.toLocalDate()}</span>
                           </td>
                           <td class="align-middle">
-
                             <form:form action="bajaPublicacion/${propiedad.id}" method="post" modelAttribute="publicaciones" name="${propiedad.id}">
-
-
                               <form:button type="submit" class="fas fa-trash m-3" />
                               <%--                                        <a class="fas fa-trash m-3" data-toggle="tooltip" data-original-title="Borrar publicacion"  data-bs-toggle="modal" data-bs-target="#es${propiedad.id}"></a>--%>
                               <%--                                        <button type="button" onclick="pregunta(${propiedad.id})" class="btn btn-primary"> WENAS TARDES</button>--%>
 
                               <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
                             </form:form>
-
-
                           </td>
                         </tr>
                       </c:forEach>
-
                       </tbody>
                     </table>
                   </div>
-
                 </div>
               </div>
             </div>
@@ -180,54 +170,48 @@
 
       <div class="tab-pane fade" id="settings-tab" role="tabpanel" aria-labelledby="settings-tab">
         <div class="card card-plain h-100">
-          <div class="card-header pb-0 p-3">
-            <h6 class="mb-0">Ajustes de cuenta</h6>
-          </div>
           <div class="card-body p-3">
             <div class="container">
               <div class="row">
-                <div class="col">
-                  <h6 class="text-uppercase text-body text-xs font-weight-bolder">Account</h6>
+                <div class="col mt-3">
+                  <h4 class="text-uppercase text-xs font-weight-bolder"><i class="fas fa-envelope me-3 text-primary"></i>Notificaciones</h4>
                   <ul class="list-group">
                     <li class="list-group-item border-0 px-0">
                       <div class="form-check form-switch ps-0">
-                        <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault9" checked="">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault9">Email me when someone follows me</label>
+                        <input class="form-check-input ms-auto form-control-color" type="checkbox" id="flexSwitchCheckDefault9" checked="">
+                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault9">Cuando alquien guarda en favoritos una publicación</label>
                       </div>
                     </li>
                     <li class="list-group-item border-0 px-0">
                       <div class="form-check form-switch ps-0">
                         <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault1">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault1">Email me when someone answers on my post</label>
+                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault1">Cuando alguien quiere contactarme</label>
                       </div>
                     </li>
                     <li class="list-group-item border-0 px-0">
                       <div class="form-check form-switch ps-0">
                         <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault2" checked="">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault2">Email me when someone mentions me</label>
+                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault2">Cuando se me efectua un pago</label>
                       </div>
                     </li>
                   </ul>
                 </div>
-                <div class="col">
-                  <h6 class="text-uppercase text-body text-xs font-weight-bolder mt-4">Application</h6>
+                <div class="col mt-3">
+                  <h4 class="text-uppercase text-xs font-weight-bolder"><i class="fa-solid fa-shield-halved me-3 text-primary"></i>Cuenta y seguridad</h4>
                   <ul class="list-group">
                     <li class="list-group-item border-0 px-0">
-                      <div class="form-check form-switch ps-0">
-                        <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault3">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault3">New launches and projects</label>
+                      <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark btn-sm mb-0 w-100" data-bs-toggle="modal" data-bs-target="#datosModal"><i class="fas fa-user me-3"></i>EDitaR DaToS PeRsOnAlEs</button>
                       </div>
                     </li>
                     <li class="list-group-item border-0 px-0">
-                      <div class="form-check form-switch ps-0">
-                        <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault4" checked="">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault4">Monthly product updates</label>
+                      <div class="text-center">
+                        <button type="button" class="btn btn-outline-dark btn-sm mb-0 w-100" data-bs-toggle="modal" data-bs-target="#pwdModal"><i class="fas fa-key me-3"></i>Cambiar contraseña</button>
                       </div>
                     </li>
-                    <li class="list-group-item border-0 px-0 pb-0">
-                      <div class="form-check form-switch ps-0">
-                        <input class="form-check-input ms-auto" type="checkbox" id="flexSwitchCheckDefault5">
-                        <label class="form-check-label text-body ms-3 text-truncate w-80 mb-0" for="flexSwitchCheckDefault5">Subscribe to newsletter</label>
+                    <li class="list-group-item border-0 px-0">
+                      <div class="text-center">
+                        <button type="button" class="btn btn-outline-primary btn-sm mb-0 w-100" data-bs-toggle="modal" data-bs-target="#desactivarModal"><i class="fas fa-exclamation-triangle me-3 text-red"></i>desactivar cuenta</button>
                       </div>
                     </li>
                   </ul>
@@ -242,7 +226,7 @@
     </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="datosModal" tabindex="-1" aria-labelledby="datosModal" aria-hidden="true">
   <div class=" modal-dialog modal-dialog-centered modal-xl ">
     <div class="modal-content">
       <div class="modal-header align-content-center">
@@ -255,12 +239,11 @@
             <div class="row">
               <div class="col mx-auto d-flex justify-content-center flex-column">
                 <form role="form" id="update-form" method="post" autocomplete="off">
-                  <div class="card-body">
+                  <ul class="card-body">
 <%--                    primera linea de filas--%>
                     <div class="row">
                       <div class="col">
                         <div class="input-group input-group-dynamic m-4">
-
                           <label class="form-label"><i class="fas fa-user me-3"></i>Nombre</label>
                           <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
                         </div>
@@ -300,6 +283,21 @@
                       <label for="message"></label><textarea name="message" class="form-control" id="message" rows="4"></textarea>
                     </div>
                   </div>
+  <div class="row">
+    <ul class="list-group">
+      <li class="list-group-item border-0 px-0">
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-dark btn-sm mb-0 w-100" data-bs-toggle="modal" data-bs-target="#fotoModal"><i class="fas fa-user me-3"></i>Actualizar foto perfil</button>
+        </div>
+      </li>
+      <li class="list-group-item border-0 px-0">
+        <div class="text-center">
+          <button type="button" class="btn btn-outline-dark btn-sm mb-0 w-100" data-bs-toggle="modal" data-bs-target="#portadaModal"><i class="fas fa-key me-3"></i>Actualizar foto portada</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
                 </form>
               </div>
             </div>
@@ -313,6 +311,207 @@
     </div>
   </div>
 </div>
+
+<%-- modal para cambiar la contrase --%>
+<div class="modal fade" id="pwdModal" tabindex="-1" aria-labelledby="pwdModal" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header align-content-center">
+        <h3 class="text-center w-100">Cambie su contraseña</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <div class="container py-4">
+            <div class="row">
+              <div class="col mx-auto d-flex justify-content-center flex-column">
+                <form role="form" id="update-form2" method="post" autocomplete="off">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label"><i class="fas fa-key me-3"></i>Contraseña actual</label>
+                            <input type="password" class="form-control">
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label"><i class="fas fa-key me-3"></i>Nueva contraseña</label>
+                            <input type="password" class="form-control" placeholder="" aria-label="Last Name..." >
+                        </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                        <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label"><i class="fas fa-key me-3"></i>Confirmar contraseña</label>
+                            <input type="password" class="form-control" placeholder="" aria-label="Last Name..." >
+                          <%--                          TODO no se puede hacer click al ojo para mostrar la pwd --%>
+                          <div class="input-group-append">
+                            <span class="input-group-text" onclick="password_show_hide();">
+                              <i class="fas fa-eye" id="show_eye"></i>
+                              <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                            </span>
+                          </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn bg-gradient-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<%-- modal para cambiar la foto de perfil --%>
+<div class="modal fade" id="fotoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header align-content-center">
+        <h3 class="text-center w-100">Actualice su foto de perfil</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <div class="container py-4">
+            <div class="row">
+              <div class="col mx-auto d-flex justify-content-center flex-column">
+                <form role="form" id="update-form3" method="post" autocomplete="off">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label"><i class="fas fa-image me-3 text-primary"></i>Foto de perfil</label>
+                        <div class="input-group input-group-dynamic m-4">
+
+                            <input type="file" class="form-control" placeholder="" aria-label="Last Name..." >
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                </div>
+                </div>
+                </section>
+                </div>
+                  <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn bg-gradient-primary">Guardar</button>
+                  </div>
+    </div>
+  </div>
+</div>
+<%-- modal para desactivar la cuenta pidiendo correo y contraseña para confirmar--%>
+<div class="modal fade" id="desactivarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header align-content-center">
+        <h3 class="text-center w-100">Desactivar cuenta</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <div class="container py-4">
+            <div class="row">
+              <div class="col mx-auto d-flex justify-content-center flex-column">
+                <form role="form" id="update-form5" method="post" autocomplete="off">
+                  <div class="card-body">
+                    <div class="row">
+                      <h5><i class="fas fa-warning text-3xl text-danger me-3"></i>Esta accion no puede deshacerse</h5>
+                      <h6 class="text-body ms-5 text-xxs">Para confirmar ingrese su correo y contraseña</h6>
+                      <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label"><i class="fas fa-user me-3"></i>Correo</label>
+                          <input type="email" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label"><i class="fas fa-key me-3"></i>Contraseña</label>
+                          <input type="password" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn bg-gradient-danger">confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%-- modal para cambiar la foto de portada--%>
+<div class="modal fade" id="portadaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header align-content-center">
+        <h3 class="text-center w-100">Actualice su foto de portada</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <section>
+          <div class="container py-4">
+            <div class="row">
+              <div class="col mx-auto d-flex justify-content-center flex-column">
+                <form role="form" id="update-form33" method="post" autocomplete="off">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col">
+                        <label class="form-label"><i class="fas fa-image me-3 text-primary"></i>Foto de portada</label>
+                        <div class="input-group input-group-dynamic m-4">
+                          <input type="file" class="form-control" placeholder="." aria-label="Last Name..." >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn bg-gradient-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function password_show_hide() {
+    let x = document.getElementById("password");
+    let y = document.getElementById("show_eye");
+    let z = document.getElementById("hide_eye");
+    if (x.type === "password") {
+      x.type = "text";
+      y.classList.add("d-none");
+      z.classList.remove("d-none");
+    } else {
+      x.type = "password";
+      y.classList.remove("d-none");
+      z.classList.add("d-none");
+    }
+  }
+</script>
 <tags:js_imports/>
 </body>
 </html>
