@@ -8,6 +8,13 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@page import="com.unam.poo.models.Ciudad"%>
+<%@page session='true'%> 
+<% 
+System.out.println("ID Sesion: " + session.getId());
+System.out.println("Usuario ID: " + session.getAttribute("userId"));
+%>
 <tags:jsp_imports/>
 <html>
 <head>
@@ -32,10 +39,10 @@
       <div class="col-auto my-auto">
         <div class="h-100">
           <h5 class="mb-1">
-            Elpe Lado
+            ${usuario.nombre}
           </h5>
           <p class="mb-0 font-weight-normal text-sm">
-            <i class="fas fa-map-marker-alt text-sm me-1"></i> Misiones, Argentina
+            <i class="fas fa-map-marker-alt text-sm me-1"></i>  ${usuario.ciudad.ciudad}, ${usuario.ciudad.idProvincia.provincia}
           </p>
         </div>
 
@@ -77,16 +84,17 @@
                   <div class="row">
                     <div class="col card bg-gray-100 m-3">
                       <ul class="list-group">
-                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Nombre completo:</strong> &nbsp; Elpe Lado</li>
-                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Telefono:</strong> &nbsp; (54) 123 1234 123</li>
-                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Email:</strong> &nbsp; elpelado@mail.com</li>
-                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Ubicacion:</strong> Apostoles, Misiones, Argentina</li>
+                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Nombre completo:</strong> &nbsp; ${usuario.nombre} ${usuario.apellido}</li>
+                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Telefono:</strong> &nbsp; ${usuario.telefono}</li>
+                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Email:</strong> &nbsp; ${usuario.correo}</li>
+                        <li class="list-group-item border-0 ps-0 bg-transparent"><strong class="text-dark">Ubicacion:</strong> ${usuario.ciudad.ciudad}, ${usuario.ciudad.idProvincia.provincia}, ${usuario.ciudad.idProvincia.idPais.pais}</li>
                       </ul>
                     </div>
                     <div class="col card bg-gray-100 m-3">
                       <strong class="text-dark">Descripcion:</strong>
                       <p>
-                        Doctor, atronauta, bombero, policia, ingeniero, plomero, electricista, repartidor de pizza... Y ahora tambien cliente de <strong>EASY-RENT</strong>! Con mas de 20 años de experiencia en el rubro, me considero un experto en el tema. Siempre estoy dispuesto a ayudar a los demas y a compartir mis conocimientos.
+                        <!--Doctor, atronauta, bombero, policia, ingeniero, plomero, electricista, repartidor de pizza... Y ahora tambien cliente de <strong>EASY-RENT</strong>! Con mas de 20 años de experiencia en el rubro, me considero un experto en el tema. Siempre estoy dispuesto a ayudar a los demas y a compartir mis conocimientos.-->
+                        ${usuario.descripcion}
                       </p>
                     </div>
                   </div>
@@ -254,61 +262,65 @@
           <div class="container py-4">
             <div class="row">
               <div class="col mx-auto d-flex justify-content-center flex-column">
-                <form role="form" id="update-form" method="post" autocomplete="off">
-                  <div class="card-body">
-<%--                    primera linea de filas--%>
-                    <div class="row">
-                      <div class="col">
-                        <div class="input-group input-group-dynamic m-4">
 
-                          <label class="form-label"><i class="fas fa-user me-3"></i>Nombre</label>
-                          <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="input-group input-group-dynamic m-4">
-                          <label class="form-label"><i class="fas fa-user me-3"></i>Apellido</label>
-                          <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
-                        </div>
-                      </div>
-                    </div>
-<%--                    segunda line de filas--%>
+                <form:form id="updateForm" role="form" action="${pageContext.request.contextPath}/user/update" method="post" modelAttribute="UsuarioDto">
+                  <div class="card-body">
                     <div class="row">
                       <div class="col">
                         <div class="input-group input-group-dynamic m-4">
-                          <label class="form-label"><i class="fas fa-envelope me-3"></i>Correo</label>
-                          <input class="form-control" aria-label="First Name..." type="email">
+                          <label class="form-label">Nombre</label>
+                          <input type="text" name="nombre" id="nombre" class="inputs form-control" value="${usuario.nombre}">
                         </div>
                       </div>
                       <div class="col">
                         <div class="input-group input-group-dynamic m-4">
-                          <label class="form-label"><i class="fas fa-phone me-3"></i>Telefono</label>
-                          <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                          <label class="form-label">Apellido</label>
+                          <input type="text" name="apellido" id="apellido" class="inputs form-control" value="${usuario.apellido}">
                         </div>
                       </div>
                     </div>
-<%--                    tercera linea de filas--%>
+                    <div class="row">
+                      <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label">Email</label>
+                          <input type="email" name="correo" id="correo" class="inputs form-control" value="${usuario.correo}">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="input-group input-group-dynamic m-4">
+                          <label class="form-label">Numero de telefono</label>
+                          <input type="number" name="telefono" id="telefono" class="inputs form-control" value="${usuario.telefono}">
+                        </div>
+                      </div>
+                    </div>
                       <div class="row">
                         <div class="col">
                             <div class="input-group input-group-dynamic m-4">
-                            <label class="form-label"><i class="fa-solid fa-location-dot me-3"></i>Ubicacion</label>
-                            <input type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                              <select id="ciudad" name="ciudad" class="form-control">
+                                <option disabled value="">Seleccione una ciudad</option> 
+                                <c:forEach items="${ciudades}" var="city">
+                                  <c:choose>
+                                    <c:when test="${usuario.ciudad == city}"><option selected value="${city.id}">${city.ciudad}</option></c:when>
+                                    <c:otherwise><option value="${city.id}">${city.ciudad}</option></c:otherwise>
+                                 </c:choose>
+                                </c:forEach>
+                            </select>
                             </div>
                         </div>
                     <div class="input-group input-group-static m-2 mt-4 row">
                       <label><i class="fas fa-circle-info me-3"></i>Informacion</label>
-                      <label for="message"></label><textarea name="message" class="form-control" id="message" rows="4"></textarea>
+                      <textarea name="descripcion" class="inputs form-control" id="descripcion" rows="4">${usuario.descripcion}</textarea>
                     </div>
                   </div>
-                </form>
+                  <div class="d-flex mt-3 justify-content-between">
+                    <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn bg-gradient-primary">Guardar</button> 
+                  </div>
+                </form:form> 
               </div>
             </div>
           </div>
         </section>
-      </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn bg-gradient-primary">Guardar</button>
       </div>
     </div>
   </div>

@@ -19,7 +19,7 @@
         <span class="navbar-toggler-bar bar3"></span>
       </span>
     </button>
-    <div class="navbar-collapse pt-3 pb-2 py-lg-0 w-100 collapse show" id="navigation" style="">
+    <div class="navbar-collapse pt-3 pb-2 py-lg-0 w-100 collapse show" id="navigation">
       <ul class="navbar-nav navbar-nav-hover ms-auto">
 <%--  home --%>
 
@@ -144,10 +144,22 @@
             <i class="fa fa-user me-1"></i>
             <span class="d-sm-inline d-md-none">Account</span>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"> 
+             <% 
+             if (session.getAttribute("autenticado") != "true"){
+             %>
             <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login">Iniciar sesión</a></li>
+            <%
+            }
+            %>            
             <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/profile">Perfil</a></li>
-            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login">Cerrar sesión</a></li>
+            <%
+             if (session.getAttribute("autenticado") == "true"){
+             %>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Cerrar sesión</a></li>
+            <%
+            }
+            %> 
           </ul>
         </li>
 

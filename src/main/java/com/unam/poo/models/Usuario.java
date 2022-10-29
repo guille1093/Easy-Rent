@@ -3,6 +3,9 @@ package com.unam.poo.models;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.unam.poo.security.modelo.Rol;
 
 import jakarta.persistence.*;
@@ -20,7 +23,7 @@ import jakarta.validation.constraints.NotNull;
 @NoArgsConstructor
 @Entity
 @Table(name="usuario")
-public class Usuario {
+public class Usuario { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -29,8 +32,16 @@ public class Usuario {
     @Basic
     @Column(name = "correo")
     @NotBlank(message = "El correo no puede estar vacio")
-
     private String correo;
+
+    @Basic
+    @Column(name = "telefono")
+    @NotBlank(message = "El telefono no puede estar vacio")
+    private String telefono;
+
+    @Basic
+    @Column(name = "descripcion")
+    private String descripcion;
 
     @Basic
     @Column(name = "dni")
@@ -55,4 +66,10 @@ public class Usuario {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
     private Set<Rol> roles = new HashSet<>();
+
+    @ManyToOne()
+    @JoinColumn(name = "ciudad_id")  
+    @JsonBackReference
+    //@NotBlank(message = "La ciudad no puede estar vacia")
+    private Ciudad ciudad;
 }

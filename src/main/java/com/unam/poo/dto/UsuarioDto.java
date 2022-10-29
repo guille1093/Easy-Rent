@@ -1,10 +1,7 @@
 package com.unam.poo.dto;
  
+import com.unam.poo.models.Ciudad;
 
-import jakarta.persistence.*;
-import jakarta.persistence.Basic;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,6 +13,10 @@ public class UsuarioDto {
     
     private String correo;
 
+    private String telefono;
+
+    private String descripcion;
+
     private Long dni;   
 
     private String nombre;
@@ -23,4 +24,6 @@ public class UsuarioDto {
     private String apellido;
 
     private String contraseña;
+
+    private Long ciudad;
 }

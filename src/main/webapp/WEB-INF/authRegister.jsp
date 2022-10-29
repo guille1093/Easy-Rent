@@ -1,7 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@page import="com.unam.poo.models.Ciudad"%>
 
 
 <%--
@@ -11,9 +12,8 @@
   Time: 21:31
   To change this template use File | Settings | File Templates.
 --%>
-<tags:jsp_imports/>
 
-
+<tags:jsp_imports/> 
 
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
@@ -64,13 +64,8 @@
                     </div>
                     <div class="card-body">
 
-<%--                    <jsp:useBean id="command" class="com.unam.poo.dto.UsuarioDto" scope="request"></jsp:useBean>--%>
-
+                        <%--<jsp:useBean id="command" class="com.unam.poo.dto.UsuarioDto" scope="request"></jsp:useBean>--%>
                         <form:form role="form" action="${pageContext.request.contextPath}/register/newRegister" method="post" modelAttribute="UsuarioDto">
-                            <div class="input-group input-group-outline my-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="correo" id="correo" class="form-control">
-                            </div>
                             <div class="input-group input-group-outline my-3">
                                 <label class="form-label">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control">
@@ -83,6 +78,25 @@
                                 <label class="form-label">DNI</label>
                                 <input type="number" name="dni" id="dni" class="form-control">
                             </div>
+                            <div class="input-group input-group-outline my-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="correo" id="correo" class="form-control">
+                            </div>
+                            <div class="input-group input-group-outline my-3">
+                                <label class="form-label">Numero de telefono</label>
+                                <input type="number" name="telefono" id="telefono" class="form-control">
+                            </div>
+                            
+                            <label class="form-label">Ciudad</label>
+                            <div class="input-group input-group-outline mb-3">
+                                <select id="ciudad" name="ciudad" class="form-control">
+                                    <option selected disabled value="">Seleccione una ciudad</option> 
+                                    <c:forEach items="${ciudades}" var="city">
+                                        <option value="${city.id}">${city.ciudad}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+
                             <div class="input-group input-group-outline mb-3">
                                 <label class="form-label">Contraseña</label>
                                 <input path="contraseña" name="contraseña" id="floatingPassword1" type="password" class="form-control is-invalid" oninput="verificarPasswords(); return false" required> 

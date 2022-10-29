@@ -20,4 +20,8 @@ public class Provincia {
     @Basic
     @Column(name = "provincia", length = 100)
     private String provincia;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_pais", nullable = false)
+    private Pais idPais;
 }
