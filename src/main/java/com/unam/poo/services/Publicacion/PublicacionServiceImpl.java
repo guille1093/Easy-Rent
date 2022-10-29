@@ -56,7 +56,11 @@ public class PublicacionServiceImpl implements PublicacionService{
         publicacionRepository.save(publicacion);
     }
 
-
+    //    metodo de busqueda publicaciones por id o titulo
+    @Override
+    public List<Publicacion> findByTituloPublicacionLike(String titulo) {
+        return publicacionRepository.findByTituloPublicacionLike(titulo);
+    }
 
 
 

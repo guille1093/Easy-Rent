@@ -12,7 +12,31 @@
 <html>
 <head>
     <title>Perfil</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <tags:css_imports/>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.combined.js" integrity="sha256-AQTn9CwiNvZG2zsoT0gswugjZp0alCQySLyt9brT9Cg="
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.js" integrity="sha256-serXvhbeEKdQIfTFSD3wpNCGNx2+/9py7VXfwLhYTfk="
+          crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.widgets.js" integrity="sha256-U+0DXO4scYcNVpt7pnud6Fx3KZqK2I5mI6KOeAjSqOE="
+          crossorigin="anonymous"></script>
+
+<%--  <script>--%>
+
+<%--    $(document).ready(function () {--%>
+<%--      ("#myTable").tablesorter();--%>
+<%--    });--%>
+<%--  </script>--%>
+
 </head>
 <body class="container bg-gray-200">
 <%@include file="common/navBar2.jsp"%>
@@ -104,7 +128,7 @@
                     <div class="col-4 mx-auto">
                       <div class="input-group input-group-dynamic mb-4">
                         <span class="input-group-text"><i class="fas fa-search text-primary" aria-hidden="true"></i></span>
-                        <input class="form-control" placeholder="Buscar" type="text" >
+                        <input class="form-control" placeholder="Buscar" type="text" id="myInput">
                       </div>
                     </div>
                   </div>
@@ -112,15 +136,15 @@
                     <table class="table align-items-center mb-0">
                       <thead>
                       <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Publicacion</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tipo</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Estado</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Visualizaciones</th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha de publicacion</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Publicacion   <i class="fa-solid fa-sort fa-lg"></i> </th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" data-order="desc">Tipo</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Estado</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Visualizaciones</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Fecha de publicacion</th>
                         <th class="text-secondary opacity-7"></th>
                       </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="myTable">
                       <c:forEach items="${publicaciones}" var="propiedad">
                         <tr style="height:100px">
                           <td>
@@ -513,5 +537,55 @@
   }
 </script>
 <tags:js_imports/>
+
+<script>
+  $(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+</script>
+
+<script>
+
+
+    $(document).ready(function(){
+      $('th').on('click', function(){
+          // ordenar la columna de publicacion de forma ascendente sin importar mayusculas o minusculas, y al volver a darle click ordenar de forma descendente
+
+          // si cantidadClicks es igual a 0, ordenar de forma ascendente
+
+          var order = $(this).data('order')
+
+          if(order == 'desc'){
+            $(this).data('order', "asc")
+            $("#myTable").find("tr").sort(function (a, b) {
+              var keyA = $(a).find("td").eq(0).text().toUpperCase();
+              var keyB = $(b).find("td").eq(0).text().toUpperCase();
+              if (keyA < keyB) return -1;
+              if (keyA > keyB) return 1;
+              return 0;
+            }).appendTo("#myTable");
+          }else{
+            $(this).data('order', "desc")
+            $("#myTable").find("tr").sort(function (a, b) {
+              var keyA = $(a).find("td").eq(0).text().toUpperCase();
+              var keyB = $(b).find("td").eq(0).text().toUpperCase();
+              if (keyA > keyB) return -1;
+              if (keyA < keyB) return 1;
+              return 0;
+            }).appendTo("#myTable");
+          }
+
+        });
+    });
+
+
+
+  </script>
+
 </body>
 </html>

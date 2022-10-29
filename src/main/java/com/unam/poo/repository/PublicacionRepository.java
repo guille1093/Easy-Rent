@@ -12,5 +12,10 @@ public interface PublicacionRepository extends JpaRepository<Publicacion, Long> 
 //    lista de todas las publicaciones con estadoPublicacion = activo
     List<Publicacion> findAllByEstadoPublicacion(String estadoPublicacion);
 
+//    motodo de busqueda publicaciones por id o titulo
+    List<Publicacion> findByTituloPublicacionLike(String titulo);
+
+
+
 }
 
