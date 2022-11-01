@@ -22,7 +22,6 @@
     <div class="navbar-collapse pt-3 pb-2 py-lg-0 w-100 collapse show" id="navigation">
       <ul class="navbar-nav navbar-nav-hover ms-auto">
 <%--  home --%>
-
         <li class="nav-item dropdown dropdown-hover mx-2">
           <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="material-icons opacity-6 me-2 text-md">home</i>
@@ -37,7 +36,7 @@
               <a href="#" class="dropdown-item border-radius-md">
                 <span>Inicio</span>
               </a>
-              <a href="#" class="dropdown-item border-radius-md">
+              <a href="#" class="dropdown-item border-radius-md">¸
                 <span>FAQ</span>
               </a>
               <a href="#" class="dropdown-item border-radius-md">
@@ -162,7 +161,6 @@
             %> 
           </ul>
         </li>
-
       </ul>
     </div>
   </div>

@@ -6,20 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<!--
-=========================================================
-* Material Kit 2 - v3.0.4
-=========================================================
 
-* Product Page:  https://www.creative-tim.com/product/material-kit
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -148,7 +136,7 @@
                     <h5 class="card-title">Un alquiler 1</h5>
                     <p class="card-text">
                         This is a longer card with supporting text below as a natural lead-in to additional content.
-                        This content is a little bit longer.
+                        This content is a bit longer.
                     </p>
                 </div>
             </div>
@@ -251,47 +239,6 @@
         <%--        a card with the same image as above and the image squared and a a fav button on the top left corner of the image on the card top--%>
 
     </div>
-    <!-- -------- START PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
-    <%--    <section class="my-5 pt-5">--%>
-    <%--        <div class="container">--%>
-    <%--            <div class="row">--%>
-    <%--                <div class="col-md-6 m-auto">--%>
-    <%--                    <h4>Se el primero </h4>--%>
-    <%--                    <p class="lead">Enterate de los nuevos alquileres antes que nadie, suscribite a nuestro newsletter.</p>--%>
-    <%--             <section class="py-7">--%>
-
-    <%--</section>--%>
-    <%--                        <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">--%>
-    <%--                        <button class="btn btn-primary" type="button" id="button-addon2">Suscribirse</button>--%>
-    <%--                    </div>--%>
-
-    <%--                    <p class="mb-4">--%>
-    <%--                        Your company may not be in the software business,--%>
-    <%--                        but eventually, a software company will be in your business.--%>
-    <%--                    </p>--%>
-    <%--                    <div class="row">--%>
-    <%--                        <div class="col-8">--%>
-    <%--                            <div class="input-group input-group-outline">--%>
-    <%--                                <label class="form-label">Email Here...</label>--%>
-    <%--                                <input type="text" class="form-control mb-sm-0">--%>
-    <%--                            </div>--%>
-    <%--                        </div>--%>
-    <%--                        <div class="col-4 ps-0">--%>
-    <%--                            <button type="button" class="btn bg-gradient-info mb-0 h-100 position-relative z-index-2">Subscribe</button>--%>
-    <%--                        </div>--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-    <%--                <div class="col-md-5 ms-auto">--%>
-    <%--                    <div class="position-relative">--%>
-    <%--                        <img class="max-width-50 w-100 position-relative z-index-2" src="../assets/img/macbook.png" alt="image">--%>
-    <%--                    </div>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-    <%--        </div>--%>
-    <%--    </section>--%>
-
-    <%--    --%>
-    <!-- -------- END PRE-FOOTER 1 w/ SUBSCRIBE BUTTON AND IMAGE ------- -->
 </div>
 <!--   Core JS Files   -->
 <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -307,8 +254,8 @@
 <script src="../assets/js/material-kit.min.js?v=3.0.4" type="text/javascript"></script>
 <script>
     // get the element to animate
-    var element = document.getElementById('count-stats');
-    var elementHeight = element.clientHeight;
+    let element = document.getElementById('count-stats');
+    let elementHeight = element.clientHeight;
 
     // listen for scroll event and call animate function
 
@@ -317,21 +264,20 @@
     // check if element is in view
     function inView() {
         // get window height
-        var windowHeight = window.innerHeight;
+        let windowHeight = window.innerHeight;
         // get number of pixels that the document is scrolled
-        var scrollY = window.scrollY || window.pageYOffset;
+        let scrollY = window.scrollY || window.pageYOffset;
         // get current scroll position (distance from the top of the page to the bottom of the current viewport)
-        var scrollPosition = scrollY + windowHeight;
+        let scrollPosition = scrollY + windowHeight;
         // get element position (distance from the top of the page to the bottom of the element)
-        var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+        let elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
 
         // is scroll position greater than element position? (is element in view?)
         return scrollPosition > elementPosition;
 
-
     }
 
-    var animateComplete = true;
+    let animateComplete = true;
     // animate element when it is in view
     function animate() {
 
@@ -360,7 +306,7 @@
                         countUp2.start();
                     } else {
                         console.error(countUp2.error);
-                    };
+                    }
                 }
                 animateComplete = false;
             }
@@ -368,7 +314,7 @@
     }
 
     if (document.getElementById('typed')) {
-        var typed = new Typed("#typed", {
+        let typed = new Typed("#typed", {
             stringsElement: '#typed-strings',
             typeSpeed: 90,
             backSpeed: 90,
@@ -381,9 +327,9 @@
 <script>
     if (document.getElementsByClassName('page-header')) {
         window.onscroll = debounce(function() {
-            var scrollPosition = window.pageYOffset;
-            var bgParallax = document.querySelector('.page-header');
-            var oVal = (window.scrollY / 3);
+            let scrollPosition = window.pageYOffset;
+            let bgParallax = document.querySelector('.page-header');
+            let oVal = (window.scrollY / 3);
             bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
         }, 6);
     }

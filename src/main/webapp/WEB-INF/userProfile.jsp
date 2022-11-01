@@ -79,17 +79,22 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
           <ul class="nav nav-pills nav-fill p-1" role="tablist">
             <li class="nav-item ps-3 pe-3">
               <a class="nav-link mb-0 px-0 py-1 active" data-bs-toggle="tab" href="#profile-tab" role="tab" aria-controls="profile" aria-selected="true">
-                Perfil
+               <i class="fas fa-circle-user text-primary me-3"></i> Perfil
               </a>
             </li>
             <li class="nav-item ps-3 pe-3">
               <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#dashboard-tab" role="tab" aria-controls="dashboard" aria-selected="false">
-                Mis publicaciones
+                <i class="fas fa-square-poll-horizontal text-primary me-3"></i> Mis publicaciones
+              </a>
+            </li>
+            <li class="nav-item ps-3 pe-3">
+              <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#favorites-tab" role="tab" aria-controls="dashboard" aria-selected="false">
+                <i class="fas fa-heart text-primary me-3"></i> Mis favoritos
               </a>
             </li>
             <li class="nav-item ps-3 pe-3">
               <a class="nav-link mb-0 px-0 py-1" data-bs-toggle="tab" href="#settings-tab" role="tab" aria-controls="settings" aria-selected="false">
-                Configuración
+                <i class="fas fa-gear text-primary me-3"></i> Configuración
               </a>
           </ul>
         </div>
@@ -126,6 +131,7 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
                 </div>
               </div>
             </div>
+
       <div class="tab-pane fade" id="dashboard-tab" role="tabpanel" aria-labelledby="dashboard-tab">
         <div class="card w-xxl-100">
           <div class="card-body">
@@ -184,7 +190,6 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
                               <form:button type="submit" class="fas fa-trash m-3" />
                               <%--                                        <a class="fas fa-trash m-3" data-toggle="tooltip" data-original-title="Borrar publicacion"  data-bs-toggle="modal" data-bs-target="#es${propiedad.id}"></a>--%>
                               <%--                                        <button type="button" onclick="pregunta(${propiedad.id})" class="btn btn-primary"> WENAS TARDES</button>--%>
-
                               <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
                             </form:form>
                           </td>
@@ -199,6 +204,79 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
           </div>
       </div>
     </div>
+
+      <div class="tab-pane fade" id="favorites-tab" role="tabpanel" aria-labelledby="dashboard-tab">
+        <div class="card w-xxl-100">
+          <div class="card-body">
+            <div class="container">
+              <div class="card h-100 align-content-xxl-center">
+                <div class="card">
+                  <div class="row text-center py-2 mt-3">
+                    <div class="col-4 mx-auto">
+                      <div class="input-group input-group-dynamic mb-4">
+                        <span class="input-group-text"><i class="fas fa-search text-primary" aria-hidden="true"></i></span>
+                        <input class="form-control" placeholder="Buscar" type="text" id="myInput2">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table align-items-center mb-0">
+                      <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Publicacion   <i class="fa-solid fa-sort fa-lg"></i> </th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" data-order="desc">Tipo</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Estado</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Visualizaciones</th>
+                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Fecha de publicacion</th>
+                        <th class="text-secondary opacity-7"></th>
+                      </tr>
+                      </thead>
+                      <tbody id="myTable2">
+                      <c:forEach items="${publicaciones}" var="propiedad">
+                        <tr style="height:100px">
+                          <td>
+                            <div class="d-flex px-2 py-1">
+                              <div>
+                                <img src="../assets/img/rents/1.webp" class="avatar avatar-xl me-3" alt="logo">
+                              </div>
+                              <div class="d-flex flex-column justify-content-center">
+                                <a class="mb-0 h6" href="${pageContext.request.contextPath}/publicacion/verPublicacion/${propiedad.id}">${propiedad.tituloPublicacion}</a>
+                                <p class="text-xs text-secondary mb-0">${propiedad.precioPublicacion}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-xs text-secondary mb-0">${propiedad.idTipo.tipo}</p>
+                          </td>
+                          <td class="align-middle text-center">
+                            <span class="badge bg-gradient-<c:if test="${propiedad.estadoPublicacion == \"Alquilado\"}">warning</c:if><c:if test="${propiedad.estadoPublicacion == \"activo\"}">success</c:if>" href="www.google.com">${propiedad.estadoPublicacion}</span>
+                          </td>
+
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-normal">420</span>
+                          </td>
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-normal">${propiedad.fechaHoraPublicacion.toLocalDate()}</span>
+                          </td>
+                          <td class="align-middle">
+                            <form:form action="bajaPublicacion/${propiedad.id}" method="post" modelAttribute="publicaciones" name="${propiedad.id}">
+                              <form:button type="submit" class="fas fa-trash m-3" />
+                              <%--                                        <a class="fas fa-trash m-3" data-toggle="tooltip" data-original-title="Borrar publicacion"  data-bs-toggle="modal" data-bs-target="#es${propiedad.id}"></a>--%>
+                              <%--                                        <button type="button" onclick="pregunta(${propiedad.id})" class="btn btn-primary"> WENAS TARDES</button>--%>
+                              <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
+                            </form:form>
+                          </td>
+                        </tr>
+                      </c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="tab-pane fade" id="settings-tab" role="tabpanel" aria-labelledby="settings-tab">
         <div class="card card-plain h-100">
@@ -341,6 +419,7 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
                 </form:form> 
               </div>
             </div>
+          </div>
           </div>
         </section>
       </div>
