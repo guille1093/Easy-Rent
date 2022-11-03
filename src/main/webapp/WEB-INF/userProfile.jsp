@@ -11,9 +11,11 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page import="com.unam.poo.models.Ciudad"%>
 <%@page session='true'%> 
-<% 
+<%
+System.out.println("----------------------------------------------");
 System.out.println("ID Sesion: " + session.getId());
 System.out.println("Usuario ID: " + session.getAttribute("userId"));
+System.out.println("----------------------------------------------");
 %>
 <tags:jsp_imports/>
 <html>
@@ -73,6 +75,7 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
       </div>
     </div>
 
+<%--    selector start--%>
     <section class="mb-2 mt-2">
       <div class="container">
         <div class="nav-wrapper position-relative end-0">
@@ -100,8 +103,12 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
         </div>
       </div>
     </section>
+<%--    selector end--%>
 
+<%--    tabs--%>
     <div class="tab-content">
+
+      <%--    tab informacion personal--%>
       <div class="tab-pane fade show active" id="profile-tab" role="tabpanel" aria-labelledby="profile-tab">
             <div class="card mb-4 w-xxl-100">
               <div class="card-header pb-0">
@@ -131,7 +138,9 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
                 </div>
               </div>
             </div>
+      <%--end tab informacion personal--%>
 
+      <%--  tab mis publicaciones        --%>
       <div class="tab-pane fade" id="dashboard-tab" role="tabpanel" aria-labelledby="dashboard-tab">
         <div class="card w-xxl-100">
           <div class="card-body">
@@ -204,7 +213,9 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
           </div>
       </div>
     </div>
+        <%--end tab mis publicaciones--%>
 
+        <%-- tab mis reservas --%>
       <div class="tab-pane fade" id="favorites-tab" role="tabpanel" aria-labelledby="dashboard-tab">
         <div class="card w-xxl-100">
           <div class="card-body">
@@ -277,7 +288,9 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
           </div>
         </div>
       </div>
+        <%--end tab mis reservas--%>
 
+        <%--  tab  configuracion --%>
       <div class="tab-pane fade" id="settings-tab" role="tabpanel" aria-labelledby="settings-tab">
         <div class="card card-plain h-100">
           <div class="card-body p-3">
@@ -331,7 +344,10 @@ System.out.println("Usuario ID: " + session.getAttribute("userId"));
           </div>
         </div>
       </div>
+            <%--end tab configuracion--%>
+
       </div>
+<%--    end tabs--%>
       </div>
     </div>
 

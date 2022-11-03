@@ -120,7 +120,13 @@
                 </a>
                 <div class="card-body">
                     <h5 class="card-title">Alquiler a la vuelta de la facu</h5>
-                    <h2 class="card-text"> $ 10.000</h2>
+                    <div class="row">
+                        <div class="col-10"><h2 class="card-text"> $ 10.000 </h2></div>
+                        <div class="col-2"><h4 class="card-text mt-2"><i class="far fa-heart text-primary"></i></h4></div>
+<%--                        corazon relleno para cuando esta en favoritos --%>
+<%--                        <div class="col-2"><h4 class="card-text mt-2"><i class="fa fa-heart text-primary"></i></h4></div>--%>
+                    </div>
+<%--                    <h2 class="card-text"> $ 10.000 <i class="far fa-heart text-primary"></i></h2>--%>
                     <p class="card-text">
                         Departamento con todos los servicios incluidos, internet agua y luz, con una vista increible a la ciudad.
                     </p>
