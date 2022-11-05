@@ -15,6 +15,10 @@ La division de las Historias de Usuario sera la siguiente:
 - Modificar propiedad(Implementacion de la funcionalidad faltante de la Iteracion 1)
     - **Encargados**: Guillermo Quintana, Marcelo Kachuk
 
+# Tablero de Proyecto
+
+![](link-a-imagen)
+
 # Diseño OO
 
 ![](link-a-imagen)
@@ -262,5 +266,5 @@ La division de las Historias de Usuario sera la siguiente:
 Teniendo en cuenta lo realizado en la release 3 podemos decir que hubo un gran aporte por parte de todos los integrantes del grupo
 cada uno cumpliendo con sus tareas asignadas y trabajando de manera correcta con el repositorio de github.
 Por otra parte se realizaron de manera completa las 3 actividades (Consultar ubicación, Modificar datos de usuario, Consultar usuario) planteadas para la iteracion. 
-Cumpliendo con su documentacion, desarrollo de wireframes e implemntacion de funcionalidades
+Cumpliendo con su documentacion, desarrollo de wireframes e implementacion de funcionalidades
 Ademas de esto se mantuvo la forma de trabajo de a pares, siguiendo con esta metodologia para las siguientes iteraciones.
