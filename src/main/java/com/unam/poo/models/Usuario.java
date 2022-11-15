@@ -72,4 +72,11 @@ public class Usuario {
     @JsonBackReference
     //@NotBlank(message = "La ciudad no puede estar vacia")
     private Ciudad ciudad;
+
+//    agregar a favoritos
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_publicacion", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_publicacion"))
+    @JsonManagedReference
+    private Set<Publicacion> favoritos = new HashSet<>();
+
 }

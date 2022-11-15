@@ -9,6 +9,7 @@
 <%@page contentType="text/html;charset=UTF-8"%>
 <%@taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <tags:jsp_imports/>
 <html>
 <head>
@@ -56,7 +57,33 @@
 <%--                agregar a favoritos y contacto--%>
                 <div class="d-flex mb-3">
                     <div class="text-primary mr-2 ms-2 me-2">
-                        <a href="#" class="btn btn-outline-primary btn-sm">Agregar a favoritos</a>
+
+                        <%
+                            if (session.getAttribute("autenticado") != "true"){
+                        %>
+                        <a href="${pageContext.request.contextPath}/login" class="btn btn-outline-primary btn-sm">Agregar a favoritos</a>
+                        <%
+                            }
+                        %>
+                        <%
+                            if (session.getAttribute("autenticado") == "true"){
+                        %>
+                        <c:if test="${usuario.favoritos.contains(publicacion)}">
+                            <form:form method="post" action="/publicacion/quitarFavorito/${publicacion.id}" >
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Quitar de favoritos</button>
+                            </form:form>
+                        </c:if>
+                        <c:if test="${!usuario.favoritos.contains(publicacion)}">
+                            <form:form method="post" action="/publicacion/agregarFavorito/${publicacion.id}" >
+                                <button type="submit" class="btn btn-outline-primary btn-sm">Agregar a favoritos</button>
+                            </form:form>
+                        </c:if>
+                        <%
+                            }
+                        %>
+
+
+
                     </div>
                     <div class="text-primary mr-2 ms-2 me-2">
                         <a href="#" class="btn btn-outline-primary btn-sm">Contactar</a>

@@ -8,6 +8,7 @@ import com.unam.poo.services.Comodidad.ComodidadService;
 import com.unam.poo.services.Provincia.ProvinciaService;
 import com.unam.poo.services.Publicacion.PublicacionService;
 import com.unam.poo.services.Tipo.TipoService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -98,7 +99,7 @@ public class PublicacionController {
 
         model.addAttribute("publicacion", publicacion);
 
-        publicacionService.deletePublicacionById(4L);
+//        publicacionService.deletePublicacionById(4L);
 
         return "Publicacion/editarPublicacion";
     }
@@ -145,13 +146,17 @@ public class PublicacionController {
 //    Ver una publicacion
 //    Ruta localhost:8080/publicacion/verPublicacion/{id}
     @GetMapping("/verPublicacion/{id}")
-    public String verPublicacion(@PathVariable("id") Long id, Model model){
+    public String verPublicacion(@PathVariable("id") Long id, Model model, HttpServletRequest request){
 
         Publicacion publicacion = publicacionService.getPublicacionById(id);
+        Long idUsuario = (Long) request.getSession().getAttribute("userId");
+        Usuario usuario = usuarioService.getUsuarioById(idUsuario);
 
-
+        model.addAttribute("usuario", usuario);
         model.addAttribute("publicacion", publicacion);
+//        usuarioService.agregarFavoritos(id,1L);
 
+//        usuarioService.quitarFavoritos(1L,1L);
         return "Publicacion/verPublicacion";
     }
 
@@ -174,6 +179,33 @@ public class PublicacionController {
 
         return "Publicacion/verPublicaciones2";
     }
+
+//    agregar a favoritos
+    @PostMapping("/agregarFavorito/{id}")
+    public String agregarFavorito(@PathVariable("id") Long id,  HttpServletRequest request) {
+        Long idUsuario = (Long) request.getSession().getAttribute("userId");
+        usuarioService.agregarFavoritos(id,idUsuario);
+        return "redirect:/publicacion/verPublicacion/{id}";
+    }
+
+    @PostMapping("/quitarFavorito/{id}")
+    public String quitarFavorito(@PathVariable("id") Long id,  HttpServletRequest request) {
+        Long idUsuario = (Long) request.getSession().getAttribute("userId");
+        usuarioService.quitarFavoritos(id,idUsuario);
+        return "redirect:/publicacion/verPublicacion/{id}";
+    }
+
+
+//    @GetMapping("/verFavoritos")
+//    public String verFavoritos(Model model){
+//
+////        List<Publicacion> publicaciones = publicacionService.findAllByFavorito("si");
+//
+//        model.addAttribute("publicaciones", publicaciones);
+//
+//        return "Publicacion/verFavoritos";
+//    }
+
 
 
 }

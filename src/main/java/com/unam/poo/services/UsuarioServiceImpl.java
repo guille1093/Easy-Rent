@@ -1,6 +1,10 @@
 package com.unam.poo.services;
+import com.unam.poo.models.Publicacion;
 import com.unam.poo.models.Usuario;
+import com.unam.poo.repository.PublicacionRepository;
 import com.unam.poo.repository.UsuarioRepository;
+import com.unam.poo.services.Publicacion.PublicacionService;
+import com.unam.poo.services.Publicacion.PublicacionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +15,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    @Autowired
+    private PublicacionRepository publicacionRepository;
 
     @Override
     public List<Usuario> findAll() {
@@ -49,5 +56,20 @@ public class UsuarioServiceImpl implements UsuarioService {
             return null;
         }
     }
+
+    @Override
+    public void agregarFavoritos(Long idPublicacion, Long id) {
+        Usuario usuario = usuarioRepository.findById(id).get();
+        usuario.getFavoritos().add(publicacionRepository.findById(idPublicacion).get());
+        usuarioRepository.save(usuario);
+    }
+
+    @Override
+    public void quitarFavoritos(Long idPublicacion, Long id) {
+        Usuario usuario = usuarioRepository.findById(id).get();
+        usuario.getFavoritos().remove(publicacionRepository.findById(idPublicacion).get());
+        usuarioRepository.save(usuario);
+    }
+
 }
 

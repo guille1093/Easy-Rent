@@ -17,6 +17,6 @@ public interface PublicacionService {
     List<Publicacion> findAllByEstadoPublicacion(String estadoPublicacion);
 
 //    metodo de busqueda publicaciones por id o titulo
-    List<Publicacion> findByTituloPublicacionLike(String titulo);
+    List<Publicacion> findByTituloPublicacionContaining(String titulo);
 
 }

@@ -32,15 +32,8 @@ public class PublicacionServiceImpl implements PublicacionService{
 
     @Override
     public void updatePublicacion(Publicacion publicacion, Long id) {
-        Publicacion publicacion1 = publicacionRepository.findById(id).get();
-        publicacion1.setTituloPublicacion(publicacion.getTituloPublicacion());
-        publicacion1.setDescripcionPublicacion(publicacion.getDescripcionPublicacion());
-        publicacion1.setPrecioPublicacion(publicacion.getPrecioPublicacion());
-        publicacion1.setIdTipo(publicacion.getIdTipo());
-//        publicacion1.setUsuario(publicacion.getUsuario());
-        publicacion1.setIdCiudad(publicacion.getIdCiudad());
-        publicacion1.setCaracteristicasComodidades(publicacion.getCaracteristicasComodidades());
-        publicacionRepository.save(publicacion1);
+
+        publicacionRepository.save(publicacion);
     }
 
     @Override
@@ -58,9 +51,10 @@ public class PublicacionServiceImpl implements PublicacionService{
 
     //    metodo de busqueda publicaciones por id o titulo
     @Override
-    public List<Publicacion> findByTituloPublicacionLike(String titulo) {
-        return publicacionRepository.findByTituloPublicacionLike(titulo);
+    public List<Publicacion> findByTituloPublicacionContaining(String titulo) {
+        return publicacionRepository.findByTituloPublicacionContaining(titulo);
     }
+
 
 
 

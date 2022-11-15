@@ -9,4 +9,7 @@ public interface UsuarioService {
     Usuario getUsuarioById(Long id);
     Usuario saveUsuario(Usuario usuario);
     Usuario getUsuarioByCorreo(String correo);
+
+    void agregarFavoritos(Long idPublicacion,Long id);
+    void quitarFavoritos(Long idPublicacion,Long id);
 }

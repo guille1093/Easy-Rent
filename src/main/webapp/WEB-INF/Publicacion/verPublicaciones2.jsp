@@ -239,6 +239,8 @@
         </div>
 <%--        Publicaciones start--%>
         <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+
+          <c:forEach items="${publicaciones}" var="publicacion">
           <div class="col">
             <div class="card" style="--bs-btn-hover-bg:100">
               <a href="" class="position-relative overflow-hidden">
@@ -259,14 +261,16 @@
                 </div>
               </a>
               <div class="card-body">
-                <h5 class="card-title">Alquiler a la vuelta de la facu</h5>
-                <h2 class="card-text"> $ 10.000</h2>
+                <h5 class="card-title">${publicacion.tituloPublicacion}</h5>
+                <h2 class="card-text"> $ ${publicacion.precioPublicacion.intValue()}</h2>
                 <p class="card-text">
-                  Departamento con todos los servicios incluidos, internet agua y luz, con una vista increible a la ciudad.
+                    ${publicacion.descripcionPublicacion}
                 </p>
               </div>
             </div>
           </div>
+          </c:forEach>
+
           <div class="col">
             <div class="card">
               <div class="ratio ratio-1x1">
@@ -308,20 +312,22 @@
               </div>
             </div>
           </div>
+
+
           <div class="col">
             <div class="card">
               <div class="ratio ratio-1x1">
                 <img class="card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/6.webp" alt="Card image cap">
               </div>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title"></h5>
                 <p class="card-text">
-                  This is a longer card with supporting text below as a natural lead-in to additional content.
-                  This content is a little bit longer.
+
                 </p>
               </div>
             </div>
           </div>
+
         </div>
 <%--        Publicaciones end--%>
         <div class="col-12 pb-1">
@@ -354,5 +360,30 @@
 
 
 <tags:js_imports/>
+
+<script>
+  // darle funcionalidad al input #buscador
+    const buscador = document.querySelector('#buscador');
+    // obtener los valores de la variable publicaciones
+    const publicaciones = ${publicaciones};
+
+    buscador.addEventListener('keyup', (e) => {
+
+        console.log("holaaaa");
+        const texto = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card) => {
+            const titulo = card.querySelector('.card-title').textContent.toLowerCase();
+            const descripcion = card.querySelector('.card-text').textContent.toLowerCase();
+            if (titulo.indexOf(texto) != -1 || descripcion.indexOf(texto) != -1) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+</script>
+
 </body>
 </html>

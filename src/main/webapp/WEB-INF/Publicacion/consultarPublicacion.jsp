@@ -87,12 +87,15 @@
 
                                 <form:form action="bajaPublicacion/${propiedad.id}" method="post" modelAttribute="publicaciones" name="${propiedad.id}">
 
-
-                                    <form:button type="submit" class="fas fa-trash m-3" />
+<%--                                    class="fa fa-trash"--%>
+                                    <form:button type="submit" >Eliminar</form:button>
+                                </form:form>
+                            </td>
 <%--                                        <a class="fas fa-trash m-3" data-toggle="tooltip" data-original-title="Borrar publicacion"  data-bs-toggle="modal" data-bs-target="#es${propiedad.id}"></a>--%>
 <%--                                        <button type="button" onclick="pregunta(${propiedad.id})" class="btn btn-primary"> WENAS TARDES</button>--%>
-
-                                    <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}" class="fas fa-edit" data-toggle="tooltip" data-original-title="Editar"></a>
+                            <td class="align-middle">
+<%--                                class=" fa-edit"--%>
+                                <a href="${pageContext.request.contextPath}/publicacion/editarPublicacion/${propiedad.id}"  data-original-title="Editar">EDITAR</a>
 
 
 <%--                                    <!-- Modal -->--%>
@@ -119,7 +122,7 @@
 <%--                                    <form:button type="submit" class="btn bg-gradient-danger" data-bs-dismiss="modal" >Eliminar</form:button>--%>
 
 
-                                </form:form>
+
 
 
 

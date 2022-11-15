@@ -47,12 +47,21 @@
           <h3 class="multisteps-form__title">Tipo de Propiedad</h3>
           <div class="multisteps-form__content">
 
+<%--              ${publicacion.idTipo.id}--%>
+
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
                 <%--@elvariable id="tipos" type=""--%>
               <form:select path="idTipo" class="multisteps-form__select form-control" >
                 <option>Seleccione un tipo de propiedad</option>
                 <c:forEach items="${tipos}" var="tipo">
-                  <form:option value="${tipo.id}" label="${tipo.tipo}"/>
+
+                  <c:if test="${publicacion.idTipo.id == tipo.id}">
+                    <form:option value="${tipo.id}"  label="${tipo.tipo}" selected="true"/>
+                  </c:if>
+                  <c:if test="${publicacion.idTipo.id != tipo.id}">
+                    <form:option value="${tipo.id}" label="${tipo.tipo}"/>
+                  </c:if>
+
                 </c:forEach>
               </form:select>
 
@@ -91,8 +100,8 @@
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
               <select class="multisteps-form__select form-control" name="provincia">
-                <option selected="selected">Seleccione una provincia</option>
-                <option value="Misiones">Misiones</option>
+                <option >Seleccione una provincia</option>
+                <option value="Misiones" selected>Misiones</option>
               </select>
             </div>
 
@@ -100,8 +109,18 @@
               <form:select path="idCiudad" class="multisteps-form__select form-control" >
                 <option>Seleccione una ciudad</option>
                 <c:forEach items="${ciudades}" var="ciudad">
-                  <form:option value="${ciudad.id}" label="${ciudad.ciudad}"/>
+
+                  <c:if test="${publicacion.idCiudad.id == ciudad.id}">
+                    <form:option value="${ciudad.id}" label="${ciudad.ciudad}" selected="true"/>
+                  </c:if>
+                  <c:if test="${publicacion.idCiudad.id != ciudad.id}">
+                    <form:option value="${ciudad.id}" label="${ciudad.ciudad}"/>
+                  </c:if>
+
                 </c:forEach>
+
+
+
               </form:select>
             </div>
 
@@ -112,6 +131,10 @@
                 <div id="map" style="width: 100%; height:450px"></div>
 
 <%--                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4198.158044205938!2d-55.77119880812339!3d-27.77231641207666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94563758e73ae093%3A0x4642bcf36db682e7!2sKulipadel!5e0!3m2!1ses-419!2sar!4v1664591023556!5m2!1ses-419!2sar"  width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>--%>
+
+                <form:input type="hidden" id="latitud" name="latitud" path="latitudPublicacion" value="${publicacion.latitudPublicacion}"/>
+                <form:input type="hidden" id="longitud" name="longitud" path="longitudPublicacion" value="${publicacion.longitudPublicacion}"/>
+
               </div>
             </div>
 
@@ -261,8 +284,17 @@
 
                 <c:if test="${caracteristica.idComodidad.idComodidad == comodidad.idComodidad}">
                     <div class="col form-check-inline">
-                      <form:checkbox path="caracteristicasComodidades" value="${caracteristica.idCaracteristica}" class="form-check-input "/>
-                      <label class="form-check-label" >${caracteristica.nombreCaracteristica}</label>
+
+                      <c:if test="${publicacion.caracteristicasComodidades.contains(caracteristica)}">
+                        <form:checkbox path="caracteristicasComodidades" value="${caracteristica.idCaracteristica}" class="form-check-input" checked="true"/>
+                        <label class="form-check-label" >${caracteristica.nombreCaracteristica}</label>
+                      </c:if>
+
+                      <c:if test="${!publicacion.caracteristicasComodidades.contains(caracteristica)}">
+                        <form:checkbox path="caracteristicasComodidades" value="${caracteristica.idCaracteristica}" class="form-check-input" />
+                        <label class="form-check-label" >${caracteristica.nombreCaracteristica}</label>
+                      </c:if>
+
                     </div>
                 </c:if>
 
@@ -270,8 +302,6 @@
             </div>
 
           </c:forEach>
-
-
 
           </div>
 
@@ -295,8 +325,10 @@
 </div>
 
 <script src="../../assets/js/plugins/multistep.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
-<script src="../../assets/js/map.js"></script>
+<%--<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>--%>
+<%--<script src="../../assets/js/map.js"></script>--%>
+<script src="../../assets/js/editMap.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRitCKrHHCHbh9KlJed9j697DDQEW-Go&callback=iniciarMap"></script>
 
 
 </body>

@@ -10,7 +10,7 @@
 
     <tags:css_imports/>
 
-    <title>Easy-Rent | Editar publicación</title>
+    <title>Easy-Rent | Editar publicacion</title>
 </head>
 <body>
 

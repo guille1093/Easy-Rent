@@ -48,7 +48,7 @@
                 <div class="col-lg-8 text-center mx-auto my-auto">
                     <h1 class=" text-white" >Easy-Rent</h1>
                     <p class="lead mb-4 text-white opacity-8">Tu proximo lugar esta aca</p>
-                    <button type="submit" class="btn bg-gradient-primary text-white border-radius-lg"> Quiero buscar un alquiler </button>
+                    <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/publicacion/verPublicaciones"> Quiero buscar un alquiler </a>
                     <span>ㅤㅤ</span>
                     <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/publicacion/crearPublicacion">Quiero publicar un alquiler</a>
                 </div>

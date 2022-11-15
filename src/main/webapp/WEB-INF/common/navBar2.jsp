@@ -150,12 +150,12 @@
             <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login">Iniciar sesión</a></li>
             <%
             }
-            %>            
-            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/profile">Perfil</a></li>
+            %>
             <%
              if (session.getAttribute("autenticado") == "true"){
              %>
             <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Cerrar sesión</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/user/profile">Perfil</a></li>
             <%
             }
             %> 
