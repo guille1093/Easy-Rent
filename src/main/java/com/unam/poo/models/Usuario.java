@@ -63,6 +63,9 @@ public class Usuario {
     @NotBlank(message = "La contraseña no puede estar vacia")
     private String contraseña;
 
+    /* Para baja logica */
+    private Boolean activo = true;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "id_usuario"), inverseJoinColumns = @JoinColumn(name = "id_rol"))
     private Set<Rol> roles = new HashSet<>();

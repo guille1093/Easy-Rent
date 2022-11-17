@@ -30,7 +30,7 @@ public class ProvinciaServiceImpl implements ProvinciaService {
 
     @Override
     public Provincia saveProvincia(Provincia provincia) {
-        return null;
+        return provinciaRepository.save(provincia);
     }
 }
 

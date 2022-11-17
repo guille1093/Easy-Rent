@@ -1,6 +1,7 @@
 package com.unam.poo.controllers.auth;
 
  
+import com.unam.poo.dto.LoginDto;
 import com.unam.poo.dto.UsuarioDto;
 import com.unam.poo.models.CaracteristicaComodidad;
 import com.unam.poo.models.Ciudad;
@@ -19,8 +20,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import com.unam.poo.services.UsuarioService;
  
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -53,6 +56,9 @@ public class UserProfileController {
 
     @Autowired
     CiudadService ciudadService;
+    
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
     @GetMapping("/profile")
@@ -75,7 +81,7 @@ public class UserProfileController {
     }
 
     @PostMapping("/update")
-    public String updateProfile(@Validated @ModelAttribute("UsuarioDto") UsuarioDto usuarioDto, HttpServletRequest request, HttpServletResponse response){
+    public String updateProfile(Model model, @Validated @ModelAttribute("UsuarioDto") UsuarioDto usuarioDto, HttpServletRequest request, HttpServletResponse response){
         try {
             System.out.println("DATOS A ACTUALIZAR: ");
             System.out.println("Nombre: " + usuarioDto.getNombre());
@@ -111,7 +117,48 @@ public class UserProfileController {
             response.sendRedirect(request.getContextPath()+"/user/profile");
             return "userProfile";
         } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage() + ". Causa: " + e.getCause());
+            System.out.println("Error: " + e.getMessage() + ". Causa: " + e.getCause()); 
+            model.addAttribute("mensaje", e.getMessage() );
+            return "error";
+        }
+    }
+
+    @PostMapping("/deleteAccount")
+    public String deleteAccount(Model model, @Validated @ModelAttribute("LoginDto") LoginDto loginDto, HttpServletRequest request, HttpServletResponse response, BindingResult result) {
+        if (result.hasErrors()) { 
+          return "Error";
+        }  
+        try { 
+            System.out.println("Buscando usuario");
+            Usuario user = usuarioService.getUsuarioByCorreo(loginDto.getCorreo().toString()); 
+            System.out.println("Encontrado");
+            if (user != null){  
+                System.out.println("Mail correcto, verificando contraseña");
+                if (passwordEncoder.matches(loginDto.getContraseña(), user.getContraseña())){
+                    //Coinciden entonces:
+                    System.out.println("AUTENTICADO: Dando de baja la cuenta...");
+                   
+                    user.setActivo(false);
+                    usuarioService.saveUsuario(user);
+                    
+                    /* Como en el logout -> */ 
+                    request.getSession().removeAttribute("usuario"); 
+                    request.getSession().removeAttribute("autenticado"); 
+                    response.sendRedirect(request.getContextPath() + "/");
+                    return "welcome"; 
+                }else{
+                    System.out.println("ERROR: Contraseña incorrecta");
+                    model.addAttribute("mensaje", "Contraseña incorrecta");
+                    return "error";
+                }
+            }else{
+                System.out.println("ERROR: Mail incorrecto");
+                model.addAttribute("mensaje", "Mail incorrecto");
+                return "error";
+            } 
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+            model.addAttribute("mensaje", e.getMessage());
             return "error";
         }
     }

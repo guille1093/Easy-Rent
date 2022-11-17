@@ -554,7 +554,8 @@ System.out.println("----------------------------------------------");
           <div class="container py-4">
             <div class="row">
               <div class="col mx-auto d-flex justify-content-center flex-column">
-                <form role="form" id="update-form5" method="post" autocomplete="off">
+                
+                <form:form role="form" action="${pageContext.request.contextPath}/user/deleteAccount" method="post" modelAttribute="LoginDto">
                   <div class="card-body">
                     <div class="row">
                       <h5><i class="fas fa-warning text-3xl text-danger me-3"></i>Esta accion no puede deshacerse</h5>
@@ -562,7 +563,7 @@ System.out.println("----------------------------------------------");
                       <div class="col">
                         <div class="input-group input-group-dynamic m-4">
                           <label class="form-label"><i class="fas fa-user me-3"></i>Correo</label>
-                          <input type="email" class="form-control">
+                          <input #correo type="email" name="correo" id="correo" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -570,21 +571,22 @@ System.out.println("----------------------------------------------");
                       <div class="col">
                         <div class="input-group input-group-dynamic m-4">
                           <label class="form-label"><i class="fas fa-key me-3"></i>Contraseña</label>
-                          <input type="password" class="form-control">
+                          <input #contraseña path="contraseña" name="contraseña" type="password" class="form-control is-invalid" required> 
                         </div>
                       </div>
                     </div>
                   </div>
-                </form>
+                  <div class="d-flex justify-content-between">
+                    <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn bg-gradient-danger">Confirmar</button>
+                  </div>
+                </form:form>
+
               </div>
             </div>
           </div>
         </section>
-      </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn bg-gradient-danger">confirmar</button>
-      </div>
+      </div> 
     </div>
   </div>
 </div>
