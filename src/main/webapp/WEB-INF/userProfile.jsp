@@ -244,6 +244,10 @@ System.out.println("----------------------------------------------");
                       </thead>
                       <tbody id="myTable2">
                       <c:forEach items="${publicaciones}" var="propiedad">
+
+                        <c:if test="${usuario.favoritos.contains(propiedad)}">
+<%--                          <%System.out.println("PRUEBAAAAA");%>--%>
+
                         <tr style="height:100px">
                           <td>
                             <div class="d-flex px-2 py-1">
@@ -278,6 +282,7 @@ System.out.println("----------------------------------------------");
                             </form:form>
                           </td>
                         </tr>
+                        </c:if>
                       </c:forEach>
                       </tbody>
                     </table>
