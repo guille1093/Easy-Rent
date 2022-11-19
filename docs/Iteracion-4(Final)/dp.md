@@ -111,10 +111,10 @@ La division de las Historias de Usuario sera la siguiente:
 ![](link-a-imagen)
 
 <br><br>
-**Caso de uso**:   
-**Descripción**: 
-**Precondición**:
-**Postcondición**:
+**Caso de uso**: Eliminar un alquiler de favoritos  <br>
+**Descripción**: Un usuario quiere eliminar una publicación de su lista de publicaciones favoritas.<br>
+**Precondición**: El usuario debe ingresar a su cuenta.<br>
+**Postcondición**: La publicación se elimina de la lista de favoritos (base de datos). <br>
 
 **Flujo Típico de eventos**:
 <table>
@@ -123,49 +123,26 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>1.</b> Esta caso de uso comienza cuando un usuario ingresa a su perfil y selecciona la opción de "Ver favoritos".</td>
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td><b>2</b></td>
+    <td><b>2.</b>El sistema despliega una ventana con las publicaciones etiquetadas como favoritos por el usuario.</td>
   </tr>
   <tr>
-    <td><b>3</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>4</b></td>
-  <tr>
-    <td><b>5</b></td>
+    <td><b>3.</b>El usuario hace click al botón de "Eliminar" al lado de la publicación.</td>
     <td></td>
   </tr>
   <tr>
-    <td><b>6</b></td>
     <td></td>
- </tr>
- <tr>
-    <td><b>7</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td><b>8</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td><b>9</b></td>
-    <td></td>
- </tr>
- <tr>
-    <td></td>
-    <td><b>10</b></td>
- </tr>
+    <td><b>4.</b>El sistema recarga la lista y muestra los favoritos actualizados.</td>
 </table>
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:
+**Paso 2.1**: El usuario no posee publicaciones en su lista de favoritos, por tanto el sistema da aviso de ello.<br>
+**Paso 4.1**: El usuario eliminó el último favorito, por tanto el sistema avisa que ya no posee favoritos.
 
 <br></br>
 
@@ -227,24 +204,18 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Eliminar un alquiler de Favoritos**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como** usuario del sistema<br> 
+**Quiero** eliminar un alquiler de favoritos<br>
+**Para** dejar de seguir una publicación que ya no le interesa.
 
 <u>Criterios de aceptación</u>
-
--
+- La lista se debe actualizar de inmediato.
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
-    - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
 - Descripción del Uso del wireframe (Caso de Uso real)
-- Creación del modelo de datos(Entidad/es de Base de datos)
-- Validación de campos con sus respectivas alertas
+- Creación de la funcionalidad.
 
 <br><br>
 
