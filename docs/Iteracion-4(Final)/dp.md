@@ -26,10 +26,10 @@ La division de las Historias de Usuario sera la siguiente:
 ![](link-a-imagen)  
 
 <br><br>
-**Caso de uso**:   
-**Descripción**:    
-**Precondición**:  
-**Postcondición**:   
+**Caso de uso**: Dar de baja un usuario <br>
+**Descripción**: El usuario ingresa a su perfil y busca la opción para dar de baja su usuario, presiona sobre el botón "Dar de baja" y su usuario se desactiva <br>
+**Precondición**:  Que el usuario se encuentre con la sesión iniciada <br>
+**Postcondición**:  Que el usuario se haya dado de baja<br> 
 
 **Flujo Típico de eventos**:
 <table>
@@ -38,66 +38,46 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b>. 
+    <td><b>1</b>.  Este caso de uso comienza cuando el usuario una vez <br>en su perfil, hace click en el boton “Dar de baja” <br>
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td><b>2</b>.
+    <td><b>2</b>. El sistema despliega el mensaje “Una vez confirmada <br> esta acción no tiene retroceso” y un formulario <br> con los siguientes campos:<br>
+    - Campo 1: E-Mail<br>
+    - Campo 2: Contraseña<br>
   </tr>
   <tr>
-    <td><b>3</b>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>4</b> </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>5</b> </td>
+    <td><b>3</b>. El usuario selecciona el campo con la etiqueta <br>“E-Mail” y lo completa<br>
     <td></td>
   </tr>
   <tr>
-    <td><b>6</b></td>
+    <td><b>4</b>. El usuario selecciona el campo con la etiqueta <br>“Contraseña” y lo completa<br>
     <td></td>
   </tr>
   <tr>
-    <td><b>7</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>8</b></td>
-    <td></td>
-  <tr>
-    <td><b>9</b></td>
-    <td></td>
-  <tr>
-    <td></td>
-    <td><b>10</b></td>
- </tr>
-   <tr>
-    <td><b>11</b></td>
+    <td><b>5</b>. Una vez completos los campos el usuario selecciona <br> el botón “Dar de baja”
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td><b>12</b> </td>
+    <td><b>6</b>. El sistema valida los campos cargados y muestra el <br>mensaje “Este usuario fue dado de baja correctamente”
  </tr>
 </table>
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:
+**Paso 6**:  El sistema detecta que un campo no fue cargado correctamente e indica cuál es el campo que no cumple con lo requerido.
 
 ## Wireframe Agregar un alquiler a Favoritos
 
 ![](link-a-imagen)  
 
 <br><br>
-**Caso de uso**:
-**Descripción**: 
-**Precondición**:
-**Postcondición**:  
+**Caso de uso**: Agregar un alquiler a Favoritos<br>
+**Descripción**: El inquilino dentro de un alquiler seleccionado se dirige a la opción de agregar a favoritos y el sistema agrega a la lista de favoritos el alquiler seleccionado<br>
+**Precondición**:El usuario debe encontrarse dentro de una publicación<br>
+**Postcondición**:  Se agregó un alquiler a favoritos<br>
 
 **Flujo Típico de eventos**:
 <table>
@@ -106,36 +86,23 @@ La division de las Historias de Usuario sera la siguiente:
     <th>Sistema</th>
   </tr>
   <tr>
-    <td><b>1</b></td>
+    <td><b>1</b>. Este caso de uso comienza cuando el inquilino  <br>se encuentra dentro de la publicación elegida.<br>
+    <td></td>
+  </tr>
+  <tr>
+    <td><b>2</b>. El inquilino selecciona la opción de agregar a favoritos <br> con un icono de corazón asociado<br>
     <td></td>
   </tr>
   <tr>
     <td></td>
-    <td><b>2</b>
-  </tr>
-  <tr>
-    <td><b>3</b></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><b>4</b></td>
-    <td></td>
-  <tr>
-    <td><b>5</b></td>
-    <td></td>
-    
-  </tr>
-  <tr>
-    <td></td>
-    <td><b>6</b></td>
+    <td><b>6</b>. El sistema cambia el estado de la publicación a favoritos <br>y guarda la publicación en la lista de favoritos.<br>
  </tr>
 </table>
 
 
 <u>**Flujo Alternativo de Eventos**.</u>  
 
-**Paso**:  
-**Paso**:
+**Paso**: El sistema no puede agregar a favoritos la publicación. Pide que se vuelva a cargar la publicación
 
 <br><br>
 
@@ -215,21 +182,21 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Dar de baja un usuario (baja lógica)**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como**  Usuario <br>
+**Quiero** dar de baja un usuario  <br>
+**Para** eliminar una cuenta registrada <br>
 
 <u>Criterios de aceptación</u>
 
--
+- El Usuario debe ingresar al sistema con su usuario.<br>
+- El usuario debe completar los campos requeridos correctamente.<br>
+
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
-
-
+        - Incorporación de botón con la funcionalidad de dar de baja y la etiqueta “Dar de baja
 - Descripción del Uso del wireframe (Caso de Uso real)
 - Creación del modelo de datos(Entidad/es de Base de datos)
 - Validación de campos con sus respectivas alertas
@@ -237,19 +204,19 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## **Tareas para Agregar un alquiler a Favoritos**
 
-**Como**  
-**Quiero**  
-**Para**
+**Como**  Inquilino <br>
+**Quiero**  agregar un alqu8iler a favorito <br>
+**Para** poder saber cuales son los alquileres que más me interesaron <br>
 
 <u>Criterios de aceptación</u>
 
--
+- Se debe poder ver una lista con las publicaciones favoritas de un inquilino
 
 <u>Las siguientes tareas comprenderán el desarrollo de la Historia de Usuario:</u>
 
 - Creación de wireframe
     - Creación del formulario donde contendrán los siguientes elementos
-        - (Colocar aca el desarrollo del wireframe)
+        - Agregar un botón con un icono de un corazón para agregar a favoritos
 
 
 - Descripción del Uso del wireframe (Caso de Uso real)
