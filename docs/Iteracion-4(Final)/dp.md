@@ -15,6 +15,10 @@ La division de las Historias de Usuario sera la siguiente:
 - Modificar propiedad(Implementacion de la funcionalidad faltante de la Iteracion 1)
     - **Encargados**: Guillermo Quintana, Marcelo Kachuk
 
+# Tablero de Proyecto
+
+![](link-a-imagen)
+
 # Diseño OO
 
 ![](link-a-imagen)
