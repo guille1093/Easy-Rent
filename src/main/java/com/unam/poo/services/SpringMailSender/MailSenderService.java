@@ -15,8 +15,7 @@ import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
 @Service
-public class MailSenderService {
- 
+public class MailSenderService { 
 
         @Value("${mail.smtp.password}")
         String password;
@@ -35,8 +34,12 @@ public class MailSenderService {
                 props.put("mail.smtp.port", "587");
                 props.put("mail.debug", "true");
                 props.put("mail.smtp.protocol", "smtp");
-                props.put("mail.smtp.mail.from", "MicroService@localhost");
-                props.put("mail.smtp.mail.subject", "alert");
+                props.put("mail.smtp.mail.from", fromInternetAdress);
+                props.put("mail.smtp.username", fromInternetAdress);
+                props.put("mail.smtp.password", password); 
+                props.put("user", fromInternetAdress);
+                props.put("password", password); 
+                props.put("java.net.preferIPv4Stack", "true");
 
                 Authenticator auth = new Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
@@ -54,7 +57,7 @@ public class MailSenderService {
                         msg.setSubject(subject);
                         msg.addHeader("x-cloudmta-class", "standard");
                         msg.addHeader("x-cloudmta-tags", "demo, example");
-                        msg.setText(body);
+                        msg.setText(body); 
 
                         Transport.send(msg);
 

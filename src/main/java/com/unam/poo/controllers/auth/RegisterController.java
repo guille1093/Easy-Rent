@@ -2,12 +2,16 @@ package com.unam.poo.controllers.auth;
 
 import com.unam.poo.dto.UsuarioDto;
 import com.unam.poo.models.Ciudad;
+import com.unam.poo.models.Correo;
+import com.unam.poo.models.Foto;
 import com.unam.poo.models.Usuario;
 import com.unam.poo.security.enums.RolNombre;
 import com.unam.poo.security.modelo.Rol;
 import com.unam.poo.security.service.RolService;
 import com.unam.poo.services.UsuarioService;
 import com.unam.poo.services.Ciudad.CiudadService;
+import com.unam.poo.services.Correo.MailService;
+import com.unam.poo.services.Foto.FotoService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -47,6 +51,12 @@ public class RegisterController {
 
     @Autowired
     CiudadService ciudadService;
+    
+    @Autowired
+    FotoService fotoService;
+
+    @Autowired
+    MailService mailService;
 
     @GetMapping ("/authRegister")
     public String registerload(Model model) {
@@ -79,7 +89,19 @@ public class RegisterController {
                         
                         Set<Rol> roles = new HashSet<>();
                         roles.add(rolService.getByRolNombre(RolNombre.ROL_USUARIO).get());
-                        user.setRoles(roles);
+                        user.setRoles(roles); 
+                        
+                        Foto foto = new Foto();
+                        foto.setUsuario(user);
+                        foto.setPerfil("../assets/img/pp.jpeg");
+                        foto.setPortada("../assets/img/bgdep.jpeg");
+                        fotoService.saveFoto(foto);
+                        user.setFoto(foto); 
+
+                        Correo correo = new Correo();
+                        correo.setUsuario(user);
+                        mailService.saveCorreo(correo);
+
                         System.out.println("Registrando...");
                         usuarioService.saveUsuario(user);
                         System.out.println("Registro exitoso.");

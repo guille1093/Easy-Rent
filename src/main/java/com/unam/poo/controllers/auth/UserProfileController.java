@@ -1,25 +1,28 @@
 package com.unam.poo.controllers.auth;
 
- 
 import com.unam.poo.dto.LoginDto;
 import com.unam.poo.dto.UsuarioDto;
 import com.unam.poo.models.CaracteristicaComodidad;
 import com.unam.poo.models.Ciudad;
+import com.unam.poo.models.Foto;
 import com.unam.poo.models.Publicacion;
 import com.unam.poo.models.Usuario;
 import com.unam.poo.services.CaracteristicaComodidad.CaracteristicaComodidadService;
 import com.unam.poo.services.Ciudad.CiudadService;
 import com.unam.poo.services.Comodidad.ComodidadService;
+import com.unam.poo.services.Foto.FotoService;
 import com.unam.poo.services.Provincia.ProvinciaService;
 import com.unam.poo.services.Publicacion.PublicacionService;
 import com.unam.poo.services.Tipo.TipoService;
 
+import jakarta.mail.Multipart;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import com.unam.poo.services.UsuarioService;
  
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.codec.Utf8;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,8 +31,14 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.net.URLDecoder;
 import java.util.List;
 
 @Controller
@@ -60,6 +69,8 @@ public class UserProfileController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    @Autowired
+    FotoService fotoService;
 
     @GetMapping("/profile")
     public String userProfile(Model model, HttpServletRequest request)
@@ -119,6 +130,58 @@ public class UserProfileController {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage() + ". Causa: " + e.getCause()); 
             model.addAttribute("mensaje", e.getMessage() );
+            return "error";
+        }
+    }
+
+    @PostMapping("/cambiarPerfil")
+    public String cambiarPerfil(Model model, @RequestBody String body, HttpServletRequest request, HttpServletResponse response, BindingResult result) {
+        if (result.hasErrors()) { 
+            model.addAttribute("mensaje", result.getAllErrors().toString());
+            return "error";
+        }  
+        try {    
+            Long idUsuario = (Long) request.getSession().getAttribute("userId");
+            Usuario user = usuarioService.getUsuarioById(idUsuario);
+            if ( user != null){
+                Foto foto = user.getFoto(); 
+                String str = body.replace("imagen=", ""); 
+                str = URLDecoder.decode(str, "UTF-8");
+                System.out.println(str);
+                foto.setPerfil(str);
+                fotoService.saveFoto(foto);
+            } 
+            response.sendRedirect(request.getContextPath() + "/user/profile");
+            return "userProfile";             
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+            model.addAttribute("mensaje", e.getMessage());
+            return "error";
+        }
+    }
+
+    @PostMapping("/cambiarPortada")
+    public String cambiarPortada(Model model, @RequestBody String body, HttpServletRequest request, HttpServletResponse response, BindingResult result) {
+        if (result.hasErrors()) { 
+            model.addAttribute("mensaje", result.getAllErrors().toString());
+            return "error";
+        }  
+        try {   
+            Long idUsuario = (Long) request.getSession().getAttribute("userId");
+            Usuario user = usuarioService.getUsuarioById(idUsuario);
+            if ( user != null){
+                Foto foto = user.getFoto(); 
+                String str = body.replace("portada=", ""); 
+                str = URLDecoder.decode(str, "UTF-8");
+                System.out.println(str);
+                foto.setPortada(str);
+                fotoService.saveFoto(foto);
+            } 
+            response.sendRedirect(request.getContextPath() + "/user/profile");
+            return "userProfile";            
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+            model.addAttribute("mensaje", e.getMessage());
             return "error";
         }
     }

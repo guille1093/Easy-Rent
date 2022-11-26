@@ -49,15 +49,15 @@
 
             <body>
               <%--Body--%>
-                <div class="container-xxl">
+                <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background: url(../assets/img/bgdep2.jpg); background-repeat: no-repeat; background-size: cover;">
                   <div class="authentication-wrapper authentication-basic container-p-y">
                     <div class="authentication-inner py-4">
                       <!-- Forgot Password -->
                       <div class="card">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                           <!-- Logo -->
                           <div class="app-brand justify-content-center">
-                            <a href="index.html" class="app-brand-link gap-2">
+                            <a href="${get.context.path}" class="app-brand-link gap-2">
                               <span class="app-brand-logo demo">
                                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                   xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -107,6 +107,8 @@
                           </div>
                           <h4 class="mb-2">Olvido su contraseña? 🔒</h4>
                           <p class="mb-4">Ingrese su correo y le enviaremos instrucciones para recuperar su cuenta</p>
+                         
+                          
                           <form:form id="formAuthentication" role="multipart/form-data"
                             action="${pageContext.request.contextPath}/forgotpsw/enviarCodigo" method="post">
                             <div class="input-group input-group-outline mb-3">
@@ -117,6 +119,9 @@
                             <button type="submit" class="btn btn-primary d-grid w-100">Enviar codigo de
                               recuperacion</button>
                           </form:form>
+                          <div class="container">
+                            <p class="mt-4 mb-4">Luego de solicitar su codigo proceda a rellenar y enviar el siguiente formulario: </p>
+                          </div>
                           <form:form id="formReestablecerPass" role="multipart/form-data"
                             action="${pageContext.request.contextPath}/forgotpsw/reestablecerPassword" method="post">
                             <div class="input-group input-group-outline mb-3">
@@ -125,7 +130,7 @@
                               autofocus />
                             </div>
                             <div class="input-group input-group-outline mb-3">
-                              <label for="codigo" class="form-label">Ingrese su codigo</label>
+                              <label for="codigo" class="form-label">Codigo de recuperacion</label>
                               <input #codigo id="codigo" name="codigo" type="text" class="form-control"
                               autofocus/>
                             </div>

@@ -96,4 +96,7 @@ public class Usuario {
     @OneToOne(mappedBy = "usuario")
     private Correo mail;
 
+    @OneToOne(mappedBy = "usuario")
+    private Foto foto;
+
 }

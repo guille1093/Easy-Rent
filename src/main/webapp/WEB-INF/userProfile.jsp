@@ -20,6 +20,11 @@ System.out.println("----------------------------------------------");
 <tags:jsp_imports/>
 <html>
 <head>
+  <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Perfil</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -50,7 +55,7 @@ System.out.println("----------------------------------------------");
 <body class="container bg-gray-200">
 <%@include file="common/navBar2.jsp"%>
 <div class="container-fluid px-2 px-md-4 mt-8">
-  <div class="page-header min-height-300 border-radius-xl mt-4 align-items-center" style="background-image: url('../assets/img/bgdep.jpeg');">
+  <div class="page-header min-height-300 border-radius-xl mt-4 align-items-center" style="background-image: url('${usuario.foto.portada}');">
     <h2 class="text-white z-index-1 ms-5 bg-gradient-faded-dark border-radius-xl shadow-dark " style="padding-left: 10px; padding-right: 10px"> Perfil personal </h2>
     <span class="mask  bg-gradient-primary  opacity-0">
     </span>
@@ -59,9 +64,9 @@ System.out.println("----------------------------------------------");
     <div class="row gx-4 mb-2">
       <div class="col-auto">
         <div class="avatar avatar-xl position-relative">
-          <img src="../assets/img/pp.jpeg" alt="profile_image" class="w-100 border-radius-lg shadow-xl">
+          <img src="${usuario.foto.perfil}" alt="profile_image" class="w-100 border-radius-lg shadow-xl">
         </div>
-      </div>
+      </div> 
 
       <div class="col-auto my-auto">
         <div class="h-100">
@@ -521,28 +526,28 @@ System.out.println("----------------------------------------------");
           <div class="container py-4">
             <div class="row">
               <div class="col mx-auto d-flex justify-content-center flex-column">
-                <form role="form" id="update-form3" method="post" autocomplete="off">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col">
-                        <label class="form-label"><i class="fas fa-image me-3 text-primary"></i>Foto de perfil</label>
-                        <div class="input-group input-group-dynamic m-4">
-
-                            <input type="file" class="form-control" placeholder="" aria-label="Last Name..." >
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-                </form>
+                
+                <form role="form" action="${pageContext.request.contextPath}/user/cambiarPerfil" method="post">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <label class="form-label"><i class="fas fa-image me-3 text-primary"></i>Foto de perfil</label>
+                      <div class="input-group input-group-dynamic m-4"> 
+                          <input id="imagen" name="imagen" #imagen type="text" class="form-control" placeholder="" aria-label="Last Name..." >
+                      </div>
+                      </div>
+                      </div>
+                  </div>
+                  
+                <div class="d-flex justify-content-between">
+                  <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn bg-gradient-primary">Guardar</button>
                 </div>
+              </form> </div>
                 </div>
                 </div>
                 </section>
                 </div>
-                  <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn bg-gradient-primary">Guardar</button>
-                  </div>
     </div>
   </div>
 </div>
@@ -609,27 +614,28 @@ System.out.println("----------------------------------------------");
           <div class="container py-4">
             <div class="row">
               <div class="col mx-auto d-flex justify-content-center flex-column">
-                <form role="form" id="update-form33" method="post" autocomplete="off">
+                <form role="form" action="${pageContext.request.contextPath}/user/cambiarPortada" method="post">
                   <div class="card-body">
                     <div class="row">
                       <div class="col">
                         <label class="form-label"><i class="fas fa-image me-3 text-primary"></i>Foto de portada</label>
                         <div class="input-group input-group-dynamic m-4">
-                          <input type="file" class="form-control" placeholder="." aria-label="Last Name..." >
+                          <input id="portada" name="portada" #portada type="text" class="form-control" aria-label="Last Name..." >
                         </div>
                       </div>
                     </div>
                   </div>
+                  <div class="d-flex justify-content-between">
+                    <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn bg-gradient-primary">Guardar</button>
+                  </div>
                 </form>
+                
               </div>
             </div>
           </div>
         </section>
-      </div>
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn bg-gradient-dark" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn bg-gradient-primary">Guardar</button>
-      </div>
+      </div> 
     </div>
   </div>
 </div>
