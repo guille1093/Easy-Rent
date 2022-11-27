@@ -52,9 +52,9 @@ public class UsuarioServiceImpl implements UsuarioService {
         }
         if (aux.getId() > 0){
             return aux;
-        }else{
-            return null;
         }
+        return null;
+        
     }
 
     @Override
