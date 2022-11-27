@@ -53,7 +53,7 @@
                     </div>
                     <small class="pt-1">(50 Reviews)</small>
                 </div>
-                <h3 class="font-weight-semi-bold mb-4">${publicacion.precioPublicacion}</h3>
+<%--                <h3 class="font-weight-semi-bold mb-4">${publicacion.precioPublicacion}</h3>--%>
 <%--                agregar a favoritos y contacto--%>
                 <div class="d-flex mb-3">
                     <div class="text-primary mr-2 ms-2 me-2">
@@ -109,27 +109,46 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary rounded-circle p-2 mr-3"><i class="fas fa-ruler-combined text-white"></i></div>
-                            <div>
-                                <h6 class="font-weight-semi-bold ms-2 mb-0">${publicacion.superficieTotalTerreno} m2</h6>
-                                <small class="text-muted ms-2">Superficie total</small>
+
+                    <c:if  test="${publicacion.superficieTotalTerreno != null}">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary rounded-circle p-2 mr-3"><i class="fas fa-ruler-combined text-white"></i></div>
+                                <div>
+                                    <h6 class="font-weight-semi-bold ms-2 mb-0">${publicacion.superficieTotalTerreno} m2</h6>
+                                    <small class="text-muted ms-2">Superficie total</small>
+                                </div>
+                            </div>
+                        </div>
+                    </c:if>
+
+                    <c:if  test="${publicacion.cocheraPublicacion > 0}">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary rounded-circle p-2 mr-3"><i class="fas fa-car text-white"></i></div>
+                                <div>
+                                    <h6 class="font-weight-semi-bold ms-2 mb-0">${publicacion.cocheraPublicacion} Cochera</h6>
+                                    <small class="text-muted ms-2">Cochera cubierta</small>
+                                </div>
+                            </div>
+                        </div>
+                    </c:if>
+
+                    <div class="col w-70 mt-4 me-6">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="font-weight-semi-bold">Precio mensual</h5>
+                                <div class="row align-items-start">
+                                    <h3 class="font-weight-semi-bold mb-4 col">$ ${publicacion.precioPublicacion.intValue()} ARS</h3>
+<%--                                    -----------------ACÁ VA EL BOTÓN DE MERCADO PAGO-----------------------------------------------------%>
+                                    <a href="#" class="btn btn-primary btn-block col">Alquilar</a>
+<%--                                    <div class="cho-container"></div>--%>
+<%--                                            -----------------ACÁ VA EL BOTÓN DE MERCADO PAGO-------------------------------------------------------------%>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <c:if  test="${publicacion.cocheraPublicacion > 0}">
-                    <div class="col-6">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary rounded-circle p-2 mr-3"><i class="fas fa-car text-white"></i></div>
-                            <div>
-                                <h6 class="font-weight-semi-bold ms-2 mb-0">${publicacion.cocheraPublicacion} Cochera</h6>
-                                <small class="text-muted ms-2">Cochera cubierta</small>
-                            </div>
-                        </div>
-                    </div>
-                    </c:if>
                 </div>
             </div>
 

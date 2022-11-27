@@ -1,7 +1,10 @@
 package com.unam.poo.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -71,7 +74,7 @@ public class Publicacion {
     @Column(name = "titulo_publicacion")
     private String tituloPublicacion;
     @Basic
-    @Column(name = "descripcion_publicacion")
+    @Column(name = "descripcion_publicacion", length = 500)
     private String descripcionPublicacion;
 
 //    crear longitud y latitud para la ubicacion en el mapa
@@ -83,7 +86,9 @@ public class Publicacion {
     @Column(name = "latitud_publicacion")
     private Double latitudPublicacion;
 
-    //    @NotBlank(message = "El campo Tipo de propiedad es obligatorio")
+//    validar el idTipo
+//    @NotEmpty(groups = {Publicacion.class}, message = "El campo Tipo es obligatorio")
+    @NotNull(message = "El campo Tipo es obligatorio")
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_tipo", nullable = false)
     private Tipo idTipo;
@@ -91,6 +96,7 @@ public class Publicacion {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_ciudad", nullable = false)
     private Ciudad idCiudad;
+
 
     @ManyToMany
     @JoinTable(name = "publicación_tiene_caracteristica",
