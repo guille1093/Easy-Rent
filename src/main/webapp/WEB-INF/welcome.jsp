@@ -50,7 +50,23 @@
                     <p class="lead mb-4 text-white opacity-8">Tu proximo lugar esta aca</p>
                     <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/publicacion/verPublicaciones"> Quiero buscar un alquiler </a>
                     <span>ㅤㅤ</span>
+                    <%
+                        if (session.getAttribute("autenticado") != "true"){
+                    %>
+                    <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/login">Quiero publicar un alquiler</a>
+                    <%
+                        }
+                    %>
+                    <%
+                        if (session.getAttribute("autenticado") == "true"){
+                    %>
                     <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/publicacion/crearPublicacion">Quiero publicar un alquiler</a>
+                    <%
+                        }
+                    %>
+
+
+<%--                    <a class="btn bg-gradient-primary text-white border-radius-lg" href="${pageContext.request.contextPath}/publicacion/crearPublicacion">Quiero publicar un alquiler</a>--%>
                 </div>
             </div>
         </div>
