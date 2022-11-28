@@ -1,7 +1,5 @@
 package com.unam.poo.models;
 
-import java.util.UUID;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

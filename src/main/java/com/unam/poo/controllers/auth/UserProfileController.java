@@ -1,28 +1,9 @@
 package com.unam.poo.controllers.auth;
 
-import com.unam.poo.dto.LoginDto;
-import com.unam.poo.dto.UsuarioDto;
-import com.unam.poo.models.CaracteristicaComodidad;
-import com.unam.poo.models.Ciudad;
-import com.unam.poo.models.Foto;
-import com.unam.poo.models.Publicacion;
-import com.unam.poo.models.Usuario;
-import com.unam.poo.services.CaracteristicaComodidad.CaracteristicaComodidadService;
-import com.unam.poo.services.Ciudad.CiudadService;
-import com.unam.poo.services.Comodidad.ComodidadService;
-import com.unam.poo.services.Foto.FotoService;
-import com.unam.poo.services.Provincia.ProvinciaService;
-import com.unam.poo.services.Publicacion.PublicacionService;
-import com.unam.poo.services.Tipo.TipoService;
+import java.net.URLDecoder;
+import java.util.List;
 
-import jakarta.mail.Multipart;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-
-import com.unam.poo.services.UsuarioService;
- 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.codec.Utf8;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,13 +14,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.net.URLDecoder;
-import java.util.List;
+import com.unam.poo.dto.LoginDto;
+import com.unam.poo.dto.UsuarioDto;
+import com.unam.poo.models.CaracteristicaComodidad;
+import com.unam.poo.models.Ciudad;
+import com.unam.poo.models.Foto;
+import com.unam.poo.models.Publicacion;
+import com.unam.poo.models.Usuario;
+import com.unam.poo.services.UsuarioService;
+import com.unam.poo.services.CaracteristicaComodidad.CaracteristicaComodidadService;
+import com.unam.poo.services.Ciudad.CiudadService;
+import com.unam.poo.services.Comodidad.ComodidadService;
+import com.unam.poo.services.Foto.FotoService;
+import com.unam.poo.services.Provincia.ProvinciaService;
+import com.unam.poo.services.Publicacion.PublicacionService;
+import com.unam.poo.services.Tipo.TipoService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
     @RequestMapping("/user")

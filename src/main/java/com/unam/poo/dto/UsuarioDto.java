@@ -1,7 +1,5 @@
 package com.unam.poo.dto;
  
-import com.unam.poo.models.Ciudad;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

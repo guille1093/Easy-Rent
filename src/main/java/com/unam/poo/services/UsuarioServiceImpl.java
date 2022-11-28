@@ -1,14 +1,12 @@
 package com.unam.poo.services;
-import com.unam.poo.models.Publicacion;
-import com.unam.poo.models.Usuario;
-import com.unam.poo.repository.PublicacionRepository;
-import com.unam.poo.repository.UsuarioRepository;
-import com.unam.poo.services.Publicacion.PublicacionService;
-import com.unam.poo.services.Publicacion.PublicacionServiceImpl;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.unam.poo.models.Usuario;
+import com.unam.poo.repository.PublicacionRepository;
+import com.unam.poo.repository.UsuarioRepository;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
