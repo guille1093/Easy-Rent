@@ -243,7 +243,7 @@
           <c:forEach items="${publicaciones}" var="publicacion">
           <div class="col">
             <div class="card" style="--bs-btn-hover-bg:100">
-              <a href="" class="position-relative overflow-hidden">
+              <a href="${pageContext.request.contextPath}/publicacion/verPublicacion/${publicacion.id}" class="position-relative overflow-hidden" target="_blank">
                 <div class="ratio ratio-1x1">
                   <div id="carousel-12" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-inner">
@@ -251,7 +251,7 @@
                       <div class="carousel-item ratio ratio-1x1"><img class="w-100 d-block card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/2.webp" alt="Slide Image" /></div>
                       <div class="carousel-item ratio ratio-1x1"><img class="w-100 d-block card-img-top" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/3.webp" alt="Slide Image" /></div>
                     </div>
-                    <div><a class="carousel-control-prev" href="#carousel-12" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-12" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
+                    <div><a class="carousel-control-prev" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-12" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
                     <ol class="carousel-indicators">
                       <li class="active" data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
                       <li data-bs-target="#carousel-12" data-bs-slide-to="1"></li>

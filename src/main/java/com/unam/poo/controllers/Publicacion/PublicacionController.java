@@ -67,11 +67,24 @@ public class PublicacionController {
 
 //    Ruta localhost:8080/publicacion/nuevaPublicacion
     @PostMapping("/nuevaPublicacion")
-    public String crearPublicacion( @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result) {
+    public String crearPublicacion( @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result, Model model) {
     if (result.hasErrors()) {
         //aca deberia ir una pagina de error o algo xd
+        // retornar y pasarle el objeto publicacion, tipo, provincia, ciudad, comodidad, caracteristicaComodidad;
+        List<Tipo> tipos = tipoService.findAll();
+        List<Provincia> provincias = provinciaService.findAll();
+        List<Ciudad> ciudades = ciudadService.findAll();
+        List<Comodidad> comodidades = comodidadService.findAll();
+        List<CaracteristicaComodidad> caracteristicaComodidades = caracteristicaComodidadService.findAll();
+
+
+        model.addAttribute("tipos", tipos);
+        model.addAttribute("comodidades", comodidades);
+        model.addAttribute("caracteristicaComodidades", caracteristicaComodidades);
+
         return "Publicacion/crearPublicacion";
     }
+
 
 
     publicacionService.savePublicacion(publicacion);
