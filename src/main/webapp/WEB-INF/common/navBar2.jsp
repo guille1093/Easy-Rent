@@ -147,7 +147,7 @@
              <% 
              if (session.getAttribute("autenticado") != "true"){
              %>
-            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/login">Iniciar sesión</a></li>
+            <li><a class="dropdown-item" href="${pageContext.request.contextPath}/loginPage">Iniciar sesión</a></li>
             <%
             }
             %>            

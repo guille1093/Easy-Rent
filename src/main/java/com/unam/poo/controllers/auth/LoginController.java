@@ -38,7 +38,7 @@ public class LoginController {
         return "welcome";
     }
 
-    @GetMapping("/login")
+    @GetMapping("/loginPage")
     public String loginload() {
         return "authLogin";
     } 
@@ -93,8 +93,8 @@ public class LoginController {
                     
                     /* cambiar para redireccionar a panel de usuario -> */ 
                     
-                    response.sendRedirect(request.getContextPath() + "/");
-                    return "welcome";
+                    // response.sendRedirect(request.getContextPath() + "/");
+                    return "redirect:/user/profile";
                     /* Alternativa: response.sendRedirect() */
                 }else{
                     System.out.println("ERROR: Contraseña incorrecta");
