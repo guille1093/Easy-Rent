@@ -84,7 +84,8 @@ public class RegisterController {
                     System.out.println("Registro exitoso.");
                     //Anulado por redundancia
                     // response.sendRedirect(request.getContextPath() + "/login");
-                    return "redirect:/login";
+                    String url = request.getContextPath();
+                    return url + "/login";
                 }else{
                     System.out.println("ERROR: La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres");
                     return "ERROR: La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres";

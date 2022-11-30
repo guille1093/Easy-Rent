@@ -59,7 +59,6 @@ public class LoginController {
                     //Coinciden entonces:
                     System.out.println("AUTENTICADO: Redireccionando...");
                    
-                    
                     request.getSession().setAttribute("userId", user.getId()); 
                     request.getSession().setAttribute("autenticado", "true"); 
                     

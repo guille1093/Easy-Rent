@@ -62,7 +62,7 @@ public class UserProfileController {
         publicaciones.addAll(   publicacionService.findAllByEstadoPublicacion("Alquilado")   );
         publicaciones.addAll(   publicacionService.findAllByEstadoPublicacion("Desactivado")   );
         List<CaracteristicaComodidad> caracteristicaComodidades = caracteristicaComodidadService.findAll();
-
+        System.out.println(request.getSession().getAttribute("userId"));//Ver si llega valor otorgado por test
         Long idUsuario = (Long) request.getSession().getAttribute("userId");
         model.addAttribute("usuario", usuarioService.getUsuarioById(idUsuario));
         model.addAttribute("publicaciones", publicaciones);

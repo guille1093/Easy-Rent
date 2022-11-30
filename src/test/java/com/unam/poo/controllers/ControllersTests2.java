@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.web.bind.annotation.RequestAttribute;
 
 import okhttp3.Call;
 import okhttp3.FormBody;
@@ -143,7 +144,7 @@ public class ControllersTests2 {
         RequestBody formBody = new FormBody.Builder()
         .add("nombre", "test")
         .add("apellido", "test")
-        .add("dni", "123456789")
+        .add("dni", "123458989")
         .add("correo", "correo@test.com")
         .add("telefono", "123456")
         .add("ciudad", "1")
@@ -164,45 +165,13 @@ public class ControllersTests2 {
 
     @Test
     public void testUserProfile() throws IOException{
-
-        HttpUrl.Builder urlBuilder 
-        = HttpUrl.parse("http://localhost:8080/user/profile").newBuilder();
-        urlBuilder.addQueryParameter("userId", "1");
-  
-        String url = urlBuilder.build().toString();
-        
-        // RequestBody formBody = new FormBody.Builder()
-        // .add("userId", "1")
-        // .build();
-
         Request requerimiento = new Request.Builder()
-        .url(url)
+        .url("http://localhost:8080/user/profile")
         .build();
-        // .getSession().getAttribute("userId");
         Response respuesta = cliente.newCall(requerimiento).execute();
         assertEquals(200, respuesta.code());
     }
 
-    // @Test
-    // public void testCrearPublicacion() throws IOException {
-    //     Request requerimiento = new Request.Builder()
-    //     .url("http://localhost:8080/publicacion/crearPublicacion")
-    //     .build();
-    //     Response respuesta = cliente.newCall(requerimiento).execute();
-    //     assertEquals(200, respuesta.code());
-    
-
-
-    // @Test
-    // public void testCrearPublicacion() throws IOException {
-    //     Request requerimiento = new Request.Builder()
-    //     .url("http://localhost:8080/publicacion/verPublicaciones")
-    //     .build();
-    //     Response respuesta = cliente.newCall(requerimiento).execute();
-    //     assertEquals(200, respuesta.code());
-    
-
-    
     
 }
         
