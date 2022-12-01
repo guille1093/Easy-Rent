@@ -164,7 +164,7 @@ System.out.println("----------------------------------------------");
                     <table class="table align-items-center mb-0">
                       <thead>
                       <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Publicacion   <i class="fa-solid fa-sort fa-lg"></i> </th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Publicacion   <i id="imagen1" class="fa-solid fa-chevron-down"></i> </th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2" data-order="desc">Tipo</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Estado</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" data-order="desc">Visualizaciones</th>
@@ -681,21 +681,27 @@ System.out.println("----------------------------------------------");
           var order = $(this).data('order')
 
           if(order == 'desc'){
+            document.getElementById("imagen1").className = "fa-solid fa-chevron-up"
             $(this).data('order', "asc")
             $("#myTable").find("tr").sort(function (a, b) {
               var keyA = $(a).find("td").eq(0).text().toUpperCase();
               var keyB = $(b).find("td").eq(0).text().toUpperCase();
               if (keyA < keyB) return -1;
               if (keyA > keyB) return 1;
+              // cambiar la clase de la flecha
+
               return 0;
             }).appendTo("#myTable");
           }else{
+            document.getElementById("imagen1").className = "fa-solid fa-chevron-down"
             $(this).data('order', "desc")
             $("#myTable").find("tr").sort(function (a, b) {
               var keyA = $(a).find("td").eq(0).text().toUpperCase();
               var keyB = $(b).find("td").eq(0).text().toUpperCase();
               if (keyA > keyB) return -1;
               if (keyA < keyB) return 1;
+                // cambiar la clase de la flecha
+
               return 0;
             }).appendTo("#myTable");
           }

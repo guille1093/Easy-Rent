@@ -208,6 +208,7 @@ public class PublicacionController {
     public String consultarPublicacion(Model model){
 
         List<Publicacion> publicaciones = publicacionService.findAllByEstadoPublicacion("activo");
+        publicaciones.addAll(publicacionService.findAllByEstadoPublicacion("Alquilado"));
         List<CaracteristicaComodidad> caracteristicaComodidades = caracteristicaComodidadService.findAll();
 
         model.addAttribute("publicaciones", publicaciones);

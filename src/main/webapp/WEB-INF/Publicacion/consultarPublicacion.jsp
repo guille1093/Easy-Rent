@@ -12,7 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <tags:css_imports/>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <title>Consulte sus propiedades</title>
 </head>
@@ -37,7 +38,7 @@
                     <div class="col-4 mx-auto">
                         <div class="input-group input-group-dynamic mb-4">
                             <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>
-                            <input class="form-control" placeholder="Buscar" type="text" >
+                            <input class="form-control" placeholder="Buscar" type="text" id="myInput">
                         </div>
                     </div>
                 </div>
@@ -53,7 +54,7 @@
                             <th class="text-secondary opacity-7"></th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable">
 
                         <c:forEach items="${publicaciones}" var="propiedad">
 
@@ -83,7 +84,14 @@
                                 <p class="text-xs text-secondary mb-0">${propiedad.idTipo.tipo}</p>
                             </td>
                             <td class="align-middle text-center">
-                                <span class="badge bg-gradient-success" href="www.google.com">${propiedad.estadoPublicacion}</span>
+                                <c:choose>
+                                    <c:when test="${propiedad.estadoPublicacion == \"activo\" }">
+                                        <span class="badge bg-gradient-success">${propiedad.estadoPublicacion}</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="badge bg-gradient-warning">${propiedad.estadoPublicacion}</span>
+                                    </c:otherwise>
+                                </c:choose>
                             </td>
                             <td class="align-middle text-center">
                                 <span class="text-secondary text-xs font-weight-normal">420</span>
@@ -167,6 +175,55 @@
             console.log(id);
             document.id.submit()
         }
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+    <script>
+
+
+        $(document).ready(function(){
+            $('th').on('click', function(){
+                // ordenar la columna de publicacion de forma ascendente sin importar mayusculas o minusculas, y al volver a darle click ordenar de forma descendente
+
+                // si cantidadClicks es igual a 0, ordenar de forma ascendente
+
+                var order = $(this).data('order')
+
+                if(order == 'desc'){
+                    $(this).data('order', "asc")
+                    $("#myTable").find("tr").sort(function (a, b) {
+                        var keyA = $(a).find("td").eq(0).text().toUpperCase();
+                        var keyB = $(b).find("td").eq(0).text().toUpperCase();
+                        if (keyA < keyB) return -1;
+                        if (keyA > keyB) return 1;
+                        return 0;
+                    }).appendTo("#myTable");
+                }else{
+                    $(this).data('order', "desc")
+                    $("#myTable").find("tr").sort(function (a, b) {
+                        var keyA = $(a).find("td").eq(0).text().toUpperCase();
+                        var keyB = $(b).find("td").eq(0).text().toUpperCase();
+                        if (keyA > keyB) return -1;
+                        if (keyA < keyB) return 1;
+                        return 0;
+                    }).appendTo("#myTable");
+                }
+
+            });
+        });
+
+
+
     </script>
 </div>
 </body>
