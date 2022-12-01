@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.unam.poo.models.Ciudad;
-import com.unam.poo.models.Provincia;
+
 import com.unam.poo.security.enums.RolNombre;
 import com.unam.poo.security.modelo.Rol;
 import com.unam.poo.security.service.RolService;
