@@ -14,13 +14,13 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Diseño OO
 
-![](link-a-imagen)
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_3.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Modificar datos de usuario
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\modificar_datos_usuarios.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:  Modificar datos de usuario <br>
@@ -61,7 +61,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Consultar usuario
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_usuario.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Consultar usuario  
@@ -101,6 +101,9 @@ La division de las Historias de Usuario sera la siguiente:
 <br><br>
 
 ## Wireframe Consultar ubicación
+
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_ubicacion.jpeg" width="800"/>
+
 <br><br>
 **Caso de uso**:  Consultar Ubicación 
 **Descripción**:  El usuario ingresa en una publicación y se dirige a la ubicación  asociada a la propiedad pudiendo consultar cual es el lugar donde queda la propiedad mediante el uso de un mapa que indica la ubicación asociada<br>
