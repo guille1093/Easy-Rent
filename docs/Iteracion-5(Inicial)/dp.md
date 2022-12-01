@@ -14,17 +14,17 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Tablero de Proyecto
 
-![](link-a-imagen)
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\tablero5I.jpeg" width="800"/>
 
 # Diseño OO
 
-![](link-a-imagen)
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_4.png" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Consultar alquileres Favoritos
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_alquileres_fav.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:   
@@ -92,7 +92,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Restablecer contraseña
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\restablecer_contra.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:

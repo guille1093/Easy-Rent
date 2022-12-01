@@ -16,12 +16,13 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Diseño OO
 
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_1-2.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Registrar Usuario
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Registrar_usuario.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Registrar Usuario  
@@ -95,7 +96,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Ingresar Usuario
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Login.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Ingresar Usuario  
@@ -149,6 +150,9 @@ La division de las Historias de Usuario sera la siguiente:
 <br><br>
 
 ## Wireframe Registrar Propiedad
+
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Registrar_Propiedad.jpeg" width="800"/>
+
 <br><br>
 **Caso de uso**: Registrar Propiedad  
 **Descripción**: El propietario ingresa en el apartado de propiedades y carga información relacionada a la propiedad a alquilar como ser la localidad/provincia donde se encuentra la propiedad, dirección de la propiedad, tipo de propiedad (casa, local, habitación única), precio, Imagen del lugar y confirma los datos cargados.  
@@ -296,7 +300,7 @@ Paso 1: <br> Campo-1: Tipo de propiedad</td>
 
 ## Wireframe Modificar Propiedad
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\modif_prop.jpeg" width="800"/>
 
 <br><br>
 

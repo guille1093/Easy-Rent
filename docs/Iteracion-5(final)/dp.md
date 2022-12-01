@@ -14,17 +14,17 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Tablero de Proyecto
 
-![](link-a-imagen)
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Tablero5F.jpeg" width="800"/>
 
 # Diseño OO
 
-![](link-a-imagen)
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_5F.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Consultar alquileres Favoritos
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_alquileres_fav.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Consultar alquileres Favoritos <br>
@@ -62,7 +62,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Restablecer contraseña
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\restablecer_contra.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:Restablecer contraseña<br>
@@ -190,12 +190,15 @@ La division de las Historias de Usuario sera la siguiente:
 
 <br><br>
 
-# Retrospectiva de la Iteracion 4
+# Retrospectiva de la Iteracion 5
 
-Teniendo en cuenta lo realizado en la release 4 podemos decir que hubo un gran aporte por parte de todos los integrantes del grupo
+Teniendo en cuenta lo realizado en la release 5 podemos decir que hubo un gran aporte por parte de todos los integrantes del grupo
 cada uno cumpliendo con sus tareas asignadas y trabajando de manera correcta con el repositorio de github.
-Por otra parte se realizaron de manera completa las 4 actividades (Dar de baja un usuario (baja lógica), Agregar un alquiler a Favoritos, Eliminar un alquiler de Favoritos, Modificar propiedad) planteadas para la iteracion. 
-Cumpliendo con su documentacion, desarrollo de wireframes e implementacion de funcionalidades
+Por otra parte se realizaron de manera completa las 3 actividades (Consultar alquileres Favoritos, Restablecer contraseña, Testing) planteadas para la iteracion. 
+Cumpliendo con su documentacion, desarrollo de wireframes e implementacion de funcionalidades. 
+Por otra parte cabe especificar que para la etapa de testing se establecio una branch separada para trabajar sobre la misma.
 Ademas de esto se mantuvo la forma de trabajo de a pares, siguiendo con esta metodologia para las siguientes iteraciones.
 
-Aclaracion: Tanto en la iteracion 4 e iteracion 5 se dejo la restrospectiva en el mismo archivo ya que el documento de la iteracion daba las 2 opciones y para seguir un formato lineal elegimos esta.
+Aclaracion: En la iteracion 5 se dejo la restrospectiva en el mismo archivo ya que el documento de la iteracion daba las 2 opciones y para seguir un formato lineal elegimos esta.
+
+Nota: Se puedieron establecer las imagenes de los wireframes, tableros y diagramas de clases en todos los documentos de todas las iteraciones. :D

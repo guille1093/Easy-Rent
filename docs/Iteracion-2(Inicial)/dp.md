@@ -16,13 +16,13 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Diseño OO
 
-![](link-a-imagen)
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_1-2.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Dar de baja una propiedad
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Baja_propiedad.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:   
@@ -90,7 +90,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Consultar propiedad(exclusivo para propietarios)
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_propiedad.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:
@@ -139,6 +139,9 @@ La division de las Historias de Usuario sera la siguiente:
 <br><br>
 
 ## Wireframe Ver detalles del alquiler(exclusivo para inquilinos)
+
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\ver_detalles_Alquiler_este.jpeg" width="800"/>
+
 <br><br>
 **Caso de uso**:   
 **Descripción**: 
@@ -200,7 +203,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Consultar alquileres obtenidos
 
-![](link-a-imagen)  
+<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Alquileres_obtenidos.jpeg" width="800"/>
 
 <br><br>
 
