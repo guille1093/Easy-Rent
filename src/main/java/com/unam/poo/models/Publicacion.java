@@ -86,6 +86,11 @@ public class Publicacion {
     @Column(name = "latitud_publicacion")
     private Double latitudPublicacion;
 
+//    imagen puede ser opcional
+    @Basic
+    @Column(name = "imagen1")
+    private String imagen1;
+
 //    validar el idTipo
 //    @NotEmpty(groups = {Publicacion.class}, message = "El campo Tipo es obligatorio")
     @NotNull(message = "El campo Tipo es obligatorio")
@@ -104,4 +109,7 @@ public class Publicacion {
             inverseJoinColumns = @JoinColumn(name = "id_caracteristica"))
     private List<CaracteristicaComodidad> caracteristicasComodidades;
 
+//    lista de imagenes
+    @OneToMany(mappedBy = "idPublicacion", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FotoPublicacion> imagenes;
 }

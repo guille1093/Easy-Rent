@@ -62,7 +62,15 @@
                             <td>
                                 <div class="d-flex px-2 py-1">
                                     <div>
-                                        <img src="../../assets/img/rents/1.webp" class="avatar avatar-xl me-3" alt="logo">
+<%--                                        <c:choose>--%>
+<%--                                            <c:when test="${propiedad.imagenes.size() > 0}">--%>
+<%--                                                imagenes en la posicion 0--%>
+                                                <img src="../../assets/img/rents/${propiedad.imagenes.get(0).url}" class="avatar avatar-xl me-3" alt="logo">
+<%--                                            </c:when>--%>
+<%--                                            <c:otherwise>--%>
+<%--                                                <img src="../../assets/img/rents/${propiedad.imagen1}" class="avatar avatar-xl me-3" alt="logo">--%>
+<%--                                            </c:otherwise>--%>
+<%--                                        </c:choose>--%>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <a class="mb-0 h6" href="${pageContext.request.contextPath}/publicacion/verPublicacion/${propiedad.id}">${propiedad.tituloPublicacion}</a>

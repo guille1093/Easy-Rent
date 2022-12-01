@@ -9,13 +9,13 @@ import jakarta.mail.Authenticator;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
 import jakarta.mail.PasswordAuthentication;
-import jakarta.mail.Session; 
+import jakarta.mail.Session;
 import jakarta.mail.Transport;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
 
 @Service
-public class MailSenderService { 
+public class MailSenderService {
 
         @Value("${mail.smtp.password}")
         String password;
@@ -36,9 +36,9 @@ public class MailSenderService {
                 props.put("mail.smtp.protocol", "smtp");
                 props.put("mail.smtp.mail.from", fromInternetAdress);
                 props.put("mail.smtp.username", fromInternetAdress);
-                props.put("mail.smtp.password", password); 
+                props.put("mail.smtp.password", password);
                 props.put("user", fromInternetAdress);
-                props.put("password", password); 
+                props.put("password", password);
                 props.put("java.net.preferIPv4Stack", "true");
 
                 Authenticator auth = new Authenticator() {
@@ -46,7 +46,7 @@ public class MailSenderService {
                                 return new PasswordAuthentication(fromInternetAdress, password);
                         }
                 };
- 
+
                 Session session = Session.getInstance(props, auth);
 
                 try {
@@ -57,7 +57,7 @@ public class MailSenderService {
                         msg.setSubject(subject);
                         msg.addHeader("x-cloudmta-class", "standard");
                         msg.addHeader("x-cloudmta-tags", "demo, example");
-                        msg.setText(body); 
+                        msg.setText(body);
 
                         Transport.send(msg);
 

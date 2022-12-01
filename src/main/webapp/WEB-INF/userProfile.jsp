@@ -526,7 +526,7 @@ System.out.println("----------------------------------------------");
           <div class="container py-4">
             <div class="row">
               <div class="col mx-auto d-flex justify-content-center flex-column">
-                
+
                 <form role="form" action="${pageContext.request.contextPath}/user/cambiarPerfil" method="post">
                 <div class="card-body">
                   <div class="row">

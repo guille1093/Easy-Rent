@@ -4,6 +4,8 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 !**/scr/main/resources/application.properties
+#ignorar la carpeta /webapp/assets/img/rents
+!**/src/main/webapp/assets/img/rents/
 
 ### STS ###
 .apt_generated

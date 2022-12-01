@@ -3,8 +3,9 @@ package com.unam.poo.services.Foto;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Service; 
 
+import com.fasterxml.jackson.core.util.ByteArrayBuilder;
 import com.unam.poo.models.Foto;
 import com.unam.poo.repository.FotosRepository;
 

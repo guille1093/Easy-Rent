@@ -65,11 +65,11 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>webjars-locator-core</artifactId>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>javax.servlet</groupId>-->
-<!--			<artifactId>jstl</artifactId>-->
-<!--			<version>1.2</version>-->
-<!--		</dependency>-->
+		<!--		<dependency>-->
+		<!--			<groupId>javax.servlet</groupId>-->
+		<!--			<artifactId>jstl</artifactId>-->
+		<!--			<version>1.2</version>-->
+		<!--		</dependency>-->
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
@@ -95,7 +95,7 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-crypto</artifactId>
 			<version>5.7.3</version>
-		</dependency> 
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
@@ -104,25 +104,24 @@
 		<!---->
 
 		<!-- Spring Mail -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context-support</artifactId>
-				<version>5.2.8.RELEASE</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-starter-mail</artifactId>
-				<version>2.5.6</version>
-			</dependency>   
-			<dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>5.2.8.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>2.5.6</version>
+		</dependency>
+		<dependency>
 			<groupId>jakarta.mail</groupId>
-				<artifactId>jakarta.mail-api</artifactId>
-				<version>1.6.4</version>
-			</dependency>
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId> 
-			</dependency>  
+			<artifactId>jakarta.mail-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
 		<!---->
 	</dependencies>
 	<build>

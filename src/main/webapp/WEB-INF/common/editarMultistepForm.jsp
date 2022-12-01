@@ -15,7 +15,7 @@
     <title>Title</title>
   <link href="../../assets/css/multistep.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
-
+  <link href="../../assets/css/dragAndDrop.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,11 +24,11 @@
   <div class="row mt-5">
     <div class=" ml-auto mr-auto mb-4">
       <div class="multisteps-form__progress">
-        <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">Tipo de Propiedad</button>
-        <button class="multisteps-form__progress-btn" type="button" title="Address">Ubicación</button>
-        <button class="multisteps-form__progress-btn" type="button" title="Order Info">Características</button>
-        <button class="multisteps-form__progress-btn" type="button" title="Comments">Imágenes</button>
-        <button class="multisteps-form__progress-btn" type="button" title="Comments">Caracerísticas específicas</button>
+        <button class="multisteps-form__progress-btn js-active" type="button" title="User Info" id="progresTipo">Tipo de Propiedad</button>
+        <button class="multisteps-form__progress-btn" type="button" title="Address" id="progresUbicacion">Ubicación</button>
+        <button class="multisteps-form__progress-btn" type="button" title="Order Info" id="progresCaracteristica">Características</button>
+        <button class="multisteps-form__progress-btn" type="button" title="Comments" id="progresImagen">Imágenes</button>
+        <button class="multisteps-form__progress-btn" type="button" title="Comments" id="progresComodidad">Caracerísticas específicas</button>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
       <div class="multisteps-form__form">
 
       <%--@elvariable id="publicacion" type=""--%>
-      <form:form role="form" method="post" action="/publicacion/editarPublicacion/${publicacion.id}" modelAttribute="publicacion"  class="text-start" >
+      <form:form role="form" method="post" action="/publicacion/editarPublicacion/${publicacion.id}" modelAttribute="publicacion" class="text-start" id="form" enctype="multipart/form-data" >
 
         <!--PANEL TIPO DE PROPIEDAD-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
@@ -50,8 +50,9 @@
 <%--              ${publicacion.idTipo.id}--%>
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
+
                 <%--@elvariable id="tipos" type=""--%>
-              <form:select path="idTipo" class="multisteps-form__select form-control" >
+              <form:select path="idTipo" class="multisteps-form__select form-control" id="inputTipo">
                 <option>Seleccione un tipo de propiedad</option>
                 <c:forEach items="${tipos}" var="tipo">
 
@@ -66,6 +67,7 @@
               </form:select>
 
               <form:errors path="idTipo" cssClass="error" element="div" />
+                  <div class="text-danger"  id="divTipo" ></div>
 
 
             </div>
@@ -84,29 +86,47 @@
 
 
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input class="multisteps-form__input form-control" type="text" path="callePublicacion" placeholder="Calle"/>
-                <form:errors path="callePublicacion" cssClass="text-danger" element="div" />
+            <div>
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Calle (*)</label>
+                <form:input class="multisteps-form__input form-control " type="text" path="callePublicacion" id="inputCalle"/>
+<%--                <input #correo type="email" name="correo" id="correo" >--%>
               </div>
+<%--              <div class="col">--%>
+<%--                <label class="multisteps-form__label" for="inputDireccion">Dirección</label>--%>
+<%--                <form:input class="multisteps-form__input form-control " type="text" path="callePublicacion" placeholder="Calle (*)" id="inputCalle"/>--%>
+<%--                <form:errors path="callePublicacion" cssClass="text-danger" element="div" />--%>
+                <div class="text-danger"  id="divCalle" ></div>
             </div>
 
-            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input class="multisteps-form__input form-control" type="number" path="alturaPublicacion" placeholder="Altura"/>
-                <form:errors path="alturaPublicacion" cssClass="error" element="div" />
+
+
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Altura (*)</label>
+                <form:input class="multisteps-form__input form-control" type="number" path="alturaPublicacion"  id="inputAlturaPublicacion"/>
               </div>
+              <div class="text-danger"  id="divAltura" ></div>
             </div>
 
+<%--            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input class="multisteps-form__input form-control" type="number" path="alturaPublicacion" placeholder="Altura (*)" id="inputAlturaPublicacion"/>--%>
+<%--&lt;%&ndash;                <form:errors path="alturaPublicacion" cssClass="error" element="div" />&ndash;%&gt;--%>
+<%--                <div class="text-danger"  id="divAltura" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <select class="multisteps-form__select form-control" name="provincia">
+              <select class="multisteps-form__select form-control" name="provincia" id="inputProvincia">
                 <option >Seleccione una provincia</option>
                 <option value="Misiones" selected>Misiones</option>
               </select>
+              <div class="text-danger"  id="divProvincia" ></div>
             </div>
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <form:select path="idCiudad" class="multisteps-form__select form-control" >
+              <form:select path="idCiudad" class="multisteps-form__select form-control" id="inputCiudad">
                 <option>Seleccione una ciudad</option>
                 <c:forEach items="${ciudades}" var="ciudad">
 
@@ -119,9 +139,8 @@
 
                 </c:forEach>
 
-
-
               </form:select>
+              <div class="text-danger"  id="divCiudad" ></div>
             </div>
 
 
@@ -134,7 +153,7 @@
 
                 <form:input type="hidden" id="latitud" name="latitud" path="latitudPublicacion" value="${publicacion.latitudPublicacion}"/>
                 <form:input type="hidden" id="longitud" name="longitud" path="longitudPublicacion" value="${publicacion.longitudPublicacion}"/>
-
+                <div class="text-danger"  id="divMapa" ></div>
               </div>
             </div>
 
@@ -154,55 +173,116 @@
           <h3 class="multisteps-form__title">Caracteristicas Generales</h3>
           <div class="multisteps-form__content">
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Ambientes" path="ambientesPublicacion"/>
-                <form:errors path="ambientesPublicacion" cssClass="text-danger" element="div" />
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Ambientes</label>
+                <form:input type="number" class="form-control"  path="ambientesPublicacion" id="inputAmbiente"/>
               </div>
+              <div class="text-danger"  id="divAmbiente" ></div>
             </div>
 
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" placeholder="Ambientes" path="ambientesPublicacion" id="inputAmbiente"/>--%>
+<%--                <form:errors path="ambientesPublicacion" cssClass="text-danger" element="div" />--%>
+<%--                <div class="text-danger"  id="divAmbiente" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Dormitorios" path="dormitoriosPublicacion"/>
-                <form:errors path="dormitoriosPublicacion" cssClass="text-danger" element="div" />
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Dormitorios</label>
+                <form:input type="number" class="form-control"  path="dormitoriosPublicacion" id="inputDormitorio"/>
               </div>
+              <div class="text-danger"  id="divDormitorio" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Baños" path="baniosPublicacion"/>
-                <form:errors path="baniosPublicacion" cssClass="text-danger" element="div" />
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" placeholder="Dormitorios" path="dormitoriosPublicacion" id="inputDormitorio"/>--%>
+<%--                <form:errors path="dormitoriosPublicacion" cssClass="text-danger" element="div" />--%>
+<%--                <div class="text-danger"  id="divDormitorio" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Baños</label>
+                <form:input type="number" class="form-control" path="baniosPublicacion" id="inputBanio"/>
               </div>
+              <div class="text-danger"  id="divBanio" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Cochera" path="cocheraPublicacion"/>
-                <form:errors path="cocheraPublicacion" cssClass="text-danger" element="div" />
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" placeholder="Baños" path="baniosPublicacion" id="inputBanio"/>--%>
+<%--                <form:errors path="baniosPublicacion" cssClass="text-danger" element="div" />--%>
+<%--                <div class="text-danger"  id="divBanio" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Cochera</label>
+                <form:input type="number" class="form-control"  path="cocheraPublicacion" id="inputCochera"/>
               </div>
+              <div class="text-danger"  id="divCochera" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Superficie cubierta" path="superficieCubiertaCasa"/>
-<%--                <form:errors path="superficieCubiertaCasa" cssClass="error" element="div" />--%>
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" placeholder="Cochera" path="cocheraPublicacion" id="inputCochera"/>--%>
+<%--                <form:errors path="cocheraPublicacion" cssClass="text-danger" element="div" />--%>
+<%--                <div class="text-danger"  id="divCochera" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Superficie cubierta</label>
+                <form:input type="number" class="form-control"  path="superficieCubiertaCasa" id="inputSuperficieCubierta"/>
               </div>
+              <div class="text-danger"  id="divSuperficieCubierta" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Superficie total" path="superficieTotalTerreno"/>
-<%--                <form:errors path="superficieTotalTerreno" cssClass="error" element="div" />--%>
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" placeholder="Superficie cubierta" path="superficieCubiertaCasa" id="inputSuperficieCubierta"/>--%>
+<%--&lt;%&ndash;                <form:errors path="superficieCubiertaCasa" cssClass="error" element="div" />&ndash;%&gt;--%>
+<%--                <div class="text-danger"  id="divSuperficieCubierta" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Superficie total</label>
+                <form:input type="number" class="form-control"  path="superficieTotalTerreno" id="inputSuperficieTotal"/>
               </div>
+              <div class="text-danger"  id="divSuperficieTotal" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Precio" path="precioPublicacion"/>
-                <form:errors path="precioPublicacion" cssClass="text-danger" element="div" />
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" placeholder="Superficie total" path="superficieTotalTerreno" id="inputSuperficieTotal"/>--%>
+<%--&lt;%&ndash;                <form:errors path="superficieTotalTerreno" cssClass="error" element="div" />&ndash;%&gt;--%>
+<%--                <div class="text-danger"  id="divSuperficieTotal" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Precio (*)</label>
+                <form:input type="number" class="form-control" path="precioPublicacion"  id="inputPrecio"/>
               </div>
+              <div class="text-danger"  id="divPrecio" ></div>
             </div>
+
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input type="number" class="form-control" path="precioPublicacion"  placeholder="Precio (*)" id="inputPrecio"/>--%>
+<%--                <form:errors path="precioPublicacion" cssClass="text-danger" element="div" />--%>
+<%--                <div class="text-danger"  id="divPrecio" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
 
           </div>
 
@@ -222,36 +302,49 @@
           <h3 class="multisteps-form__title">Fotos de la propiedad. Puede cargar hasta 3 imagenes</h3>
           <div class="multisteps-form__content">
 
-
-            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input class="multisteps-form__input form-control" type="text" path="tituloPublicacion" placeholder="Título"/>
-<%--                <form:errors path="alturaPublicacion" cssClass="error" element="div" />--%>
+            <div class="mt-5">
+              <div class="input-group input-group-outline o my-3 is-focused">
+                <label class="form-label">Título (*)</label>
+                <form:input class="multisteps-form__input form-control" type="text" path="tituloPublicacion"  id="inputTitulo"/>
               </div>
+              <div class="text-danger"  id="divTitulo" ></div>
             </div>
 
-            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:textarea class="multisteps-form__input form-control" type="text" path="descripcionPublicacion" placeholder="Descripción de la publicación"/>
-                  <%--                <form:errors path="alturaPublicacion" cssClass="error" element="div" />--%>
+<%--            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:input class="multisteps-form__input form-control" type="text" path="tituloPublicacion" placeholder="Título (*)" id="inputTitulo"/>--%>
+<%--&lt;%&ndash;                <form:errors path="alturaPublicacion" cssClass="error" element="div" />&ndash;%&gt;--%>
+<%--                <div class="text-danger"  id="divTitulo" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 is-focused">
+              <label class="form-label">Descripción de la publicación (*)</label>
+                <form:textarea class="multisteps-form__input form-control" type="text" path="descripcionPublicacion"  id="inputDescripcion"/>
               </div>
+              <div class="text-danger"  id="divDescripcion" ></div>
             </div>
+
+<%--            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <form:textarea class="multisteps-form__input form-control" type="text" path="descripcionPublicacion" placeholder="Descripción de la publicación (*)" id="inputDescripcion"/>--%>
+<%--                  &lt;%&ndash;                <form:errors path="alturaPublicacion" cssClass="error" element="div" />&ndash;%&gt;--%>
+<%--                <div class="text-danger"  id="divDescripcion" ></div>--%>
+<%--              </div>--%>
+<%--            </div>--%>
 
             <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <input type="file" placeholder="Imagen"/>
-              </div>
-            </div>
-
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <input type="file" placeholder="Imagen" />
-              </div>
-            </div>
-
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <input type="file" placeholder="Imagen"/>
+                <div class="drop-area">
+                  <div id="preview"></div>
+                  <h2>Arrastra y suelta la imagen</h2>
+                  <span>O</span>
+                  <button type="button">Selecciona tus archivos</button>
+                    <%--                  <!-- <input type="file" multiple> -->--%>
+                  <input type="file" name="file[]" placeholder="Imagen" multiple id="input-file" accept="image/*" hidden/>
+                    <%--                  <input type="file" name="" id="input-file"  multiple />--%>
+                </div>
+                <div class="text-danger"  id="divImagenes" ></div>
               </div>
             </div>
 
@@ -328,6 +421,8 @@
 <%--<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>--%>
 <%--<script src="../../assets/js/map.js"></script>--%>
 <script src="../../assets/js/editMap.js"></script>
+<script src="../../assets/js/validacionCrear.js"></script>
+<script src="../../assets/js/dragAndDrop.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRitCKrHHCHbh9KlJed9j697DDQEW-Go&callback=iniciarMap"></script>
 
 

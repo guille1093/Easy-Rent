@@ -15,6 +15,7 @@
     <title>Title</title>
   <link href="../../assets/css/multistep.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin=""/>
+  <link href="../../assets/css/dragAndDrop.css" rel="stylesheet">
 
 </head>
 
@@ -40,7 +41,7 @@
       <div class="multisteps-form__form">
 
       <%--@elvariable id="publicacion" type=""--%>
-      <form:form role="form" method="post" action="/publicacion/nuevaPublicacion" modelAttribute="publicacion"  class="text-start" id="form" >
+      <form:form role="form" method="post" action="/publicacion/nuevaPublicacion" modelAttribute="publicacion"  class="text-start" id="form" enctype="multipart/form-data" >
 
         <!--PANEL TIPO DE PROPIEDAD-->
         <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
@@ -58,7 +59,6 @@
 
               <form:errors path="idTipo" cssClass="text-danger" element="div"/>
                   <div class="text-danger"  id="divTipo" ></div>
-<%--                  <form:errors path="callePublicacion" cssClass="text-danger" element="div" />--%>
 
 
             </div>
@@ -78,19 +78,20 @@
 
 
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input class="multisteps-form__input form-control" type="text" path="callePublicacion" placeholder="Calle (*)" id="inputCalle"/>
-                <form:errors path="callePublicacion" cssClass="text-danger" element="div" />
-                <div class="text-danger"  id="divCalle" ></div>
+            <div>
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Calle (*)</label>
+                <form:input class="multisteps-form__input form-control " type="text" path="callePublicacion" id="inputCalle"/>
               </div>
+              <div class="text-danger"  id="divCalle" ></div>
             </div>
 
-            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input class="multisteps-form__input form-control" type="number" path="alturaPublicacion" placeholder="Altura (*)" id="inputAlturaPublicacion"/>
-                <div class="text-danger"  id="divAltura" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Altura (*)</label>
+                <form:input class="multisteps-form__input form-control" type="number" path="alturaPublicacion"  id="inputAlturaPublicacion"/>
               </div>
+              <div class="text-danger"  id="divAltura" ></div>
             </div>
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
@@ -141,61 +142,61 @@
           <h3 class="multisteps-form__title">Caracteristicas Generales</h3>
           <div class="multisteps-form__content">
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Ambientes" path="ambientesPublicacion" id="inputAmbiente"/>
-                <form:errors path="ambientesPublicacion" cssClass="text-danger" element="div" />
-                <div class="text-danger"  id="divAmbiente" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Ambientes</label>
+                <form:input type="number" class="form-control"  path="ambientesPublicacion" id="inputAmbiente"/>
               </div>
+              <div class="text-danger"  id="divAmbiente" ></div>
             </div>
 
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Dormitorios" path="dormitoriosPublicacion" id="inputDormitorio"/>
-                <form:errors path="dormitoriosPublicacion" cssClass="text-danger" element="div" />
-                <div class="text-danger"  id="divDormitorio" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label">Dormitorios</label>
+                <form:input type="number" class="form-control"  path="dormitoriosPublicacion" id="inputDormitorio"/>
               </div>
+              <div class="text-danger"  id="divDormitorio" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Baños" path="baniosPublicacion" id="inputBanio"/>
-                <form:errors path="baniosPublicacion" cssClass="text-danger" element="div" />
-                <div class="text-danger"  id="divBanio" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Baños</label>
+                <form:input type="number" class="form-control" path="baniosPublicacion" id="inputBanio"/>
               </div>
+              <div class="text-danger"  id="divBanio" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Cochera" path="cocheraPublicacion" id="inputCochera"/>
-                <form:errors path="cocheraPublicacion" cssClass="text-danger" element="div" />
-                <div class="text-danger"  id="divCochera" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline  my-3 ">
+                <label class="form-label">Cochera</label>
+                <form:input type="number" class="form-control"  path="cocheraPublicacion" id="inputCochera"/>
               </div>
+              <div class="text-danger"  id="divCochera" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Superficie cubierta" path="superficieCubiertaCasa" id="inputSuperficieCubierta"/>
-<%--                <form:errors path="superficieCubiertaCasa" cssClass="error" element="div" />--%>
-                <div class="text-danger"  id="divSuperficieCubierta" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Superficie cubierta</label>
+                <form:input type="number" class="form-control"  path="superficieCubiertaCasa" id="inputSuperficieCubierta"/>
               </div>
+              <div class="text-danger"  id="divSuperficieCubierta" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Superficie total" path="superficieTotalTerreno" id="inputSuperficieTotal"/>
-<%--                <form:errors path="superficieTotalTerreno" cssClass="error" element="div" />--%>
-                <div class="text-danger"  id="divSuperficieTotal" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Superficie total</label>
+                <form:input type="number" class="form-control"  path="superficieTotalTerreno" id="inputSuperficieTotal"/>
               </div>
+              <div class="text-danger"  id="divSuperficieTotal" ></div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input type="number" class="form-control" placeholder="Precio (*)" path="precioPublicacion" id="inputPrecio"/>
-                <form:errors path="precioPublicacion" cssClass="text-danger" element="div" />
-                <div class="text-danger"  id="divPrecio" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 ">
+                <label class="form-label">Precio (*)</label>
+                <form:input type="number" class="form-control" path="precioPublicacion"  id="inputPrecio"/>
               </div>
+              <div class="text-danger"  id="divPrecio" ></div>
             </div>
 
           </div>
@@ -217,39 +218,53 @@
           <div class="multisteps-form__content">
 
 
-            <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <form:input class="multisteps-form__input form-control" type="text" path="tituloPublicacion" placeholder="Título (*)" id="inputTitulo"/>
-<%--                <form:errors path="alturaPublicacion" cssClass="error" element="div" />--%>
-                <div class="text-danger"  id="divTitulo" ></div>
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3">
+                <label class="form-label">Título (*)</label>
+                <form:input class="multisteps-form__input form-control" type="text" path="tituloPublicacion"  id="inputTitulo"/>
               </div>
+              <div class="text-danger"  id="divTitulo" ></div>
+            </div>
+
+            <div class="mt-5">
+              <div class="input-group input-group-outline my-3 is-focused">
+                <label class="form-label">Descripción de la publicación (*)</label>
+                <form:textarea class="multisteps-form__input form-control" type="text" path="descripcionPublicacion" id="inputDescripcion"/>
+              </div>
+              <div class="text-danger"  id="divDescripcion" ></div>
             </div>
 
             <div class="form-row mt-4 shadow-none p-3 mb-5 bg-light rounded">
               <div class="col">
-                <form:textarea class="multisteps-form__input form-control" type="text" path="descripcionPublicacion" placeholder="Descripción de la publicación (*)" id="inputDescripcion"/>
-                  <%--                <form:errors path="alturaPublicacion" cssClass="error" element="div" />--%>
-                <div class="text-danger"  id="divDescripcion" ></div>
+<%--                <input type="file" name="file[]" placeholder="Imagen" multiple id="inputImagen" accept="image/*"/>--%>
+
+                <div class="drop-area">
+                  <div id="preview"></div>
+                  <h2>Arrastra y suelta la imagen</h2>
+                  <span>O</span>
+                  <button type="button">Selecciona tus archivos</button>
+<%--                  <!-- <input type="file" multiple> -->--%>
+                  <input type="file" name="file[]" placeholder="Imagen" multiple id="input-file" accept="image/*" hidden/>
+<%--                  <input type="file" name="" id="input-file"  multiple />--%>
+                </div>
+
+
+<%--                accept="image/png,image/jpeg"--%>
+                <div class="text-danger"  id="divImagenes" ></div>
               </div>
             </div>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <input type="file" placeholder="Imagen"/>
-              </div>
-            </div>
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <input type="file" placeholder="Imagen" />--%>
+<%--              </div>--%>
+<%--            </div>--%>
 
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <input type="file" placeholder="Imagen" />
-              </div>
-            </div>
-
-            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
-              <div class="col">
-                <input type="file" placeholder="Imagen"/>
-              </div>
-            </div>
+<%--            <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">--%>
+<%--              <div class="col">--%>
+<%--                <input type="file" placeholder="Imagen"/>--%>
+<%--              </div>--%>
+<%--            </div>--%>
 
 
 
@@ -301,7 +316,7 @@
               <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Anterior</button>
             </div>
             <div class="col text-md-end">
-              <button class="btn btn-success ml-auto" type="submit" title="Send">Enviar</button>
+              <button class="btn btn-success ml-auto" type="submit" title="Send" id="ENVIAR">Enviar</button>
             </div>
           </div>
 
@@ -317,6 +332,7 @@
 <%--<script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>--%>
 <script src="../../assets/js/createMap.js"></script>
 <script src="../../assets/js/validacionCrear.js"></script>
+<script src="../../assets/js/dragAndDrop.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRitCKrHHCHbh9KlJed9j697DDQEW-Go&callback=iniciarMap"></script>
 
 

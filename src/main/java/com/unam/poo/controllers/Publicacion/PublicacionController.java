@@ -15,6 +15,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 @RequestMapping("/publicacion")
@@ -44,6 +50,8 @@ public class PublicacionController {
 
 
 
+
+
 //    Crear publicacion
 //    Ruta localhost:8080/publicacion/crearPublicacion
     @GetMapping("/crearPublicacion")
@@ -67,7 +75,7 @@ public class PublicacionController {
 
 //    Ruta localhost:8080/publicacion/nuevaPublicacion
     @PostMapping("/nuevaPublicacion")
-    public String crearPublicacion( @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result, Model model) {
+    public String crearPublicacion(@Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result, Model model, @RequestParam("file[]") List<MultipartFile> imagen) {
     if (result.hasErrors()) {
         //aca deberia ir una pagina de error o algo xd
         // retornar y pasarle el objeto publicacion, tipo, provincia, ciudad, comodidad, caracteristicaComodidad;
@@ -84,7 +92,39 @@ public class PublicacionController {
 
         return "Publicacion/crearPublicacion";
     }
+//        @RequestParam("file[]")List<MultipartFile> imagen
+    if (!imagen.isEmpty()) {
+        try {
+//            imprimir el nombre de todos los archivos de imagen
+            Path directorioImagenes = Path.of("src//main//webapp//assets//img//rents");
+            String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
 
+            List<FotoPublicacion> fotos = new ArrayList<>();
+
+            for (MultipartFile file : imagen) {
+                System.out.println(file.getOriginalFilename());
+
+                byte[] bytes = file.getBytes();
+
+
+
+                String nombreImagen = Math.random() + file.getOriginalFilename();
+                Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + nombreImagen);
+                Files.write(rutaCompleta, bytes);
+
+                FotoPublicacion fotoPublicacion = new FotoPublicacion();
+                fotoPublicacion.setUrl(nombreImagen);
+                fotoPublicacion.setIdPublicacion(publicacion);
+
+                fotos.add(fotoPublicacion);
+            }
+            publicacion.setImagenes(fotos);
+
+//            publicacionService.save(publicacion, imagen);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
     publicacionService.savePublicacion(publicacion);
@@ -118,10 +158,42 @@ public class PublicacionController {
     }
 
     @PostMapping("/editarPublicacion/{id}")
-    public String editarPublicacion(@PathVariable("id") Long id, @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result) {
+    public String editarPublicacion(@PathVariable("id") Long id, @Validated @ModelAttribute ("publicacion")Publicacion publicacion, BindingResult result,@RequestParam("file[]") List<MultipartFile> imagen ) {
         if (result.hasErrors()) {
             //aca deberia ir una pagina de error o algo xd
             return "Publicacion/editarPublicacion";
+        }
+        if (!imagen.isEmpty()) {
+            try {
+//            imprimir el nombre de todos los archivos de imagen
+                Path directorioImagenes = Path.of("src//main//webapp//assets//img//rents");
+                String rutaAbsoluta = directorioImagenes.toFile().getAbsolutePath();
+
+                List<FotoPublicacion> fotos = new ArrayList<>();
+
+                for (MultipartFile file : imagen) {
+                    System.out.println(file.getOriginalFilename());
+
+                    byte[] bytes = file.getBytes();
+
+
+
+                    String nombreImagen = Math.random() + file.getOriginalFilename();
+                    Path rutaCompleta = Paths.get(rutaAbsoluta + "//" + nombreImagen);
+                    Files.write(rutaCompleta, bytes);
+
+                    FotoPublicacion fotoPublicacion = new FotoPublicacion();
+                    fotoPublicacion.setUrl(nombreImagen);
+                    fotoPublicacion.setIdPublicacion(publicacion);
+
+                    fotos.add(fotoPublicacion);
+                }
+                publicacion.setImagenes(fotos);
+
+//            publicacionService.save(publicacion, imagen);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
         publicacionService.updatePublicacion(publicacion, id);
@@ -186,7 +258,7 @@ public class PublicacionController {
     @GetMapping("/verPublicaciones")
     public String verPublicaciones(Model model){
 
-        List<Publicacion> publicaciones = publicacionService.findAll();
+        List<Publicacion> publicaciones = publicacionService.findAllByEstadoPublicacion("activo");
 
         model.addAttribute("publicaciones", publicaciones);
 

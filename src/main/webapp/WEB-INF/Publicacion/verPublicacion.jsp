@@ -27,16 +27,71 @@
         <div class="row px-xl-5">
             <div class="col-lg-5 pb-5">
                 <div id="carousel-1" class="carousel slide shadow-lg" data-bs-ride="true">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/1.webp" alt="Slide Image" /></div>
-                        <div class="carousel-item ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/2.webp" alt="Slide Image" /></div>
-                        <div class="carousel-item ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/3.webp" alt="Slide Image" /></div>
+                    <div class="carousel-inner" >
+<%--                        <div class="carousel-item active ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/3.webp" alt="Slide Image" /></div>--%>
+
+
+
+                        <c:forEach items="${publicacion.imagenes}" var="imagen">
+                            <c:if test="${imagen.id == publicacion.imagenes[0].id}">
+                                <div class="carousel-item active ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/${imagen.url}" alt="Slide Image" /></div>
+                            </c:if>
+                            <c:if test="${imagen.id != publicacion.imagenes[0].id}">
+                                <div class="carousel-item ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/${imagen.url}" alt="Slide Image" /></div>
+                            </c:if>
+<%--                            <div class="carousel-item ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/3.webp" alt="Slide Image" /></div>--%>
+                        </c:forEach>
+
+<%--                        <div class="carousel-item active ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/1.webp" alt="Slide Image" /></div>--%>
+<%--                        <div class="carousel-item ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/2.webp" alt="Slide Image" /></div>--%>
+<%--                        <div class="carousel-item ratio ratio-1x1 "><img class="rounded" style="object-fit:cover; height:100%; width: 100%;" src="../../assets/img/rents/3.webp" alt="Slide Image" /></div>--%>
                     </div>
                     <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
                     <ol class="carousel-indicators">
-                        <li class="active" data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                        <c:choose>
+                            <c:when test="${publicacion.imagenes.size() == 1}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                            </c:when>
+                            <c:when test="${publicacion.imagenes.size() == 2}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                            </c:when>
+                            <c:when test="${publicacion.imagenes.size() == 3}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                            </c:when>
+                            <c:when test="${publicacion.imagenes.size() == 4}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                            </c:when>
+                            <c:when test="${publicacion.imagenes.size() == 5}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
+                            </c:when>
+                            <c:when test="${publicacion.imagenes.size() == 6}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="5"></li>
+                            </c:when>
+                            <c:when test="${publicacion.imagenes.size() == 7}">
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="5"></li>
+                                <li data-bs-target="#carousel-1" data-bs-slide-to="6"></li>
+                            </c:when>
+                        </c:choose>
                     </ol>
                 </div>
             </div>
@@ -91,6 +146,7 @@
                 </div>
 
                 <div class="row">
+                    <c:if test="${publicacion.dormitoriosPublicacion > 0}">
                     <div class="col-6">
                         <div class="d-flex align-items-center mb-3">
                             <div class="bg-primary p-2 mr-3 rounded-circle" style="height: 32px; width: 32px;"><i class="fas fa-bed text-white"></i></div>
@@ -100,6 +156,8 @@
                             </div>
                         </div>
                     </div>
+                    </c:if>
+                    <c:if  test="${publicacion.baniosPublicacion > 0}">
                     <div class="col-6">
                         <div class="d-flex align-items-center mb-3">
                             <div class="bg-primary rounded-circle p-2 mr-3" style="height: 32px; width: 32px;"><i class="fas fa-bath text-white"></i></div>
@@ -109,8 +167,9 @@
                             </div>
                         </div>
                     </div>
+                    </c:if>
 
-                    <c:if  test="${publicacion.superficieTotalTerreno != null}">
+                    <c:if  test="${publicacion.superficieTotalTerreno > 0}">
                         <div class="col-6">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="bg-primary rounded-circle p-2 mr-3"><i class="fas fa-ruler-combined text-white"></i></div>
@@ -134,21 +193,20 @@
                         </div>
                     </c:if>
 
-                    <div class="col w-70 mt-4 me-6">
-                        <div class="card border-0 shadow-sm mb-4">
-                            <div class="card-body">
-                                <h5 class="font-weight-semi-bold">Precio mensual</h5>
-                                <div class="row align-items-start">
-                                    <h3 class="font-weight-semi-bold mb-4 col">$ ${publicacion.precioPublicacion.intValue()} ARS</h3>
-<%--                                    -----------------ACÁ VA EL BOTÓN DE MERCADO PAGO-----------------------------------------------------%>
-                                    <a href="#" class="btn btn-primary btn-block col">Alquilar</a>
-<%--                                    <div class="cho-container"></div>--%>
-<%--                                            -----------------ACÁ VA EL BOTÓN DE MERCADO PAGO-------------------------------------------------------------%>
-                                </div>
+                </div>
+                <div class="col w-70 mt-4 me-6">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="font-weight-semi-bold">Precio mensual</h5>
+                            <div class="row align-items-start">
+                                <h3 class="font-weight-semi-bold mb-4 col">$ ${publicacion.precioPublicacion.intValue()} ARS</h3>
+                                <%--                                    -----------------ACÁ VA EL BOTÓN DE MERCADO PAGO-----------------------------------------------------%>
+                                <a href="#" class="btn btn-primary btn-block col">Alquilar</a>
+                                <%--                                    <div class="cho-container"></div>--%>
+                                <%--                                            -----------------ACÁ VA EL BOTÓN DE MERCADO PAGO-------------------------------------------------------------%>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -164,6 +222,7 @@
             </div>
 
 <%--            Listado de comodidades de la base de datos--%>
+            <c:if test="${!publicacion.caracteristicasComodidades.isEmpty()}">
             <div class="row px-xl-5">
                 <div class="col">
                     <div class="card border-0 shadow-sm mb-4">
@@ -194,6 +253,7 @@
                     </div>
                 </div>
             </div>
+            </c:if>
 
 <%--&lt;%&ndash;                                        Solamente visualiza 5 comodidades&ndash;%&gt;--%>
 <%--                                        @if($loop->iteration <= 5)--%>
