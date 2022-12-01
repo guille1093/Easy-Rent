@@ -78,11 +78,11 @@
                     <div class="card-body">
                        
                         <form role="form" action="/login" method="post" modelAttribute="LoginDto">
-                            <div class="input-group input-group-outline my-3">
+                            <div class="input-group input-group-outline o my-3 is-focused">
                                 <label class="form-label">Email</label>
                                 <input #correo type="email" name="correo" id="correo" class="form-control">
                             </div>
-                            <div class="input-group input-group-outline mb-3">
+                            <div class="input-group input-group-outline o mb-3 is-focused">
                                 <label class="form-label">Contraseña</label>
                                 <input #contraseña path="contraseña" name="contraseña" type="password" class="form-control is-invalid" required> 
                             </div> 

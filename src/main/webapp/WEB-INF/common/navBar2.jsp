@@ -6,7 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <html>
+
 <nav class="navbar navbar-expand-lg border-radius-xl top-0 z-index-3 shadow position-absolute my-3 py-2 start-5 end-5" style="backdrop-filter:blur(2px); background-color: rgba(255, 255, 255, .75);">
   <div class="container-fluid px-0">
     <a class="navbar-brand font-weight-bolder ms-sm-3" href="${pageContext.request.contextPath}/mainpage/" rel="tooltip" title="Pagina de inicio" data-placement="bottom" >

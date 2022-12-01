@@ -22,7 +22,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Registrar Usuario
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Registrar_usuario.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/Registrar_usuario.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Registrar Usuario  
@@ -96,7 +96,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Ingresar Usuario
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Login.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/Login.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Ingresar Usuario  
@@ -151,7 +151,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Registrar Propiedad
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Registrar_Propiedad.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/Registrar_Propiedad.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Registrar Propiedad  
@@ -300,7 +300,7 @@ Paso 1: <br> Campo-1: Tipo de propiedad</td>
 
 ## Wireframe Modificar Propiedad
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\modif_prop.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/modif_prop.jpeg" width="800"/>
 
 <br><br>
 

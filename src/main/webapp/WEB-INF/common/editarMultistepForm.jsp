@@ -348,10 +348,22 @@
               </div>
             </div>
 
+<%--              mostrar las imagenes de la base de datos--%>
+              <div class="form-row mt-4  shadow-none p-3 mb-5 bg-light rounded">
+                <div class="col">
+                  <c:forEach items="${publicacion.imagenes}" var="imagen">
+<%--                      <div>--%>
+                          <img src="../../assets/img/rents/${imagen.url}" alt="imagen" height="100">
+<%--                          <button type="button"  onclick="eliminarImagen(${imagen.id})">Eliminar</button>--%>
+<%--                      </div>--%>
 
+
+                    </c:forEach>
+                </div>
+              </div>
 
           </div>
-
+        <form:input path="estadoPublicacion" type="hidden"/>
           <div class="button-row d-flex mt-4 " >
             <div class="col">
               <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Anterior</button>

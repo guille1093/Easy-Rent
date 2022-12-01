@@ -14,13 +14,13 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Diseño OO
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_1-2.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/DC_ite_1-2.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Modificar datos de usuario
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\modificar_datos_usuarios.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/modificar_datos_usuarios.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:   
@@ -88,7 +88,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Consultar usuario
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_usuario.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/consultar_usuario.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:
@@ -138,7 +138,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Consultar ubicación
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_ubicacion.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/consultar_ubicacion.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:   

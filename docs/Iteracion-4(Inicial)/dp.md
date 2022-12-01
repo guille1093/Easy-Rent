@@ -17,17 +17,17 @@ La division de las Historias de Usuario sera la siguiente:
 
 # Tablero de Proyecto
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\tablero_4I.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/tablero_4I.jpeg" width="800"/>
 
 # Diseño OO
 
-<img height="" src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_3.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/imagenes_iteraciones\DC_ite_3.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Dar de baja un usuario (baja lógica)
 
-<img height="" src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\baja_usuario.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/baja_usuario.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:   
@@ -95,7 +95,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Agregar un alquiler a Favoritos
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\agregar_fav.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/agregar_fav.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:
@@ -145,7 +145,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Eliminar un alquiler de Favoritos
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\quitar_fav.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/quitar_fav.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Eliminar un alquiler de favoritos  

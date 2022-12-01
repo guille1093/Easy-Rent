@@ -13,18 +13,17 @@ La division de las Historias de Usuario sera la siguiente:
     - **Encargados**: Marcela Stigelmeier, Matias Fernandez, Emiliano Blazco, Ariel Cristaldo, Guillermo Quintana, Marcelo Kachuk
 
 # Tablero de Proyecto
-
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\Tablero5F.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/Tablero5F.jpeg" width="800"/>
 
 # Diseño OO
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\DC_ite_5F.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/DC_ite_5F.jpeg" width="800"/>
 
 # Wireframe y caso de uso
 
 ## Wireframe Consultar alquileres Favoritos
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\consultar_alquileres_fav.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/consultar_alquileres_fav.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**: Consultar alquileres Favoritos <br>
@@ -62,7 +61,7 @@ La division de las Historias de Usuario sera la siguiente:
 
 ## Wireframe Restablecer contraseña
 
-<img src="C:\Users\emili\Desktop\Facultad\Tercer Año\Segundo cuatri\POO2\IntegradorIntegro\src\main\webapp\assets\img\imagenes_iteraciones\restablecer_contra.jpeg" width="800"/>
+<img src="../../src/main/webapp/assets/img/imagenes_iteraciones/restablecer_contra.jpeg" width="800"/>
 
 <br><br>
 **Caso de uso**:Restablecer contraseña<br>
