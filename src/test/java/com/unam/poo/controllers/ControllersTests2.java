@@ -163,6 +163,9 @@ public class ControllersTests2 {
         assertEquals(200, response.code());
     } 
 
+    //No funciona
+    //Necesario inyectar atributos de sesion "userID" 
+    //O intentar que los tests corran en una misma sesion
     @Test
     public void testUserProfile() throws IOException{
         Request requerimiento = new Request.Builder()
