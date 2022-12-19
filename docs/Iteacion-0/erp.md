@@ -49,8 +49,8 @@ No funcionales
 ## Arquitectura de software
 
 - Entorno: Desarrollo Web
-- Lenguajes de programación:Java
-- Framework: Springboot
+- Lenguajes de programación:Java 9 / JS
+- Framework: Springboot 3
 - Arquitectura: Modelo Vista Controlador
 
 
