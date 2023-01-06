@@ -13,7 +13,7 @@
     <img src="src/main/webapp/assets/img/md/logo-unam.png" alt="Logo" width="291" height="145">
   </a>
 
-<h3 align="center">Object Oriented Programming 2</h3>
+<h3 align="center">Easy-Rent</h3>
 
   <p align="center">
     Easy-Rent is a powerful and easy-to-use property rental marketplace built using the Java programming language and a variety of modern technologies. The app is powered by Spring Boot, a popular framework for building standalone, production-grade Java applications, and Thymeleaf, a template engine for Java that enables the easy creation of HTML, XML, and other markup languages. The user interface is sleek and intuitive, thanks to the inclusion of Bootstrap, a popular front-end library for building responsive and mobile-first web apps.
