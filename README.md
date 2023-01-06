@@ -16,7 +16,11 @@
 <h3 align="center">Object Oriented Programming 2</h3>
 
   <p align="center">
-    A WebApp project.
+    Easy-Rent is a powerful and easy-to-use property rental marketplace built using the Java programming language and a variety of modern technologies. The app is powered by Spring Boot, a popular framework for building standalone, production-grade Java applications, and Thymeleaf, a template engine for Java that enables the easy creation of HTML, XML, and other markup languages. The user interface is sleek and intuitive, thanks to the inclusion of Bootstrap, a popular front-end library for building responsive and mobile-first web apps.
+
+Easy-Rent uses PostgreSQL as its primary database management system, providing a robust and reliable way to store and retrieve data as users browse and rent properties. The app also implements JWT (JSON Web Token) for secure user sessions, and JPA (Java Persistence API) for data persistence, making it easy for developers to manage and manipulate data within the app.
+
+Whether you're a landlord looking to advertise your properties or a tenant searching for the perfect rental, Easy-Rent is the perfect solution. With its simple and intuitive design, you'll be able to find and rent the perfect property in no time.
   </p>
 </div>
 
